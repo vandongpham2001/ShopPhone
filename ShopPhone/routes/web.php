@@ -18,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('admin/users/login', [LoginController::class, 'index']);
+Route::post('admin/users/login/store', [LoginController::class, 'store']);

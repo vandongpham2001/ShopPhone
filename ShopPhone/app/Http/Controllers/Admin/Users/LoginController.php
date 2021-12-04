@@ -13,4 +13,11 @@ class LoginController extends Controller
             'title' => 'Đăng nhập hệ thống'
         ]);
     }
+    public function store(Request $request)
+    {
+//        dd($request->input());
+        $this->validate($request, [
+            'email'=> 'required|email:filter'
+        ]);
+    }
 }
