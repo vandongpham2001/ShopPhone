@@ -3,10 +3,10 @@
   <title>AdminLTE 3 | Log in</title>
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" rel="stylesheet">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="/backend/admin/plugins/fontawesome-free/css/all.min.css">
+  <link href="{{asset('backend/admin/plugins/fontawesome-free/css/all.min.css')}}"  rel="stylesheet">
   <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="/backend/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <link href="{{asset('backend/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}"  rel="stylesheet">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/backend/admin/dist/css/adminlte.min.css">
+  <link href="{{asset('backend/admin/dist/css/adminlte.min.css')}}"rel="stylesheet">
