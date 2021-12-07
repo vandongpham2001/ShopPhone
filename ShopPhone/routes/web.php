@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\Admin\Users\LoginController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,24 @@ Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     //
-    Route::get('admin', [MainController::class, 'index'])->name('admin');
-    Route::get('admin/main', [MainController::class, 'index']);
+    Route::prefix('admin')->group(function (){
+        Route::get('/', [MainController::class, 'index'])->name('admin');
+        Route::get('main', [MainController::class, 'index']);
+
+        #Category
+        Route::prefix('category')->group(function (){
+            Route::get('add', [CategoryController::class, 'create']);
+            Route::post('add', [CategoryController::class, 'store']);
+            Route::get('list', [CategoryController::class, 'index']);
+            Route::get('edit/{category}', [CategoryController::class, 'show']);
+            Route::post('edit/{category}', [CategoryController::class, 'update']);
+            Route::DELETE('destroy', [CategoryController::class, 'destroy']);
+        });
+
+    });
+
+
+
 });
 
 
