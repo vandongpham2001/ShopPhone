@@ -2877,8 +2877,7 @@
 								"$ref": "AAAAAAF9ZyNFn5laALA="
 							},
 							"name": "IdProduct",
-							"length": 0,
-							"primaryKey": true
+							"length": 0
 						},
 						{
 							"_type": "ERDColumn",

@@ -38,6 +38,21 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [CategoryController::class, 'destroy']);
         });
 
+        #ProductType
+        Route::prefix('producttype')->group(function (){
+
+        });
+
+        #Product
+        Route::prefix('products')->group(function (){
+
+        });
+
+        #Role
+        Route::prefix('roles')->group(function (){
+
+        });
+
     });
 
 
