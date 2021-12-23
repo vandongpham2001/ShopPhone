@@ -24,7 +24,9 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.image.add', [
+            'title' => 'Thêm ảnh mới'
+        ]);
     }
 
     /**

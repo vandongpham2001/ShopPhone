@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\Users\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\ProductTypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,7 +42,12 @@ Route::middleware(['auth'])->group(function () {
 
         #ProductType
         Route::prefix('producttype')->group(function (){
-
+            Route::get('add', [ProductTypeController::class, 'create']);
+            Route::post('add', [ProductTypeController::class, 'store']);
+            Route::get('list', [ProductTypeController::class, 'index']);
+            Route::get('edit/{producttype}', [ProductTypeController::class, 'show']);
+            Route::post('edit/{producttype}', [ProductTypeController::class, 'update']);
+            Route::DELETE('destroy', [ProductTypeController::class, 'destroy']);
         });
 
         #Product
@@ -52,6 +59,19 @@ Route::middleware(['auth'])->group(function () {
         Route::prefix('roles')->group(function (){
 
         });
+
+        #Image
+        Route::prefix('images')->group(function () {
+            Route::get('add', [ImageController::class, 'create']);
+            Route::post('add', [ImageController::class, 'store']);
+            Route::get('list', [ImageController::class, 'index']);
+            Route::get('edit/{image}', [ImageController::class, 'show']);
+            Route::post('edit/{image}', [ImageController::class, 'update']);
+            Route::DELETE('destroy', [ImageController::class, 'destroy']);
+        });
+
+        #Upload
+        Route::post('upload/services', [\App\Http\Controllers\Admin\UploadController::class, 'store']);
 
     });
 
