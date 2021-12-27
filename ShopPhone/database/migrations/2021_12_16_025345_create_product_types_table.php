@@ -18,8 +18,9 @@ class CreateProductTypesTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('status');
-            $table->integer('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
+            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('restrict')->onDelete('cascade');
         });
     }
 
