@@ -18,12 +18,12 @@ class UploadController extends Controller
     {
         $url=$this->upload->store($request);
         if ($url!=false){
-            return respone()->json([
+            return response()->json([
                 'error'=> false,
                 'url'=> $url
             ]);
         }
-        return respone()->json([
+        return response()->json([
             'error'=> true
         ]);
     }
