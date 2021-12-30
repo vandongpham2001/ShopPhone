@@ -12,15 +12,15 @@
                 <input type="text" class="form-control" name="name" id="name" placeholder="Nhập tên loại sản phẩm">
             </div>
 
-{{--            <div class="form-group">--}}
-{{--                <label for="category">Danh mục</label>--}}
-{{--                <select class="form-control" name="parent_id">--}}
+            <div class="form-group">
+                <label for="category">Danh mục</label>
+                <select class="form-control" name="category_id">
 {{--                    <option value="0">Danh mục cha</option>--}}
-{{--                    @foreach($categories as $category)--}}
-{{--                        <option value="{{$category->id}}">{{$category->name}}</option>--}}
-{{--                    @endforeach--}}
-{{--                </select>--}}
-{{--            </div>--}}
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </div>
 
             <div class="form-group">
                 <label for="description">Mô tả</label>

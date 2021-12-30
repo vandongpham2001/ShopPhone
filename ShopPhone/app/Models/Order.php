@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class order extends Model
 {
     use HasFactory;
-    public function User(){
-        return $this->hasOne(User::class, 'id', 'user_id');
+    public function user(){
+        return $this->hasOne(user::class, 'id', 'user_id');
     }
-    public function OrdersDetails(){
-        return $this->hasMany(OrdersDetail::class, 'order_id', 'id');
+    public function ordersdetails(){
+        return $this->hasMany(ordersdetail::class, 'order_id', 'id');
     }
-    public function Invoice(){
-        return $this->hasOne(Invoice::class, 'id', 'invoice_id');
+    public function invoice(){
+        return $this->hasOne(invoice::class, 'id', 'invoice_id');
     }
 }

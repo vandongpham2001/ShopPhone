@@ -1,12 +1,13 @@
 <?php
 
 use App\Http\Controllers\Admin\BannerController;
-use App\Http\Controllers\Admin\Users\LoginController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ProductTypeController;
+use App\Http\Controllers\Admin\UploadController;
+use App\Http\Controllers\Admin\Users\LoginController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,17 +23,18 @@ use App\Http\Controllers\Admin\ProductTypeController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     //
-    Route::prefix('admin')->group(function (){
+    Route::prefix('admin')->group(function () {
         Route::get('/', [MainController::class, 'index'])->name('admin');
         Route::get('main', [MainController::class, 'index']);
 
         #Category
-        Route::prefix('category')->group(function (){
+        Route::prefix('category')->group(function () {
             Route::get('add', [CategoryController::class, 'create']);
             Route::post('add', [CategoryController::class, 'store']);
             Route::get('list', [CategoryController::class, 'index']);
@@ -42,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #ProductType
-        Route::prefix('productType')->group(function (){
+        Route::prefix('producttype')->group(function () {
             Route::get('add', [ProductTypeController::class, 'create']);
             Route::post('add', [ProductTypeController::class, 'store']);
             Route::get('list', [ProductTypeController::class, 'index']);
@@ -52,12 +54,12 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #Product
-        Route::prefix('products')->group(function (){
+        Route::prefix('products')->group(function () {
 
         });
 
         #Role
-        Route::prefix('roles')->group(function (){
+        Route::prefix('roles')->group(function () {
 
         });
 
@@ -82,12 +84,10 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #Upload
-        Route::post('upload/services', [\App\Http\Controllers\Admin\UploadController::class, 'store']);
+        Route::post('upload/services', [UploadController::class, 'store']);
 
     });
 
 
-
 });
-
 

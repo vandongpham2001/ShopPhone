@@ -31,7 +31,8 @@ class ProductTypeController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $this->productTypeService->create($request);
+        return redirect()->back();
     }
 
     /**

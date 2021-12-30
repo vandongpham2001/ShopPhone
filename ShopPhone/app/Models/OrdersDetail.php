@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OrdersDetail extends Model
+class ordersdetail extends Model
 {
     use HasFactory;
-    public function ProductDetail(){
-        return $this->hasOne(ProductDetail::class, 'id', 'productDetail_id');
+    public function productdetail(){
+        return $this->hasOne(productdetail::class, 'id', 'productDetail_id');
     }
-    public function Order(){
-        return $this->hasOne(Order::class, 'id', 'order_id');
+    public function order(){
+        return $this->hasOne(order::class, 'id', 'order_id');
     }
 }
