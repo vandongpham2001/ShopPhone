@@ -13,15 +13,15 @@ class CreateOrdersDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders_details', function (Blueprint $table) {
+        Schema::create('orderDetails', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('orders_id');
-            $table->unsignedBigInteger('product_detail_id');
+            $table->unsignedBigInteger('order_id');
+            $table->unsignedBigInteger('productDetail_id');
             $table->integer('soLuong');
             $table->decimal('giaMua');
             $table->timestamps();
-            $table->foreign('orders_id')->references('id')->on('orders')->onUpdate('restrict')->onDelete('cascade');
-            $table->foreign('product_detail_id')->references('id')->on('product_details')->onUpdate('restrict')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('restrict')->onDelete('cascade');
+            $table->foreign('productDetail_id')->references('id')->on('productDetails')->onUpdate('restrict')->onDelete('cascade');
         });
     }
 
@@ -32,6 +32,6 @@ class CreateOrdersDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders_details');
+        Schema::dropIfExists('orderDetails');
     }
 }

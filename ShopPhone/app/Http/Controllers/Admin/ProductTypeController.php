@@ -3,14 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Services\ProductType\ProductTypeService;
 use Illuminate\Http\Request;
 
 class ProductTypeController extends Controller
 {
-    protected $producttypeService;
+    protected $productTypeService;
 
-    public function __construct()
+    public function __construct(ProductTypeService $productTypeService)
     {
+        $this->productTypeService=$productTypeService;
     }
 
     public function index()
@@ -20,8 +22,9 @@ class ProductTypeController extends Controller
 
     public function create()
     {
-        return view('admin.producttype.add', [
-            'title' => 'Thêm loại sản phẩm mới'
+        return view('admin.productType.add', [
+            'title' => 'Thêm loại sản phẩm mới',
+            'categories'=>$this->productTypeService->getCategory()
         ]);
     }
 

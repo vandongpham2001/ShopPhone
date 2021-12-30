@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MainController;
@@ -41,12 +42,12 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #ProductType
-        Route::prefix('producttype')->group(function (){
+        Route::prefix('productType')->group(function (){
             Route::get('add', [ProductTypeController::class, 'create']);
             Route::post('add', [ProductTypeController::class, 'store']);
             Route::get('list', [ProductTypeController::class, 'index']);
-            Route::get('edit/{producttype}', [ProductTypeController::class, 'show']);
-            Route::post('edit/{producttype}', [ProductTypeController::class, 'update']);
+            Route::get('edit/{productType}', [ProductTypeController::class, 'show']);
+            Route::post('edit/{productType}', [ProductTypeController::class, 'update']);
             Route::DELETE('destroy', [ProductTypeController::class, 'destroy']);
         });
 
@@ -68,6 +69,16 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{image}', [ImageController::class, 'show']);
             Route::post('edit/{image}', [ImageController::class, 'update']);
             Route::DELETE('destroy', [ImageController::class, 'destroy']);
+        });
+
+        #Banner
+        Route::prefix('banners')->group(function () {
+            Route::get('add', [BannerController::class, 'create']);
+            Route::post('add', [BannerController::class, 'store']);
+            Route::get('list', [BannerController::class, 'index']);
+            Route::get('edit/{banner}', [BannerController::class, 'show']);
+            Route::post('edit/{banner}', [BannerController::class, 'update']);
+            Route::DELETE('destroy', [BannerController::class, 'destroy']);
         });
 
         #Upload

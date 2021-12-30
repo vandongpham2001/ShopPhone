@@ -8,7 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class ProductDetail extends Model
 {
     use HasFactory;
-    public function category(){
-        return $this->hasOne(Category::class, 'id', 'category_id')->withDefault(['name'=>'']);
+    public function Product(){
+        return $this->hasOne(Product::class, 'id', 'product_id');
+    }
+    public function OrdersDetails(){
+        return $this->hasMany(OrdersDetail::class, 'productDetail_id', 'id');
     }
 }
