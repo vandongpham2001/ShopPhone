@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class product extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'name',
+        'productType_id',
+        'NhaSX',
+        'ThoiGianBaoHanh',
+        'status'
+        ];
     public function producttype(){
         return $this->hasOne(producttype::class, 'id', 'productType_id');
     }

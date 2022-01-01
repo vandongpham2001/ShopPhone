@@ -1,34 +1,34 @@
 <?php
 
-namespace App\Http\Services\ProductType;
+namespace App\Http\Services\Product;
 
-use App\Models\Category;
+use App\Models\product;
 use App\Models\producttype;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class ProductTypeService
+class ProductService
 {
-    public function getAllCategory(){
-        return Category::where('status', 1)->get();
+    public function getAllProductType(){
+        return producttype::where('status', 1)->get();
     }
 
     public  function getAll(){
-        return producttype::with('category')
+        return product::with('producttype')
             ->orderBy('id')->paginate(15);
     }
 
     public function create($request){
         try{
             $request->except('_token');
-            ProductType::create($request->all());
+            Product::create($request->all());
 //            producttype::create([
 //                'name'=>(string) $request->input('name'),
 //                'description'=>(string) $request->input('description'),
 //                'status'=>(string) $request->input('status'),
 //                'category_id'=>(string) $request->input('category_id')
 //            ]);
-            Session::flash('success', 'Tạo loại sản phẩm thành công');
+            Session::flash('success', 'Tạo sản phẩm thành công');
         }
         catch (\Exception $err){
             Session::flash('error', $err->getMessage());
@@ -37,18 +37,18 @@ class ProductTypeService
         }
         return true;
     }
-    public function update($request, $productType) : bool
+    public function update($request, $product) : bool
     {
 //        $isValidPrice=$this->isValidPrice($request);
 //        if ($isValidPrice===false)
 //            return false;
         try{
-            $productType->fill($request->input());
-            $productType->save();
-            Session::flash('success', 'Cập nhật loại sản phẩm thành công');
+            $product->fill($request->input());
+            $product->save();
+            Session::flash('success', 'Cập nhật sản phẩm thành công');
         }
         catch (\Exception $err){
-            Session::flash('error', 'Cập nhật loại sản phẩm lỗi');
+            Session::flash('error', 'Cập nhật sản phẩm lỗi');
             \Log::info($err->getMessage());
             return false;
         }
@@ -57,19 +57,19 @@ class ProductTypeService
 
     public function destroy($request){
         $id=(int) $request->input('id');
-        $productType=producttype::where('id', $id)->first();
-        if ($productType){
-            return producttype::where('id', $id)->delete();
+        $product=product::where('id', $id)->first();
+        if ($product){
+            return product::where('id', $id)->delete();
         }
         return false;
     }
 
     public function search($request){
         $keyword = (string) $request->input('keyword');
-        $rs =  DB::table('producttypes')
-            ->join('categories', 'categories.id', 'category_id')
+        $rs =  DB::table('products')
+            ->join('productTypes', 'productTypes.id', 'productType_id')
             ->where('name', 'like', "%".$keyword."%")
-            ->get(['producttypes.id', 'producttypes.name', 'description', 'status', 'categories.name']);
+            ->get(['products.id', 'products.name', 'NhaSX', 'ThoiGianBaoHanh', 'status', 'productTypes.name']);
 
         return count($rs) == 0 ? null : $rs;
     }

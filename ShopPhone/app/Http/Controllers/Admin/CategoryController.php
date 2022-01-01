@@ -39,7 +39,6 @@ class CategoryController extends Controller
         return view('admin.category.list', [
             'title' => 'Danh sách danh mục',
             'categories' => $this->categoryService->getAll()
-
         ]);
     }
 

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductType\ProductTypeRequest;
 use App\Http\Services\ProductType\ProductTypeService;
+use App\Models\producttype;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class ProductTypeController extends Controller
@@ -17,14 +20,17 @@ class ProductTypeController extends Controller
 
     public function index()
     {
-        //
+        return view('admin.productType.list', [
+            'title' => 'Danh sách loại sản phẩm',
+            'productTypes' => $this->productTypeService->getAll()
+        ]);
     }
 
     public function create()
     {
         return view('admin.productType.add', [
             'title' => 'Thêm loại sản phẩm mới',
-            'categories'=>$this->productTypeService->getCategory()
+            'categories'=>$this->productTypeService->getAllCategory()
         ]);
     }
 
@@ -35,48 +41,46 @@ class ProductTypeController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(producttype $productType)
     {
-        //
+        return view('admin.productType.edit', [
+            'title' => 'Chỉnh sửa loại sản phẩm: ' . $productType->name,
+            'productType' => $productType,
+            'categories' => $this->productTypeService->getAllCategory()
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+
+    public function update(producttype $productType, ProductTypeRequest $request)
     {
-        //
+        $result=$this->productTypeService->update($request, $productType);
+        if ($result) {
+            return redirect('/admin/producttype/list');
+        }
+        return redirect()->back();
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function destroy(Request $request)
     {
-        //
+        $result = $this->productTypeService->destroy($request);
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xoá thành công loại sản phẩm'
+            ]);
+        }
+        return response()->json([
+            'error' => true
+        ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    public function search(Request $request): JsonResponse
     {
-        //
+        $result = $this->productTypeService->search($request);
+        return response()->json([
+            'list' => $result,
+            'message' => $result != null  ? "" : "Không tìm thấy loại sản phẩm nào!",
+            'keyword' => $request->input('keyword').gettype($result)
+        ]);
     }
 }

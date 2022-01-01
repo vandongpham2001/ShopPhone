@@ -8,33 +8,33 @@
     <form action="" method="POST">
         <div class="card-body">
             <div class="form-group">
-                <label for="name">Tên danh mục</label>
-                <input type="text" value="{{old('name')}}" class="form-control" name="name" id="name" placeholder="Nhập tên danh mục">
+                <label for="name">Tên loại sản phẩm</label>
+                <input type="text" value="{{$productType->name}}" class="form-control" name="name" id="name" placeholder="Nhập tên loại sản phẩm">
             </div>
 
             <div class="form-group">
                 <label for="category">Danh mục</label>
-                <select class="form-control" name="parent_id">
-                    <option value="0">Danh mục cha</option>
+                <select class="form-control" name="category_id">
+                    {{--                    <option value="0">Danh mục cha</option>--}}
                     @foreach($categories as $category)
-                        <option value="{{$category->id}}">{{$category->name}}</option>
+                        <option value="{{$category->id}}" {{$productType->category_id==$category->id ? 'selected' : '' }}>{{$category->name}}</option>
                     @endforeach
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="description">Mô tả</label>
-                <textarea id="content" value="{{old('description')}}" name="description" class="form-control"></textarea>
+                <textarea id="content" name="description" class="form-control">{{$productType->description}}</textarea>
             </div>
 
             <div class="form-group">
                 <label>Kích hoạt</label>
                 <div class="custom-control custom-radio">
-                    <input class="custom-control-input" value=1 type="radio" id="active" name="active" checked="">
+                    <input class="custom-control-input" value=1 type="radio" id="active" name="status" {{$productType->status == 1 ? 'checked=""' : ''}}>
                     <label for="active" class="custom-control-label">Có</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input class="custom-control-input" value=0 type="radio" id="no_active" name="active">
+                    <input class="custom-control-input" value=0 type="radio" id="no_active" name="status" {{$productType->status == 0 ? 'checked=""' : ''}}>
                     <label for="no_active" class="custom-control-label">Không</label>
                 </div>
             </div>
@@ -43,7 +43,7 @@
         <!-- /.card-body -->
 
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Tạo danh mục</button>
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
         </div>
         @csrf
     </form>

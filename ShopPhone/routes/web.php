@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\Users\LoginController;
@@ -54,8 +55,13 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #Product
-        Route::prefix('products')->group(function () {
-
+        Route::prefix('product')->group(function () {
+            Route::get('add', [ProductController::class, 'create']);
+            Route::post('add', [ProductController::class, 'store']);
+            Route::get('list', [ProductController::class, 'index']);
+            Route::get('edit/{product}', [ProductController::class, 'show']);
+            Route::post('edit/{product}', [ProductController::class, 'update']);
+            Route::DELETE('destroy', [ProductController::class, 'destroy']);
         });
 
         #Role
@@ -64,7 +70,7 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #Image
-        Route::prefix('images')->group(function () {
+        Route::prefix('image')->group(function () {
             Route::get('add', [ImageController::class, 'create']);
             Route::post('add', [ImageController::class, 'store']);
             Route::get('list', [ImageController::class, 'index']);
@@ -74,7 +80,7 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #Banner
-        Route::prefix('banners')->group(function () {
+        Route::prefix('banner')->group(function () {
             Route::get('add', [BannerController::class, 'create']);
             Route::post('add', [BannerController::class, 'store']);
             Route::get('list', [BannerController::class, 'index']);

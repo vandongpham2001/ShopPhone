@@ -14,7 +14,7 @@
                 <img src="{{asset('backend/admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">Admin</a>
             </div>
         </div>
 
@@ -91,13 +91,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/products/add')}}" class="nav-link">
+                            <a href="{{asset('admin/product/add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Sản phẩm</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/products/list')}}" class="nav-link">
+                            <a href="{{asset('admin/product/list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách Sản phẩm</p>
                             </a>
@@ -115,13 +115,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/images/add')}}" class="nav-link">
+                            <a href="{{asset('admin/image/add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Ảnh</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/images/list')}}" class="nav-link">
+                            <a href="{{asset('admin/image/list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách ảnh sản phẩm</p>
                             </a>
@@ -138,13 +138,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/banners/add')}}" class="nav-link">
+                            <a href="{{asset('admin/banner/add')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Banner</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/banners/list')}}" class="nav-link">
+                            <a href="{{asset('admin/banner/list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách Banner</p>
                             </a>
