@@ -24,7 +24,15 @@ class BannerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'noiDung'=>'required',
+            'image'=>'required'
+        ];
+    }
+    public function messages():array
+    {
+        return [
+            'noiDung.required'=>'Vui lòng nhập nội dung',
+            'image.required'=>'Vui lòng chọn ảnh'
         ];
     }
 }

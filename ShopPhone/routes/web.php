@@ -97,3 +97,5 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+

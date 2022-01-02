@@ -24,7 +24,20 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
+            'NhaSX'=>'required',
+            'ThoiGianBaoHanh'=>'required',
+            'status'=>'required',
+            'productType_id'=>'required'
+        ];
+    }
+
+    public function messages():array
+    {
+        return [
+            'name.required'=>'Vui lòng nhập tên sản phẩm',
+            'NhaSX.required'=>'Vui lòng nhập tên sản phẩm',
+            'ThoiGianBaoHanh.required'=>'Vui lòng nhập tên sản phẩm'
         ];
     }
 }

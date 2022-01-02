@@ -7,8 +7,13 @@ use Illuminate\Support\Facades\Session;
 
 class BannerService
 {
+
+    public function show(){
+        return banner::orderBy('id')->get();
+    }
+
     public  function getAll(){
-        return banner::orderBy('id')->paginate(15);
+        return banner::orderBy('id')->paginate(10);
     }
 
     public function create($request){

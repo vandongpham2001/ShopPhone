@@ -34,7 +34,7 @@ class BannerController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(BannerRequest $request)
     {
         $this->bannerService->create($request);
         return redirect()->back();

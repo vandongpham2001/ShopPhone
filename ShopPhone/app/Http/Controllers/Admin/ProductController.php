@@ -35,7 +35,7 @@ class ProductController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $this->productService->create($request);
         return redirect()->back();

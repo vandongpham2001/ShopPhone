@@ -4,7 +4,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th style="width: 50px">ID</th>
+            <th style="width: 50px">STT</th>
             <th>Tên sản phẩm</th>
             <th>Ảnh</th>
             <th>Update</th>
@@ -14,5 +14,6 @@
         <tbody>
         {!! \App\Helpers\Helper::image($images) !!}
         </tbody>
+        {!! $images->links('pagination::bootstrap-4') !!}
     </table>
 @endsection

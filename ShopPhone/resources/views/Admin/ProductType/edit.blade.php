@@ -26,7 +26,16 @@
                 <label for="description">Mô tả</label>
                 <textarea id="content" name="description" class="form-control">{{$productType->description}}</textarea>
             </div>
-
+            <div class="form-group">
+                <label for="image">Ảnh loại sản phẩm</label>
+                <input type="file" class="form-control" id="upload" name="file">
+                <div id="image_show">
+                    <a href="{{$productType->image}}" target="_blank">
+                        <img src="{{$productType->image}}" width="100px">
+                    </a>
+                </div>
+                <input type="hidden" name="image" value="{{$productType->image}}" id="image">
+            </div>
             <div class="form-group">
                 <label>Kích hoạt</label>
                 <div class="custom-control custom-radio">

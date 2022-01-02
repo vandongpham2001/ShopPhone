@@ -24,7 +24,15 @@ class ProductTypeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
+            'description'=>'required'
+        ];
+    }
+    public function messages():array
+    {
+        return [
+            'name.required'=>'Vui lòng nhập tên loại sản phẩm',
+            'description.required'=>'Vui lòng nhập mô tả',
         ];
     }
 }

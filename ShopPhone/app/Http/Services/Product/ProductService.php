@@ -15,7 +15,7 @@ class ProductService
 
     public  function getAll(){
         return product::with('producttype')
-            ->orderBy('id')->paginate(15);
+            ->orderBy('id')->paginate(10);
     }
 
     public function create($request){

@@ -14,7 +14,7 @@ class ImageService
     }
 
     public function getAll(){
-        return image::with('product')->orderBy('id')->paginate(15);
+        return image::with('product')->orderBy('id')->paginate(10);
     }
     public function create($request){
         try{

@@ -31,6 +31,17 @@
             </div>
 
             <div class="form-group">
+                <label for="image">Ảnh minh hoạ</label>
+                <input type="file" class="form-control" id="upload" name="file">
+                <div id="image_show">
+                    <a href="{{$category->image}}" target="_blank">
+                        <img src="{{$category->image}}" width="100px">
+                    </a>
+                </div>
+                <input type="hidden" name="image" value="{{$category->image}}" id="image">
+            </div>
+
+            <div class="form-group">
                 <label>Kích hoạt</label>
                 <div class="custom-control custom-radio">
                     <input class="custom-control-input" value=1 type="radio" id="active" name="active" {{$category->status == 1 ? 'checked=""' : ''}}>

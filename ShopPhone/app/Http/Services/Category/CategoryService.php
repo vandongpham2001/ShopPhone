@@ -18,8 +18,13 @@ class CategoryService
 //        })
 //            ->get();
 //    }
+
+    public function show(){
+        return Category::select('name', 'id')->orderBy('id')->get();
+    }
+
     public function getAll(){
-        return Category::orderbyDesc('id')->paginate(20);
+        return Category::orderbyDesc('id')->paginate(10);
     }
     public function create($request)
     {
@@ -27,6 +32,7 @@ class CategoryService
             Category::create([
                 'name'=>(string) $request->input('name'),
                 'description'=>(string) $request->input('description'),
+                'image'=>(string) $request->input('image'),
                 'status'=>(string) $request->input('active'),
                 'slug'=>Str::slug($request->input('name'), '-'),
                 'parent_id'=>(string) $request->input('parent_id')
@@ -50,6 +56,7 @@ class CategoryService
         }
         $category->name=(string) $request->input('name');
         $category->description=(string) $request->input('description');
+        $category->image=(string) $request->input('image');
         $category->status=(string) $request->input('active');
         $category->save();
         Session::flash('success', 'Cập nhật danh mục thành công');
