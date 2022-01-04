@@ -150,12 +150,17 @@ class Helper
         $html='';
         foreach ($categories as $key => $category){
             $html.='
-                <li>
-                    <a href="/category/'. $category->id .'-'. Str::slug($category->name, '-') .'.html">
+                <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+                    <a class="nav-link dropdown-toggle" href="/category/'. $category->id .'-'. Str::slug($category->name, '-') .'.html">
                         '. $category->name .'
                     </a>';
             if (self::isChild($category->id, $producttypes)){
-                $html.= '<ul class="sub-menu">';
+                $html.= '<div class="dropdown-menu">
+                            <div class="agile_inner_drop_nav_info p-4">
+                                <h5 class="mb-3">'. $category->name .'</h5>
+                                <div class="row">
+                                    <div class="col-sm-6 multi-gd-img">
+                                        <ul class="multi-column-dropdown">';
                 foreach ($producttypes as $k=>$producttype) {
                     if ($producttype->category_id == $category->id){
                         $html .= '
@@ -173,6 +178,31 @@ class Helper
             $html .='</li>
                 ';
             unset($categories[$key]);
+        }
+        return $html;
+    }
+
+    public static function producttypes($producttypes){
+        $html='';
+        foreach ($producttypes as $key => $producttype){
+            $html.='
+                <li>
+                    <input type="checkbox" class="checked">
+                    <span class="span">'. $producttype->name .'</span>';
+            $html .='</li>
+                ';
+            unset($producttypes[$key]);
+        }
+        return $html;
+    }
+    public static function categories($categories){
+        $html='';
+        foreach ($categories as $key => $category){
+            $html.='
+                <li>
+                    <option value="'. $category->id .'">'. $category->name .'</option>';
+            $html .='</li>
+                ';
         }
         return $html;
     }

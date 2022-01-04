@@ -1,192 +1,534 @@
-<!-- Header desktop -->
-<header>
-    @php $menuHtml= \App\Helpers\Helper::menus($categories, $producttypes);  @endphp
-<div class="container-menu-desktop">
-
-    <!-- Topbar -->
-    <div class="top-bar">
-        <div class="content-topbar flex-sb-m h-full container">
-            <div class="left-top-bar">
-                Free shipping for standard order over $100
+<!-- top-header -->
+<div class="agile-main-top">
+    <div class="container-fluid">
+        <div class="row main-top-w3l py-2">
+            <div class="col-lg-4 header-most-top">
+                <p class="text-white text-lg-left text-center">Offer Zone Top Deals & Discounts
+                    <i class="fas fa-shopping-cart ml-1"></i>
+                </p>
             </div>
-
-            <div class="right-top-bar flex-w h-full">
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    Help & FAQs
-                </a>
-
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    My Account
-                </a>
-
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    EN
-                </a>
-
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    USD
-                </a>
-            </div>
-        </div>
-    </div>
-
-{{--    {{dd($categories)}}--}}
-{{--        {{dd($producttypes)}}--}}
-
-    <div class="wrap-menu-desktop">
-        <nav class="limiter-menu-desktop container">
-
-            <!-- Logo desktop -->
-            <a href="#" class="logo">
-                <img src="/backend/images/icons/logo-01.png" alt="IMG-LOGO">
-            </a>
-
-            <!-- Menu desktop -->
-            <div class="menu-desktop">
-                <ul class="main-menu">
-                    <li class="active-menu"><a href="/">Trang chủ</a></li>
-                    {!! $menuHtml !!}
-{{--                    <li class="active-menu">--}}
-{{--                        <a href="index.html">Home</a>--}}
-{{--                        <ul class="sub-menu">--}}
-{{--                            <li><a href="index.html">Homepage 1</a></li>--}}
-{{--                            <li><a href="home-02.html">Homepage 2</a></li>--}}
-{{--                            <li><a href="home-03.html">Homepage 3</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-
-                    <li>
-                        <a href="blog.html">Blog</a>
+            <div class="col-lg-8 header-right mt-lg-0 mt-2">
+                <!-- header lists -->
+                <ul>
+                    <li class="text-center border-right text-white">
+                        <a class="play-icon popup-with-zoom-anim text-white" href="#small-dialog1">
+                            <i class="fas fa-map-marker mr-2"></i>Select Location</a>
                     </li>
-
-                    <li>
-                        <a href="about.html">About</a>
+                    <li class="text-center border-right text-white">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
+                            <i class="fas fa-truck mr-2"></i>Track Order</a>
                     </li>
-
-                    <li>
-                        <a href="contact.html">Contact</a>
+                    <li class="text-center border-right text-white">
+                        <i class="fas fa-phone mr-2"></i> 001 234 5678
+                    </li>
+                    <li class="text-center border-right text-white">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
+                            <i class="fas fa-sign-in-alt mr-2"></i> Đăng nhập </a>
+                    </li>
+                    <li class="text-center text-white">
+                        <a href="#" data-toggle="modal" data-target="#exampleModal2" class="text-white">
+                            <i class="fas fa-sign-out-alt mr-2"></i> Đăng ký </a>
                     </li>
                 </ul>
+                <!-- //header lists -->
             </div>
-
-            <!-- Icon header -->
-            <div class="wrap-icon-header flex-w flex-r-m">
-                <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                    <i class="zmdi zmdi-search"></i>
-                </div>
-
-                <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-                    <i class="zmdi zmdi-shopping-cart"></i>
-                </div>
-
-                <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
-                    <i class="zmdi zmdi-favorite-outline"></i>
-                </a>
-            </div>
-        </nav>
-    </div>
-</div>
-
-<!-- Header Mobile -->
-<div class="wrap-header-mobile">
-    <!-- Logo moblie -->
-    <div class="logo-mobile">
-        <a href="index.html"><img src="/backend/images/icons/logo-01.png" alt="IMG-LOGO"></a>
-    </div>
-
-    <!-- Icon header -->
-    <div class="wrap-icon-header flex-w flex-r-m m-r-15">
-        <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-            <i class="zmdi zmdi-search"></i>
         </div>
+    </div>
+</div>
 
-        <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-            <i class="zmdi zmdi-shopping-cart"></i>
+<!-- Button trigger modal(select-location) -->
+<div id="small-dialog1" class="mfp-hide">
+    <div class="select-city">
+        <h3>
+            <i class="fas fa-map-marker"></i> Please Select Your Location</h3>
+        <select class="list_of_cities">
+            <optgroup label="Popular Cities">
+                <option selected style="display:none;color:#eee;">Select City</option>
+                <option>Birmingham</option>
+                <option>Anchorage</option>
+                <option>Phoenix</option>
+                <option>Little Rock</option>
+                <option>Los Angeles</option>
+                <option>Denver</option>
+                <option>Bridgeport</option>
+                <option>Wilmington</option>
+                <option>Jacksonville</option>
+                <option>Atlanta</option>
+                <option>Honolulu</option>
+                <option>Boise</option>
+                <option>Chicago</option>
+                <option>Indianapolis</option>
+            </optgroup>
+            <optgroup label="Alabama">
+                <option>Birmingham</option>
+                <option>Montgomery</option>
+                <option>Mobile</option>
+                <option>Huntsville</option>
+                <option>Tuscaloosa</option>
+            </optgroup>
+            <optgroup label="Alaska">
+                <option>Anchorage</option>
+                <option>Fairbanks</option>
+                <option>Juneau</option>
+                <option>Sitka</option>
+                <option>Ketchikan</option>
+            </optgroup>
+            <optgroup label="Arizona">
+                <option>Phoenix</option>
+                <option>Tucson</option>
+                <option>Mesa</option>
+                <option>Chandler</option>
+                <option>Glendale</option>
+            </optgroup>
+            <optgroup label="Arkansas">
+                <option>Little Rock</option>
+                <option>Fort Smith</option>
+                <option>Fayetteville</option>
+                <option>Springdale</option>
+                <option>Jonesboro</option>
+            </optgroup>
+            <optgroup label="California">
+                <option>Los Angeles</option>
+                <option>San Diego</option>
+                <option>San Jose</option>
+                <option>San Francisco</option>
+                <option>Fresno</option>
+            </optgroup>
+            <optgroup label="Colorado">
+                <option>Denver</option>
+                <option>Colorado</option>
+                <option>Aurora</option>
+                <option>Fort Collins</option>
+                <option>Lakewood</option>
+            </optgroup>
+            <optgroup label="Connecticut">
+                <option>Bridgeport</option>
+                <option>New Haven</option>
+                <option>Hartford</option>
+                <option>Stamford</option>
+                <option>Waterbury</option>
+            </optgroup>
+            <optgroup label="Delaware">
+                <option>Wilmington</option>
+                <option>Dover</option>
+                <option>Newark</option>
+                <option>Bear</option>
+                <option>Middletown</option>
+            </optgroup>
+            <optgroup label="Florida">
+                <option>Jacksonville</option>
+                <option>Miami</option>
+                <option>Tampa</option>
+                <option>St. Petersburg</option>
+                <option>Orlando</option>
+            </optgroup>
+            <optgroup label="Georgia">
+                <option>Atlanta</option>
+                <option>Augusta</option>
+                <option>Columbus</option>
+                <option>Savannah</option>
+                <option>Athens</option>
+            </optgroup>
+            <optgroup label="Hawaii">
+                <option>Honolulu</option>
+                <option>Pearl City</option>
+                <option>Hilo</option>
+                <option>Kailua</option>
+                <option>Waipahu</option>
+            </optgroup>
+            <optgroup label="Idaho">
+                <option>Boise</option>
+                <option>Nampa</option>
+                <option>Meridian</option>
+                <option>Idaho Falls</option>
+                <option>Pocatello</option>
+            </optgroup>
+            <optgroup label="Illinois">
+                <option>Chicago</option>
+                <option>Aurora</option>
+                <option>Rockford</option>
+                <option>Joliet</option>
+                <option>Naperville</option>
+            </optgroup>
+            <optgroup label="Indiana">
+                <option>Indianapolis</option>
+                <option>Fort Wayne</option>
+                <option>Evansville</option>
+                <option>South Bend</option>
+                <option>Hammond</option>
+            </optgroup>
+            <optgroup label="Iowa">
+                <option>Des Moines</option>
+                <option>Cedar Rapids</option>
+                <option>Davenport</option>
+                <option>Sioux City</option>
+                <option>Waterloo</option>
+            </optgroup>
+            <optgroup label="Kansas">
+                <option>Wichita</option>
+                <option>Overland Park</option>
+                <option>Kansas City</option>
+                <option>Topeka</option>
+                <option>Olathe </option>
+            </optgroup>
+            <optgroup label="Kentucky">
+                <option>Louisville</option>
+                <option>Lexington</option>
+                <option>Bowling Green</option>
+                <option>Owensboro</option>
+                <option>Covington</option>
+            </optgroup>
+            <optgroup label="Louisiana">
+                <option>New Orleans</option>
+                <option>Baton Rouge</option>
+                <option>Shreveport</option>
+                <option>Metairie</option>
+                <option>Lafayette</option>
+            </optgroup>
+            <optgroup label="Maine">
+                <option>Portland</option>
+                <option>Lewiston</option>
+                <option>Bangor</option>
+                <option>South Portland</option>
+                <option>Auburn</option>
+            </optgroup>
+            <optgroup label="Maryland">
+                <option>Baltimore</option>
+                <option>Frederick</option>
+                <option>Rockville</option>
+                <option>Gaithersburg</option>
+                <option>Bowie</option>
+            </optgroup>
+            <optgroup label="Massachusetts">
+                <option>Boston</option>
+                <option>Worcester</option>
+                <option>Springfield</option>
+                <option>Lowell</option>
+                <option>Cambridge</option>
+            </optgroup>
+            <optgroup label="Michigan">
+                <option>Detroit</option>
+                <option>Grand Rapids</option>
+                <option>Warren</option>
+                <option>Sterling Heights</option>
+                <option>Lansing</option>
+            </optgroup>
+            <optgroup label="Minnesota">
+                <option>Minneapolis</option>
+                <option>St. Paul</option>
+                <option>Rochester</option>
+                <option>Duluth</option>
+                <option>Bloomington</option>
+            </optgroup>
+            <optgroup label="Mississippi">
+                <option>Jackson</option>
+                <option>Gulfport</option>
+                <option>Southaven</option>
+                <option>Hattiesburg</option>
+                <option>Biloxi</option>
+            </optgroup>
+            <optgroup label="Missouri">
+                <option>Kansas City</option>
+                <option>St. Louis</option>
+                <option>Springfield</option>
+                <option>Independence</option>
+                <option>Columbia</option>
+            </optgroup>
+            <optgroup label="Montana">
+                <option>Billings</option>
+                <option>Missoula</option>
+                <option>Great Falls</option>
+                <option>Bozeman</option>
+                <option>Butte-Silver Bow</option>
+            </optgroup>
+            <optgroup label="Nebraska">
+                <option>Omaha</option>
+                <option>Lincoln</option>
+                <option>Bellevue</option>
+                <option>Grand Island</option>
+                <option>Kearney</option>
+            </optgroup>
+            <optgroup label="Nevada">
+                <option>Las Vegas</option>
+                <option>Henderson</option>
+                <option>North Las Vegas</option>
+                <option>Reno</option>
+                <option>Sunrise Manor</option>
+            </optgroup>
+            <optgroup label="New Hampshire">
+                <option>Manchesters</option>
+                <option>Nashua</option>
+                <option>Concord</option>
+                <option>Dover</option>
+                <option>Rochester</option>
+            </optgroup>
+            <optgroup label="New Jersey">
+                <option>Newark</option>
+                <option>Jersey City</option>
+                <option>Paterson</option>
+                <option>Elizabeth</option>
+                <option>Edison</option>
+            </optgroup>
+            <optgroup label="New Mexico">
+                <option>Albuquerque</option>
+                <option>Las Cruces</option>
+                <option>Rio Rancho</option>
+                <option>Santa Fe</option>
+                <option>Roswell</option>
+            </optgroup>
+            <optgroup label="New York">
+                <option>New York</option>
+                <option>Buffalo</option>
+                <option>Rochester</option>
+                <option>Yonkers</option>
+                <option>Syracuse</option>
+            </optgroup>
+            <optgroup label="North Carolina">
+                <option>Charlotte</option>
+                <option>Raleigh</option>
+                <option>Greensboro</option>
+                <option>Winston-Salem</option>
+                <option>Durham</option>
+            </optgroup>
+            <optgroup label="North Dakota">
+                <option>Fargo</option>
+                <option>Bismarck</option>
+                <option>Grand Forks</option>
+                <option>Minot</option>
+                <option>West Fargo</option>
+            </optgroup>
+            <optgroup label="Ohio">
+                <option>Columbus</option>
+                <option>Cleveland</option>
+                <option>Cincinnati</option>
+                <option>Toledo</option>
+                <option>Akron</option>
+            </optgroup>
+            <optgroup label="Oklahoma">
+                <option>Oklahoma City</option>
+                <option>Tulsa</option>
+                <option>Norman</option>
+                <option>Broken Arrow</option>
+                <option>Lawton</option>
+            </optgroup>
+            <optgroup label="Oregon">
+                <option>Portland</option>
+                <option>Eugene</option>
+                <option>Salem</option>
+                <option>Gresham</option>
+                <option>Hillsboro</option>
+            </optgroup>
+            <optgroup label="Pennsylvania">
+                <option>Philadelphia</option>
+                <option>Pittsburgh</option>
+                <option>Allentown</option>
+                <option>Erie</option>
+                <option>Reading</option>
+            </optgroup>
+            <optgroup label="Rhode Island">
+                <option>Providence</option>
+                <option>Warwick</option>
+                <option>Cranston</option>
+                <option>Pawtucket</option>
+                <option>East Providence</option>
+            </optgroup>
+            <optgroup label="South Carolina">
+                <option>Columbia</option>
+                <option>Charleston</option>
+                <option>North Charleston</option>
+                <option>Mount Pleasant</option>
+                <option>Rock Hill</option>
+            </optgroup>
+            <optgroup label="South Dakota">
+                <option>Sioux Falls</option>
+                <option>Rapid City</option>
+                <option>Aberdeen</option>
+                <option>Brookings</option>
+                <option>Watertown</option>
+            </optgroup>
+            <optgroup label="Tennessee">
+                <option>Memphis</option>
+                <option>Nashville</option>
+                <option>Knoxville</option>
+                <option>Chattanooga</option>
+                <option>Clarksville</option>
+            </optgroup>
+            <optgroup label="Texas">
+                <option>Houston</option>
+                <option>San Antonio</option>
+                <option>Dallas</option>
+                <option>Austin</option>
+                <option>Fort Worth</option>
+            </optgroup>
+            <optgroup label="Utah">
+                <option>Salt Lake City</option>
+                <option>West Valley City</option>
+                <option>Provo</option>
+                <option>West Jordan</option>
+                <option>Orem</option>
+            </optgroup>
+            <optgroup label="Vermont">
+                <option>Burlington</option>
+                <option>Essex</option>
+                <option>South Burlington</option>
+                <option>Colchester</option>
+                <option>Rutland</option>
+            </optgroup>
+            <optgroup label="Virginia">
+                <option>Virginia Beach</option>
+                <option>Norfolk</option>
+                <option>Chesapeake</option>
+                <option>Arlington</option>
+                <option>Richmond</option>
+            </optgroup>
+            <optgroup label="Washington">
+                <option>Seattle</option>
+                <option>Spokane</option>
+                <option>Tacoma</option>
+                <option>Vancouver</option>
+                <option>Bellevue</option>
+            </optgroup>
+            <optgroup label="West Virginia">
+                <option>Charleston</option>
+                <option>Huntington</option>
+                <option>Parkersburg</option>
+                <option>Morgantown</option>
+                <option>Wheeling</option>
+            </optgroup>
+            <optgroup label="Wisconsin">
+                <option>Milwaukee</option>
+                <option>Madison</option>
+                <option>Green Bay</option>
+                <option>Kenosha</option>
+                <option>Racine</option>
+            </optgroup>
+            <optgroup label="Wyoming">
+                <option>Cheyenne</option>
+                <option>Casper</option>
+                <option>Laramie</option>
+                <option>Gillette</option>
+                <option>Rock Springs</option>
+            </optgroup>
+        </select>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //shop locator (popup) -->
+
+<!-- modals -->
+<!-- log in -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center">Log In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label class="col-form-label">Username</label>
+                        <input type="text" class="form-control" placeholder=" " name="Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Password</label>
+                        <input type="password" class="form-control" placeholder=" " name="Password" required="">
+                    </div>
+                    <div class="right-w3l">
+                        <input type="submit" class="form-control" value="Log in">
+                    </div>
+                    <div class="sub-w3l">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+                            <label class="custom-control-label" for="customControlAutosizing">Remember me?</label>
+                        </div>
+                    </div>
+                    <p class="text-center dont-do mt-3">Don't have an account?
+                        <a href="#" data-toggle="modal" data-target="#exampleModal2">
+                            Register Now</a>
+                    </p>
+                </form>
+            </div>
         </div>
-
-        <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
-            <i class="zmdi zmdi-favorite-outline"></i>
-        </a>
-    </div>
-
-    <!-- Button show menu -->
-    <div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
     </div>
 </div>
-
-
-<!-- Menu Mobile -->
-<div class="menu-mobile">
-    <ul class="topbar-mobile">
-        <li>
-            <div class="left-top-bar">
-                Free shipping for standard order over $100
+<!-- register -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Register</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-        </li>
-
-        <li>
-            <div class="right-top-bar flex-w h-full">
-                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                    Help & FAQs
-                </a>
-
-                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                    My Account
-                </a>
-
-                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                    EN
-                </a>
-
-                <a href="#" class="flex-c-m p-lr-10 trans-04">
-                    USD
-                </a>
+            <div class="modal-body">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label class="col-form-label">Your Name</label>
+                        <input type="text" class="form-control" placeholder=" " name="Name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Email</label>
+                        <input type="email" class="form-control" placeholder=" " name="Email" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Password</label>
+                        <input type="password" class="form-control" placeholder=" " name="Password" id="password1" required="">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder=" " name="Confirm Password" id="password2" required="">
+                    </div>
+                    <div class="right-w3l">
+                        <input type="submit" class="form-control" value="Register">
+                    </div>
+                    <div class="sub-w3l">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" class="custom-control-input" id="customControlAutosizing2">
+                            <label class="custom-control-label" for="customControlAutosizing2">I Accept to the Terms & Conditions</label>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </li>
-    </ul>
-
-    <ul class="main-menu-m">
-        <li class="active-menu"><a href="/">Trang chủ</a></li>
-        {!! $menuHtml !!}
-        {{--                    <li class="active-menu">--}}
-        {{--                        <a href="index.html">Home</a>--}}
-        {{--                        <ul class="sub-menu">--}}
-        {{--                            <li><a href="index.html">Homepage 1</a></li>--}}
-        {{--                            <li><a href="home-02.html">Homepage 2</a></li>--}}
-        {{--                            <li><a href="home-03.html">Homepage 3</a></li>--}}
-        {{--                        </ul>--}}
-        {{--                    </li>--}}
-
-        <li>
-            <a href="blog.html">Blog</a>
-        </li>
-
-        <li>
-            <a href="about.html">About</a>
-        </li>
-
-        <li>
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-</div>
-
-<!-- Modal Search -->
-<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-    <div class="container-search-header">
-        <button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-            <img src="/backend/images/icons/icon-close2.png" alt="CLOSE">
-        </button>
-
-        <form class="wrap-search-header flex-w p-l-15">
-            <button class="flex-c-m trans-04">
-                <i class="zmdi zmdi-search"></i>
-            </button>
-            <input class="plh3" type="text" name="search" placeholder="Search...">
-        </form>
+        </div>
     </div>
 </div>
-</header>
+<!-- //modal -->
+<!-- //top-header -->
+
+<!-- header-bottom-->
+<div class="header-bot">
+    <div class="container">
+        <div class="row header-bot_inner_wthreeinfo_header_mid">
+            <!-- logo -->
+            <div class="col-md-3 logo_agile">
+                <h1 class="text-center">
+                    <a href="index.html" class="font-weight-bold font-italic">
+                        <img src="/backend/images/logo2.png" alt=" " class="img-fluid">Shop Phone
+                    </a>
+                </h1>
+            </div>
+            <!-- //logo -->
+            <!-- header-bot -->
+            <div class="col-md-9 header mt-4 mb-md-0 mb-4">
+                <div class="row">
+                    <!-- search -->
+                    <div class="col-10 agileits_search">
+                        <form class="form-inline" action="#" method="post">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm" aria-label="Search" required>
+                            <button class="btn my-2 my-sm-0" type="submit">Tìm kiếm</button>
+                        </form>
+                    </div>
+                    <!-- //search -->
+                    <!-- cart details -->
+                    @include('cart')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- shop locator (popup) -->
+<!-- //header-bottom -->
