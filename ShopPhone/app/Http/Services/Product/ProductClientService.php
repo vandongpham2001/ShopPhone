@@ -14,7 +14,7 @@ class ProductClientService
         return DB::table('images')
                     ->join('products', 'images.product_id', '=', 'products.id')
                     ->orderBy('id')
-            ->groupBy('images.product_id')
+
                     ->take(self::LIMIT)
                     ->get(array(
                         'products.id',
