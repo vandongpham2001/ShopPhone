@@ -6,14 +6,19 @@
         <tr>
             <th style="width: 50px">STT</th>
             <th>Tên sản phẩm</th>
-            <th>Ảnh</th>
-            <th>Update</th>
+            <th>Rom</th>
+            <th>Ram</th>
+            <th>CPU</th>
+            <th>Màu</th>
+            <th>Đơn giá</th>
+            <th>Số lượng</th>
+            
             <th style="width: 100px">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
-        {!! \App\Helpers\Helper::image($images) !!}
+        {!! \App\Helpers\Helper::productdetail($productdetail) !!}
         </tbody>
-        {!! $images->links('pagination::bootstrap-4') !!}
+        {!! $productdetail->links('pagination::bootstrap-4') !!}
     </table>
 @endsection

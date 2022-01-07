@@ -37,7 +37,7 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-bars"></i>
                         <p>
                             Danh mục
                             <i class="right fas fa-angle-left"></i>
@@ -60,7 +60,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class=" nav-icon fab fa-typo3"></i>
                         <p>
                             Loại sản phẩm
                             <i class="right fas fa-angle-left"></i>
@@ -83,7 +83,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fab fa-product-hunt"></i>
                         <p>
                             Sản phẩm
                             <i class="right fas fa-angle-left"></i>
@@ -107,7 +107,7 @@
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-images"></i>
                         <p>
                             Ảnh sản phẩm
                             <i class="right fas fa-angle-left"></i>
@@ -130,7 +130,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <i class="nav-icon fas fa-id-card"></i>
                         <p>
                             Banner
                             <i class="right fas fa-angle-left"></i>
@@ -151,7 +151,46 @@
                         </li>
                     </ul>
                 </li>
-
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-user-alt"></i>
+                        <p>
+                            Người dùng
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                       
+                        <li class="nav-item">
+                            <a href="{{asset('admin/users/list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách người dùng</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-info-circle"></i>
+                        <p>
+                            Chi tiết sản phẩm
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                            <a href="{{asset('admin/productdetails/add')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm chi tiết sản phẩm</p>
+                            </a>
+                    </li>
+                    <li class="nav-item">
+                            <a href="{{asset('admin/productdetails/list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách chi tiết sản phẩm</p>
+                            </a>
+                    </li>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

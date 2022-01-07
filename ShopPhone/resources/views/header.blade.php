@@ -46,7 +46,7 @@
                 <ul class="main-menu">
                     <li class="active-menu"><a href="/">Trang chủ</a></li>
                     {!! $menuHtml !!}
-{{--                    <li class="active-menu">--}}
+{{--                    <li class="active-menu" style="color: #FFFFFF;">--}}
 {{--                        <a href="index.html">Home</a>--}}
 {{--                        <ul class="sub-menu">--}}
 {{--                            <li><a href="index.html">Homepage 1</a></li>--}}
@@ -55,17 +55,7 @@
 {{--                        </ul>--}}
 {{--                    </li>--}}
 
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                   
                 </ul>
             </div>
 

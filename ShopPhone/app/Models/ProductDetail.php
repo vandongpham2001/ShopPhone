@@ -8,6 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class productdetail extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'product_id',
+        'ROM',
+        'RAM',
+        'CPU',
+        'ManHinh',
+        'Pin',
+        'Camera',
+        'Color',
+        'dongia',
+        'soluong',
+        'description'
+    ];
     public function product(){
         return $this->hasOne(product::class, 'id', 'product_id');
     }

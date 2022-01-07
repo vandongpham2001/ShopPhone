@@ -21,18 +21,18 @@
 <section class="section-slide">
     <div class="wrap-slick1">
         <div class="slick1">
-            <div class="item-slick1" style="background-image: url(/backend/images/slide-01.jpg);">
+            <div class="item-slick1" style="background-image: url(/backend/images/bannerIPX.jpg);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Women Collection 2018
+									Điện thoại tích hợp công nghệ cao
 								</span>
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
                             <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                NEW SEASON
+                                Mới ra mắt
                             </h2>
                         </div>
 
@@ -45,18 +45,18 @@
                 </div>
             </div>
 
-            <div class="item-slick1" style="background-image: url(/backend/images/slide-02.jpg);">
+            <div class="item-slick1" style="background-image: url(/backend/images/bannerMeizu.jpg);">
                 <div class="container h-full">
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rollIn" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men New-Season
+									Màn hình vô cực, sắc nét
 								</span>
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="lightSpeedIn" data-delay="800">
                             <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                Jackets & Coats
+                                SamSung
                             </h2>
                         </div>
 
@@ -74,13 +74,13 @@
                     <div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInDownLeft" data-delay="0">
 								<span class="ltext-101 cl2 respon2">
-									Men Collection 2018
+									Đa dạng điện thoại và các loại thiết bị công nghệ
 								</span>
                         </div>
 
                         <div class="layer-slick1 animated visible-false" data-appear="rotateInUpRight" data-delay="800">
                             <h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-                                New arrivals
+                                Nhiều sự lựa chọn
                             </h2>
                         </div>
 
@@ -192,6 +192,8 @@
                 Product Overview
             </h3>
         </div>
+        {{--    {{dd($categories)}}--}}
+{{--        {{dd($producttypes)}}--}}
 
         <div class="flex-w flex-sb-m p-b-52">
             <div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -200,37 +202,35 @@
                 </button>
 
                 <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".women">
-                    Women
+                   Điện thoại
                 </button>
 
                 <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".men">
-                    Men
+                    Máy tính bảng
                 </button>
 
                 <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".bag">
-                    Bag
+                    Vòng đeo tay
                 </button>
 
                 <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".shoes">
-                    Shoes
+                    Lap Top
                 </button>
 
-                <button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".watches">
-                    Watches
-                </button>
+               
             </div>
 
             <div class="flex-w flex-c-m m-tb-10">
                 <div class="flex-c-m stext-106 cl6 size-104 bor4 pointer hov-btn3 trans-04 m-r-8 m-tb-4 js-show-filter">
                     <i class="icon-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-filter-list"></i>
                     <i class="icon-close-filter cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                    Filter
+                    Lọc
                 </div>
 
                 <div class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
                     <i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
                     <i class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-                    Search
+                    Tìm kiếm
                 </div>
             </div>
 
@@ -250,25 +250,25 @@
                 <div class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
                     <div class="filter-col1 p-r-15 p-b-27">
                         <div class="mtext-102 cl2 p-b-15">
-                            Sort By
+                            Lọc
                         </div>
 
                         <ul>
                             <li class="p-b-6">
                                 <a href="#" class="filter-link stext-106 trans-04">
-                                    Default
+                                    Mặc định
                                 </a>
                             </li>
 
                             <li class="p-b-6">
                                 <a href="#" class="filter-link stext-106 trans-04">
-                                    Popularity
+                                    Yêu Thích
                                 </a>
                             </li>
 
                             <li class="p-b-6">
                                 <a href="#" class="filter-link stext-106 trans-04">
-                                    Average rating
+                                    Giá trung bình
                                 </a>
                             </li>
 
@@ -280,13 +280,13 @@
 
                             <li class="p-b-6">
                                 <a href="#" class="filter-link stext-106 trans-04">
-                                    Price: Low to High
+                                    Giá thấp đến cao
                                 </a>
                             </li>
 
                             <li class="p-b-6">
                                 <a href="#" class="filter-link stext-106 trans-04">
-                                    Price: High to Low
+                                   Giá cao đến thấp
                                 </a>
                             </li>
                         </ul>
@@ -294,7 +294,7 @@
 
                     <div class="filter-col2 p-r-15 p-b-27">
                         <div class="mtext-102 cl2 p-b-15">
-                            Price
+                            Giá
                         </div>
 
                         <ul>
@@ -306,7 +306,7 @@
 
                             <li class="p-b-6">
                                 <a href="#" class="filter-link stext-106 trans-04">
-                                    $0.00 - $50.00
+                                   $0-5.000.000VNĐ
                                 </a>
                             </li>
 
@@ -338,7 +338,7 @@
 
                     <div class="filter-col3 p-r-15 p-b-27">
                         <div class="mtext-102 cl2 p-b-15">
-                            Color
+                            Màu
                         </div>
 
                         <ul>
@@ -450,11 +450,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Esprit Ruffle Shirt
+                                IPhone 7
                             </a>
 
                             <span class="stext-105 cl3">
-									$16.64
+									$3.000.000 VNĐ
 								</span>
                         </div>
 
@@ -482,11 +482,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Herschel supply
+                                IPhone 7 Plus
                             </a>
 
                             <span class="stext-105 cl3">
-									$35.31
+									$5.000.000VNĐ
 								</span>
                         </div>
 
@@ -514,11 +514,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Only Check Trouser
+                                Ipad Pro M1 2021
                             </a>
 
                             <span class="stext-105 cl3">
-									$25.50
+									$35.500.000 VNĐ
 								</span>
                         </div>
 
@@ -546,11 +546,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Classic Trench Coat
+                                Xiaomi Mimix 4
                             </a>
 
                             <span class="stext-105 cl3">
-									$75.00
+									$9.000.000VNĐ
 								</span>
                         </div>
 
@@ -578,11 +578,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Front Pocket Jumper
+                                Apple IPhone 12
                             </a>
 
                             <span class="stext-105 cl3">
-									$34.75
+									$16.000.000VNĐ
 								</span>
                         </div>
 
@@ -642,11 +642,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Shirt in Stretch Cotton
+                                IPhone 12 Pro Max
                             </a>
 
                             <span class="stext-105 cl3">
-									$52.66
+									$29.000.000VNĐ
 								</span>
                         </div>
 
@@ -674,11 +674,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Pieces Metallic Printed
+                               Sam Sung A5
                             </a>
 
                             <span class="stext-105 cl3">
-									$18.96
+									$3.400.000
 								</span>
                         </div>
 
@@ -706,11 +706,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Converse All Star Hi Plimsolls
+                                Macbook Pro 2016
                             </a>
 
                             <span class="stext-105 cl3">
-									$75.00
+									$22.000.000VNĐ
 								</span>
                         </div>
 
@@ -738,11 +738,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Femme T-Shirt In Stripe
+                                Galaxy Z Flip 2
                             </a>
 
                             <span class="stext-105 cl3">
-									$25.85
+									$20.500.000 VNĐ
 								</span>
                         </div>
 
@@ -770,11 +770,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Herschel supply
+                                Xiaomi Mipad 5 Pro
                             </a>
 
                             <span class="stext-105 cl3">
-									$63.16
+									$18.000.000VNĐ
 								</span>
                         </div>
 
@@ -802,11 +802,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Herschel supply
+                                Huawei Matepad Pro
                             </a>
 
                             <span class="stext-105 cl3">
-									$63.15
+									$23.350.000 VNĐ
 								</span>
                         </div>
 
@@ -834,11 +834,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                T-Shirt with Sleeve
+                                Xiaomi Mi9
                             </a>
 
                             <span class="stext-105 cl3">
-									$18.49
+									$4.300.000 VNĐ
 								</span>
                         </div>
 
@@ -856,7 +856,7 @@
                 <!-- Block2 -->
                 <div class="block2">
                     <div class="block2-pic hov-img0">
-                        <img src="/backend/images/product-14.jpg" alt="IMG-PRODUCT">
+                        <img src="/backend/images/a.jpg" alt="IMG-PRODUCT">
 
                         <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                             Quick View
@@ -866,11 +866,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Pretty Little Thing
+                                Điện Thoại Đồ chơi
                             </a>
 
                             <span class="stext-105 cl3">
-									$54.79
+									$10.000 VNĐ
 								</span>
                         </div>
 
@@ -930,11 +930,11 @@
                     <div class="block2-txt flex-w flex-t p-t-14">
                         <div class="block2-txt-child1 flex-col-l ">
                             <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                                Square Neck Back
+                               Điện thoại siêu nhân
                             </a>
 
                             <span class="stext-105 cl3">
-									$29.64
+									$20.000 VNĐ
 								</span>
                         </div>
 
