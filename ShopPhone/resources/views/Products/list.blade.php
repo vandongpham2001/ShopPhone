@@ -2,11 +2,12 @@
 <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
     <h3 class="heading-tittle text-center font-italic">Điện thoại mới</h3>
     <div class="row">
+{{--        {{dd($products)}}--}}
         @foreach( $products as $key=> $product)
         <div class="col-md-4 product-men mt-5">
             <div class="men-pro-item simpleCart_shelfItem">
                 <div class="men-thumb-item text-center">
-                    <img src="{{$product->image}}" alt="" width="100px">
+                    <img src="{{$product->image}}" alt="" width="150px" height="200px">
                     <div class="men-cart-pro">
                         <div class="inner-men-cart-pro">
                             <a href="single.html" class="link-product-add-cart">Quick View</a>
