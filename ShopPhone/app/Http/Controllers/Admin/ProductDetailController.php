@@ -24,7 +24,7 @@ class ProductdetailController extends Controller
     {
         return view('admin.productdetail.list', [
             'title' => 'Danh sách chi tiết sản phẩm',
-            'productdetail'=>$this->productdetailService->getAll()
+            'productdetails'=>$this->productdetailService->getAll()
         ]);
         
     }
@@ -40,19 +40,20 @@ class ProductdetailController extends Controller
         $this->productdetailService->create($request);
         return redirect('admin/productdetails/list');
     }
-    public function show(productdetail $productdetail)
+    public function show(productdetail $image)
     {
         return view('admin.productdetail.edit', [
-            'title' => 'Chỉnh sửa chi tiết sản phẩm: ',
-            'productdetail' => $productdetail,
+            'title' => 'Chỉnh sửa chi tiết sản phẩm: ' . $image->product->name,
+            'productdetails' => $image,
             'products' => $this->productdetailService->getAllProduct()
         ]);
     }
-    public function update(productdetail $productdetail, ProductDetailRequest $request)
+
+    public function update(productdetail $image, ProductDetailRequest $request)
     {
-        $result = $this->imageService->update($request, $productdetail);
+        $result = $this->productdetailService->update($request, $image);
         if ($result) {
-            return redirect('/admin/productdetail/list');
+            return redirect('/admin/productdetails/list');
         }
         return redirect()->back();
     }

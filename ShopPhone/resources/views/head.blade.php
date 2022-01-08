@@ -1,35 +1,35 @@
 <title>{{$title}}</title>
-<meta charset="UTF-8">
+<!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-<link rel="icon" type="image/png" href="/backend/images/icons/favicon.png"/>
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/fonts/linearicons-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/animate/animate.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/slick/slick.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/MagnificPopup/magnific-popup.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/vendor/perfect-scrollbar/perfect-scrollbar.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="/backend/css/util.css">
-<link rel="stylesheet" type="text/css" href="/backend/css/main.css">
-<!--===============================================================================================-->
+<meta charset="UTF-8" />
+<meta name="keywords" content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+/>
+<script>
+    addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
 
-<link rel="stylesheet" type="text/css" href="/backend/css/style.css">
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+</script>
+<!-- //Meta tag Keywords -->
+
+<!-- Custom-Files -->
+<link href="/backend/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Bootstrap css -->
+<link href="/backend/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Main css -->
+<link rel="stylesheet" href="/backend/css/fontawesome-all.css">
+<!-- Font-Awesome-Icons-CSS -->
+<link href="/backend/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+<!-- pop-up-box -->
+<link href="/backend/css/menu.css" rel="stylesheet" type="text/css" media="all" />
+<!-- menu style -->
+<!-- //Custom-Files -->
+
+<!-- web fonts -->
+<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+      rel="stylesheet">
+<!-- //web fonts -->

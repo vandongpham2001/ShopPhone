@@ -102,15 +102,17 @@ Route::middleware(['auth'])->group(function () {
         });
    
         #Product Detail
-        Route::prefix('productdetails')-> group(function(){
-            Route::get('list',[ProductdetailController::class,'index']);
+        Route::prefix('productdetails')->group(function () {
             Route::get('add', [ProductdetailController::class, 'create']);
             Route::post('add', [ProductdetailController::class, 'store']);
-            Route::get('edit/{productdetails}', [ProductdetailController::class, 'show']);
-            Route::post('edit/{user}', [ProductdetailController::class, 'update']);
+            Route::get('list', [ProductdetailController::class, 'index']);
+            Route::get('edit/{image}', [ProductdetailController::class, 'show']);
+            Route::post('edit/{image}', [ProductdetailController::class, 'update']);
+            Route::DELETE('destroy', [ProductdetailController::class, 'destroy']);
         });
     });
+    Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 });
 
-Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+
 

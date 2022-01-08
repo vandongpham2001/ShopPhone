@@ -17,8 +17,8 @@
         </tr>
         </thead>
         <tbody>
-        {!! \App\Helpers\Helper::productdetail($productdetail) !!}
+        {!! \App\Helpers\Helper::productdetail($productdetails) !!}
         </tbody>
-        {!! $productdetail->links('pagination::bootstrap-4') !!}
+        {!! $productdetails->links('pagination::bootstrap-4') !!}
     </table>
 @endsection
