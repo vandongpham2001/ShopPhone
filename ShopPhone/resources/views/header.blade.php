@@ -7,55 +7,7 @@
                     <i class="fas fa-shopping-cart ml-1"></i>
                 </p>
             </div>
-<<<<<<< HEAD
 
-            <div class="right-top-bar flex-w h-full">
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    Help & FAQs
-                </a>
-
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    My Account
-                </a>
-
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    EN
-                </a>
-
-                <a href="#" class="flex-c-m trans-04 p-lr-25">
-                    USD
-                </a>
-            </div>
-        </div>
-    </div>
-
-{{--    {{dd($categories)}}--}}
-{{--        {{dd($producttypes)}}--}}
-
-    <div class="wrap-menu-desktop">
-        <nav class="limiter-menu-desktop container">
-
-            <!-- Logo desktop -->
-            <a href="#" class="logo">
-                <img src="/backend/images/icons/logo-01.png" alt="IMG-LOGO">
-            </a>
-
-            <!-- Menu desktop -->
-            <div class="menu-desktop">
-                <ul class="main-menu">
-                    <li class="active-menu"><a href="/">Trang chủ</a></li>
-                    <!-- {!! $menuHtml !!} -->
-{{--                    <li class="active-menu" style="color: #FFFFFF;">--}}
-{{--                        <a href="index.html">Home</a>--}}
-{{--                        <ul class="sub-menu">--}}
-{{--                            <li><a href="index.html">Homepage 1</a></li>--}}
-{{--                            <li><a href="home-02.html">Homepage 2</a></li>--}}
-{{--                            <li><a href="home-03.html">Homepage 3</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-
-                   
-=======
             <div class="col-lg-8 header-right mt-lg-0 mt-2">
                 <!-- header lists -->
                 <ul>
@@ -78,7 +30,7 @@
                         <a href="#" data-toggle="modal" data-target="#exampleModal2" class="text-white">
                             <i class="fas fa-sign-out-alt mr-2"></i> Đăng ký </a>
                     </li>
->>>>>>> ee89ec4829dd99801efe698fe2441ca0973a7069
+
                 </ul>
                 <!-- //header lists -->
             </div>
