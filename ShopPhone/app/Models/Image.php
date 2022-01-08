@@ -13,7 +13,7 @@ class image extends Model
         'image'
     ];
     public function product(){
-//        return $this->hasOne(product::class, 'id', 'product_id');
-        return $this->belongsTo(product::class, 'id', 'product_id');
+        return $this->hasOne(product::class, 'id', 'product_id');
+//        return $this->belongsTo(product::class, 'id', 'product_id');
     }
 }

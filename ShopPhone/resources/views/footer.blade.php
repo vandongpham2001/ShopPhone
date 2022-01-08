@@ -551,4 +551,5 @@
 <!-- for bootstrap working -->
 <script src="/backend/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
+<script src="/backend/js/public.js"></script>
 <!-- //js-files -->

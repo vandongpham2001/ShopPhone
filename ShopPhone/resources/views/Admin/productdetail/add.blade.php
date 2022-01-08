@@ -20,6 +20,7 @@
             <div class="form-group">
                 <label for="image">Ram</label>
                 <select class="form-control" name="RAM" id="RAM">
+                    <option value="None">None</option>
                     <option value="4GB">4GB</option>
                     <option value="6GB">6GB</option>
                     <option value="8GB">8GB</option>
@@ -29,6 +30,7 @@
             <div class="form-group">
                 <label for="image">Rom</label>
                 <select class="form-control" name="ROM" id="ROM">
+                    <option value="None">None</option>
                     <option value="32G">32GB</option>
                     <option value="64G">64GB</option>
                     <option value="128G">128GB</option>

@@ -71,4 +71,9 @@ class CategoryService
         }
         return false;
     }
+
+    public function getId($id)
+    {
+        return Category::where('id', $id)->where('status', 1)->firstOrFail();
+    }
 }

@@ -2,25 +2,26 @@
 <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
     <h3 class="heading-tittle text-center font-italic">Điện thoại mới</h3>
     <div class="row">
-{{--        {{dd($products)}}--}}
-        @foreach( $products as $key=> $product)
+{{--        {{dd($phones)}}--}}
+        @foreach( $phones as $key=> $phone)
+
         <div class="col-md-4 product-men mt-5">
             <div class="men-pro-item simpleCart_shelfItem">
                 <div class="men-thumb-item text-center">
-                    <img src="{{$product->image}}" alt="" width="150px" height="200px">
+                    <img src="{{$phone->image}}" alt="" width="150px" height="200px">
                     <div class="men-cart-pro">
                         <div class="inner-men-cart-pro">
-                            <a href="single.html" class="link-product-add-cart">Quick View</a>
+                            <a href="/san-pham/{{$phone->id}}--{{Str::slug($phone->name, '-')}}.html" class="link-product-add-cart">Quick View</a>
                         </div>
                     </div>
                 </div>
                 <div class="item-info-product text-center border-top mt-4">
                     <h4 class="pt-1">
-                        <a href="/san-pham/{{$product->id}}--{{Str::slug($product->name, '-')}}.html">{{$product->name}}</a>
+                        <a href="/san-pham/{{$phone->id}}--{{Str::slug($phone->name, '-')}}.html">{{$phone->name}}</a>
                     </h4>
                     <div class="info-product-price my-2">
-                        <span class="item_price">$200.00</span>
-                        <del>$280.00</del>
+                        <span class="item_price">{{number_format($phone->DonGia, 0, ',', '.') . " VNĐ"}}</span>
+{{--                        <del>$280.00</del>--}}
                     </div>
                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                         <form action="#" method="post">
@@ -49,10 +50,11 @@
 <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
     <h3 class="heading-tittle text-center font-italic">Phụ kiện</h3>
     <div class="row">
+        @foreach( $phukiens as $key=> $phukien)
         <div class="col-md-4 product-men mt-5">
             <div class="men-pro-item simpleCart_shelfItem">
                 <div class="men-thumb-item text-center">
-                    <img src="images/m4.jpg" alt="">
+                    <img src="{{$phukien->image}}" alt="" width="150px" height="200px">
                     <div class="men-cart-pro">
                         <div class="inner-men-cart-pro">
                             <a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -61,11 +63,11 @@
                 </div>
                 <div class="item-info-product text-center border-top mt-4">
                     <h4 class="pt-1">
-                        <a href="single.html">Sony 80 cm (32 inches)</a>
+                        <a href="/san-pham/{{$phukien->id}}--{{Str::slug($phukien->name, '-')}}.html">{{$phukien->name}}</a>
                     </h4>
                     <div class="info-product-price my-2">
-                        <span class="item_price">$320.00</span>
-                        <del>$340.00</del>
+                        <span class="item_price">{{number_format($phukien->DonGia, 0, ',', '.') . " VNĐ"}}</span>
+{{--                        <del>$340.00</del>--}}
                     </div>
                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                         <form action="#" method="post">
@@ -86,6 +88,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 <!-- //second section -->
@@ -104,10 +107,11 @@
 <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
     <h3 class="heading-tittle text-center font-italic">Sạc dự phòng</h3>
     <div class="row">
+        @foreach( $pins as $key=> $pin)
         <div class="col-md-4 product-men mt-5">
             <div class="men-pro-item simpleCart_shelfItem">
                 <div class="men-thumb-item text-center">
-                    <img src="images/m7.jpg" alt="">
+                    <img src="{{$pin->image}}" alt="" width="150px" height="200px">
                     <div class="men-cart-pro">
                         <div class="inner-men-cart-pro">
                             <a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -117,11 +121,11 @@
                 <span class="product-new-top">New</span>
                 <div class="item-info-product text-center border-top mt-4">
                     <h4 class="pt-1">
-                        <a href="single.html">Whirlpool 245</a>
+                        <a href="/san-pham/{{$pin->id}}--{{Str::slug($pin->name, '-')}}.html">{{$pin->name}}</a>
                     </h4>
                     <div class="info-product-price my-2">
-                        <span class="item_price">$230.00</span>
-                        <del>$280.00</del>
+                        <span class="item_price">{{number_format($pin->DonGia, 0, ',', '.') . " VNĐ"}}</span>
+{{--                        <del>$280.00</del>--}}
                     </div>
                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                         <form action="#" method="post">
@@ -143,6 +147,7 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
 </div>
 <!-- //fourth section -->

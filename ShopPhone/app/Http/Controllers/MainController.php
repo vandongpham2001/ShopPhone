@@ -24,11 +24,13 @@ class MainController extends Controller
 
     public function index()
     {
-        return view('main', [
-            'title'=>'Shop điện thoại di động',
+        return view('home', [
+            'title'=>'Sản phẩm',
             'banners'=>$this->banner->show(),
             'categories'=>$this->category->show(),
-            'products'=>$this->product->get()
+            'phones'=>$this->product->getPhone(),
+            'pins'=>$this->product->getPin(),
+            'phukiens'=>$this->product->getPhuKien()
         ]);
     }
 }

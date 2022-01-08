@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Nhà sản xuất</label>
-                <input type="text" value="{{$product->NhaSX}}" class="form-control" name="NhSX" id="NhaSX" placeholder="Nhập nhà sản xuất">
+                <input type="text" value="{{$product->NhaSX}}" class="form-control" name="NhaSX" id="NhaSX" placeholder="Nhập nhà sản xuất">
             </div>
             <div class="form-group">
                 <label for="name">Thời gian bảo hành</label>

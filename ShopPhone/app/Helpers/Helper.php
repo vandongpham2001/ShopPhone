@@ -121,7 +121,6 @@ class Helper
     }
     public static function image($images){
         $html='';
-        $i=1;
         foreach ($images as $key=>$image){
             $html .= '
                     <tr>
@@ -281,5 +280,12 @@ class Helper
         if($i>0)
             return true;
         return false;
+    }
+    public static function price($price=0, $priceSale=0){
+        if ($priceSale!=0)
+            return $priceSale;
+        if ($price!=0)
+            return $price;
+        return '<a href="/lien-he.html">Liên hệ</a>';
     }
 }

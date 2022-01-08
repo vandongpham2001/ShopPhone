@@ -36,8 +36,8 @@ class ProductRequest extends FormRequest
     {
         return [
             'name.required'=>'Vui lòng nhập tên sản phẩm',
-            'NhaSX.required'=>'Vui lòng nhập tên sản phẩm',
-            'ThoiGianBaoHanh.required'=>'Vui lòng nhập tên sản phẩm'
+            'NhaSX.required'=>'Vui lòng nhập nhà sản xuất',
+            'ThoiGianBaoHanh.required'=>'Vui lòng nhập thời gian bảo hành'
         ];
     }
 }

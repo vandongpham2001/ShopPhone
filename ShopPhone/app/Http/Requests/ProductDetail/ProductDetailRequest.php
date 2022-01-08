@@ -24,19 +24,19 @@ class ProductDetailRequest extends FormRequest
     public function rules()
     {
         return [
-            'Pin'=>'required',
-            'CPU'=>'required',
-            'Camera'=>'required',
-            'ManHinh'=>'required'
+//            'Pin'=>'required',
+//            'CPU'=>'required',
+//            'Camera'=>'required',
+//            'ManHinh'=>'required'
         ];
     }
-    public function messages():array
-    {
-        return [
-            'CPU.required'=>'Vui lòng Nhập CPU',
-            'Pin.required'=>'Vui lòng Nhập Dung lượng pin',
-            'Camera.required'=>'Vui lòng Nhập Camera',
-            'ManHinh.required'=>'Vui lòng Nhập Màn hình'
-        ];
-    }
+//    public function messages():array
+//    {
+//        return [
+//            'CPU.required'=>'Vui lòng Nhập CPU',
+//            'Pin.required'=>'Vui lòng Nhập Dung lượng pin',
+//            'Camera.required'=>'Vui lòng Nhập Camera',
+//            'ManHinh.required'=>'Vui lòng Nhập Màn hình'
+//        ];
+//    }
 }

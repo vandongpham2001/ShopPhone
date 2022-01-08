@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductdetailController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\Users\LoginController;
+use App\Http\Controllers\MenuController;
 use App\Http\Services\ProductDetail\ProductDetailService;
 use Illuminate\Support\Facades\Route;
 
@@ -113,6 +114,7 @@ Route::middleware(['auth'])->group(function () {
     });
 });
 Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+Route::get('category/{id}-{slug}.html', [MenuController::class, 'index']);
 
 
 

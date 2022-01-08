@@ -27,6 +27,7 @@
                     <label for="RAM">Ram</label>
                     <select class="form-control" name="RAM" id="RAM">
                         <option value="{{$productdetails->RAM}}">{{$productdetails->RAM}}</option>
+                        <option value="None">None</option>
                         <option value="4GB">4GB</option>
                         <option value="6GB">6GB</option>
                         <option value="8GB">8GB</option>
@@ -37,6 +38,7 @@
                     <label for="ROM">ROM</label>
                     <select class="form-control" name="ROM" id="ROM">
                         <option value="{{$productdetails->ROM}}">{{$productdetails->ROM}}</option>
+                        <option value="None">None</option>
                         <option value="32G">32GB</option>
                         <option value="64G">64GB</option>
                         <option value="128G">128GB</option>
