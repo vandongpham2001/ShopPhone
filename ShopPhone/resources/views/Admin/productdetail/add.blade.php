@@ -33,6 +33,7 @@
                     <option value="64G">64GB</option>
                     <option value="128G">128GB</option>
                     <option value="256G">256GB</option>
+                    <option value="512G">512GB</option>
                 </select>
             </div>
             <div class="form-group">
@@ -66,7 +67,7 @@
                 <input type="number" class="form-control" id="soluong" name="soluong">
             </div>
             <div class="form-group">
-                <label for="image">Dơn giá</label>
+                <label for="image">Đơn giá</label>
                 <input type="number" class="form-control" id="dongia" name="dongia">
             </div>
             <div class="form-group">

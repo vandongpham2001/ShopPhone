@@ -13,7 +13,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Ngày sinh</label>
-                <input type="text" value="{{$users->NgaySinh}}" class="form-control" name="NgaySinh" id="NgaySinh" >
+                <input type="date" value="{{$users->NgaySinh}}" class="form-control" name="NgaySinh" id="NgaySinh" >
             </div>
             <div class="form-group">
                 <label for="name">Địa chỉ</label>
@@ -21,11 +21,19 @@
             </div>
             <div class="form-group">
                 <label for="name">Giới tính</label>
-                <select name="GioiTinh" id="GioiTinh" class="form-control">
-                    <option selected="{{$users->GioiTinh}}">{{$users->GioiTinh}}</option>
-                    <option value="Nữ">Nữ</option>
-                    <option value="Nữ">Nam</option>
-                </select>
+{{--                <select name="GioiTinh" id="GioiTinh" class="form-control">--}}
+{{--                    <option selected="{{$users->GioiTinh}}">{{$users->GioiTinh}}</option>--}}
+{{--                    <option value="Nữ">Nữ</option>--}}
+{{--                    <option value="Nữ">Nam</option>--}}
+{{--                </select>--}}
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value=1 type="radio" id="gender" name="GioiTinh" {{$users->GioiTinh == 1 ? 'checked=""' : ''}}>
+                    <label for="gender" class="custom-control-label">Nam</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input class="custom-control-input" value=0 type="radio" id="no_gender" name="GioiTinh" {{$users->GioiTinh == 0 ? 'checked=""' : ''}}>
+                    <label for="no_gender" class="custom-control-label">Nữ</label>
+                </div>
             </div>
             <div class="form-group">
                 <label for="name">Số điện thoại</label>

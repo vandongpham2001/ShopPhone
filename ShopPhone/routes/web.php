@@ -100,7 +100,7 @@ Route::middleware(['auth'])->group(function () {
             Route::post('edit/{user}', [LoginController::class, 'update']);
             Route::DELETE('destroy', [LoginController::class, 'destroy']);
         });
-   
+
         #Product Detail
         Route::prefix('productdetails')->group(function () {
             Route::get('add', [ProductdetailController::class, 'create']);
@@ -111,8 +111,8 @@ Route::middleware(['auth'])->group(function () {
             Route::DELETE('destroy', [ProductdetailController::class, 'destroy']);
         });
     });
-    Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 });
+Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 
 
 

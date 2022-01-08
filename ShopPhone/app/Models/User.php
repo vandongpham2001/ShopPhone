@@ -31,7 +31,7 @@ class User extends Authenticatable
         'password',
         'DiaChi',
         'GioiTinh',
-        'Ngaysinh',
+        'NgaySinh',
         'SDT',
     ];
 

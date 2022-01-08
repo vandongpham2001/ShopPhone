@@ -160,7 +160,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                       
+
                         <li class="nav-item">
                             <a href="{{asset('admin/users/list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
@@ -187,7 +187,7 @@
                     <li class="nav-item">
                             <a href="{{asset('admin/productdetails/list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách chi tiết sản phẩm</p>
+                                <p>Danh sách</p>
                             </a>
                     </li>
                 </li>

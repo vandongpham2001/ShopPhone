@@ -103,8 +103,8 @@ class Helper
                     <tr>
                         <td>'. $users->firstItem()+$key .'</td>
                         <td>'. $user->name .'</td>
-                        <td>'. $user->NgaySinh   .'</td>
-                        <td>'. $user->GioiTinh  .'</td>
+                        <td>'. date('d-m-Y', strtotime($user->NgaySinh))   .'</td>
+                        <td>'. self::gender($user->GioiTinh)  .'</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="/admin/users/edit/'. $user->id .'">
                                 <i class="fas fa-edit"></i>
@@ -155,7 +155,7 @@ class Helper
                         <td>'. $productdetail->RAM .'</td>
                         <td>'. $productdetail->CPU .'</td>
                         <td>'. $productdetail->Color .'</td>
-                        <td>'. $productdetail->DonGia .'</td>
+                        <td>'. number_format($productdetail->DonGia, 0, ',', '.') . " VNĐ" .'</td>
                         <td>'. $productdetail->SoLuong .'</td>
                         <td>
                             <a class="btn btn-primary btn-sm" href="/admin/productdetails/edit/'. $productdetail->id .'">
@@ -261,6 +261,11 @@ class Helper
     public static function active($active=0):string
     {
         return $active==0 ? '<span class="btn btn-danger btn-xs">Không</span>' : '<span class="btn btn-success btn-xs">Có</span>';
+    }
+
+    public static function gender($gender=1):string
+    {
+        return $gender==1 ? 'Nam' : 'Nữ';
     }
 
     public static function isChild($id, $producttypes)
