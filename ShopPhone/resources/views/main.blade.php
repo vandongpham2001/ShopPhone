@@ -45,11 +45,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <a class="nav-link" href="contact.html">Liên hệ</a>
                     </li>
                 </ul>
+
             </div>
         </nav>
     </div>
 </div>
 <!-- //navigation -->
+
 
 <!-- banner -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -77,6 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             Sale
                         </h3>
                         <a class="button2" href="product.html">Shop Now </a>
+
                     </div>
                 </div>
             </div>
@@ -643,6 +646,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </div>
 <!-- //top products -->
 
+
 <!-- middle section -->
 <div class="join-w3l1 py-sm-5 py-4">
     <div class="container py-xl-4 py-lg-2">
@@ -657,10 +661,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="col-sm-5 offerimg-w3l">
                             <img src="/backend/images/off1.png" alt="" class="img-fluid">
+
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6 mt-lg-0 mt-5">
                 <div class="join-agile text-left p-4">
                     <div class="row ">
@@ -668,6 +674,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <h6>A Bigger Phone</h6>
                             <h4 class="mt-2 mb-3">Smart Phones 5</h4>
                             <p>Free shipping order over $100</p>
+
                         </div>
                         <div class="col-sm-5 offerimg-w3l">
                             <img src="/backend/images/off2.png" alt="" class="img-fluid">
@@ -675,6 +682,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                 </div>
             </div>
+
+
         </div>
     </div>
 </div>

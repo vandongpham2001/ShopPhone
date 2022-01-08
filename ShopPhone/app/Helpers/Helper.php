@@ -95,7 +95,30 @@ class Helper
         }
         return $html;
     }
+    public static function users($users){
+        $html='';
+        $i=1;
+        foreach ($users as $key=>$user){
+            $html .= '
+                    <tr>
+                        <td>'. $users->firstItem()+$key .'</td>
+                        <td>'. $user->name .'</td>
+                        <td>'. $user->NgaySinh   .'</td>
+                        <td>'. $user->GioiTinh  .'</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/admin/users/edit/'. $user->id .'">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="#" onclick="removeRow('. $user->id . ',\'/admin/users/destroy\')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
 
+                ';
+        }
+        return $html;
+    }
     public static function image($images){
         $html='';
         $i=1;
@@ -120,7 +143,35 @@ class Helper
         }
         return $html;
     }
+    public static function productdetail($productdetails){
+        $html='';
+        $i=1;
+        foreach ($productdetails as $key=>$productdetail){
+            $html .= '
+                    <tr>
+                    <td>'. $productdetails->firstItem()+$key .'</td>
+                        <td>'. $productdetail->product->name .'</td>
+                        <td>'. $productdetail->ROM .'</td>
+                        <td>'. $productdetail->RAM .'</td>
+                        <td>'. $productdetail->CPU .'</td>
+                        <td>'. $productdetail->Color .'</td>
+                        <td>'. $productdetail->DonGia .'</td>
+                        <td>'. $productdetail->SoLuong .'</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/admin/productdetails/edit/'. $productdetail->id .'">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="#" onclick="removeRow('. $productdetail->id . ',\'/admin/productdetails/destroy\')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
 
+                ';
+                $i++;
+        }
+        return $html;
+    }
     public static function banner($banners){
         $html='';
         $i=1;

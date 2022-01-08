@@ -8,6 +8,7 @@
                 <i class="fas fa-cart-arrow-down"></i>
             </button>
         </form>
+
     </div>
 </div>
 <!-- //cart details -->

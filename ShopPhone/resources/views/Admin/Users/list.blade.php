@@ -5,15 +5,15 @@
         <thead>
         <tr>
             <th style="width: 50px">STT</th>
-            <th>Tên sản phẩm</th>
-            <th>Ảnh</th>
-            <th>Update</th>
+            <th>Họ Tên</th>
+            <th>Ngày sinh</th>
+            <th>Giới tính</th>
             <th style="width: 100px">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
-        {!! \App\Helpers\Helper::image($images) !!}
+        {!! \App\Helpers\Helper::users($users) !!}
         </tbody>
-        {!! $images->links('pagination::bootstrap-4') !!}
     </table>
+    {!! $users->links('pagination::bootstrap-4') !!}
 @endsection

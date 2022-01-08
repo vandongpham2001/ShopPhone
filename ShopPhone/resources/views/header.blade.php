@@ -7,6 +7,7 @@
                     <i class="fas fa-shopping-cart ml-1"></i>
                 </p>
             </div>
+
             <div class="col-lg-8 header-right mt-lg-0 mt-2">
                 <!-- header lists -->
                 <ul>
@@ -29,6 +30,7 @@
                         <a href="#" data-toggle="modal" data-target="#exampleModal2" class="text-white">
                             <i class="fas fa-sign-out-alt mr-2"></i> Đăng ký </a>
                     </li>
+
                 </ul>
                 <!-- //header lists -->
             </div>

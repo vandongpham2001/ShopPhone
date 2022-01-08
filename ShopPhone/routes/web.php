@@ -5,9 +5,11 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductdetailController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\Users\LoginController;
+use App\Http\Services\ProductDetail\ProductDetailService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -91,11 +93,26 @@ Route::middleware(['auth'])->group(function () {
 
         #Upload
         Route::post('upload/services', [UploadController::class, 'store']);
-
+        #Users
+        Route::prefix('users')-> group(function(){
+            Route::get('list', [LoginController::class, 'list']);
+            Route::get('edit/{user}', [LoginController::class, 'show']);
+            Route::post('edit/{user}', [LoginController::class, 'update']);
+            Route::DELETE('destroy', [LoginController::class, 'destroy']);
+        });
+   
+        #Product Detail
+        Route::prefix('productdetails')->group(function () {
+            Route::get('add', [ProductdetailController::class, 'create']);
+            Route::post('add', [ProductdetailController::class, 'store']);
+            Route::get('list', [ProductdetailController::class, 'index']);
+            Route::get('edit/{image}', [ProductdetailController::class, 'show']);
+            Route::post('edit/{image}', [ProductdetailController::class, 'update']);
+            Route::DELETE('destroy', [ProductdetailController::class, 'destroy']);
+        });
     });
-
-
+    Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 });
 
-Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
+
 
