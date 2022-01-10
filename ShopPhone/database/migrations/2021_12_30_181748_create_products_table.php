@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('NhaSX');
             $table->string('ThoiGianBaoHanh');
+            $table->longText('description')->nullable();
             $table->integer('status');
             $table->unsignedBigInteger('category_id');
             $table->timestamps();

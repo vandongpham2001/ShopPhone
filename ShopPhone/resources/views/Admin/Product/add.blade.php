@@ -42,6 +42,11 @@
             </div>
 
             <div class="form-group">
+                <label for="description">Mô tả</label>
+                <textarea id="content" value="{{old('description')}}" name="description" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
                 <label>Kích hoạt</label>
                 <div class="custom-control custom-radio">
                     <input class="custom-control-input" value=1 type="radio" id="active" name="status" checked="">

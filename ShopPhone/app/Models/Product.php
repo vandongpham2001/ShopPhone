@@ -13,6 +13,7 @@ class product extends Model
         'category_id',
         'NhaSX',
         'ThoiGianBaoHanh',
+        'description',
         'status'
         ];
     public function producttype(){

@@ -38,7 +38,7 @@ class ProductClientService
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
             ->join('categories', 'categories.id', '=', 'products.category_id')
-            ->where('categories.parent_id', '=', 2)
+            ->where('categories.id', '=', 3)
 //                    ->select('name', 'products.id', 'image')
             ->orderBy('id')
 //                    ->groupBy('products.id', 'name', 'image')
@@ -62,7 +62,7 @@ class ProductClientService
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
             ->join('categories', 'categories.id', '=', 'products.category_id')
-            ->where('categories.parent_id', '=', 3)
+            ->where('categories.parent_id', '=', 2)
 //                    ->select('name', 'products.id', 'image')
             ->orderBy('id')
 //                    ->groupBy('products.id', 'name', 'image')
@@ -153,6 +153,7 @@ class ProductClientService
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->where('products.id', $id)
             ->where('products.status', 1)
+//            ->with('category')
 //            ->firtOrFail();
             ->get(array(
             'products.id',
@@ -166,7 +167,8 @@ class ProductClientService
                 'Pin',
                 'Camera',
                 'Color',
-                'category_id'))
+                'category_id'
+                ))
             ->first();
     }
     public function more($id){

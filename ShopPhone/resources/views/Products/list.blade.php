@@ -129,7 +129,7 @@
                     <!-- //third section -->
                     <!-- fourth section -->
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-                        <h3 class="heading-tittle text-center font-italic">Sạc dự phòng</h3>
+                        <h3 class="heading-tittle text-center font-italic">Ốp lưng</h3>
                         <div class="row">
                             @foreach( $pins as $key=> $pin)
                                 <div class="col-md-4 product-men mt-5">

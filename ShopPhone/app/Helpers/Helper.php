@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Models\category;
 use Illuminate\Support\Str;
 
 class Helper
@@ -346,5 +347,18 @@ class Helper
         if ($price!=0)
             return $price;
         return '<a href="/lien-he.html">Liên hệ</a>';
+    }
+
+    public static function getNameCategory($id)
+    {
+        $name= category::where('id', $id)->pluck('name');
+//        $name= category::where('id', $id)->get(['name']);
+        return $name[0];
+    }
+    public static function getCategory($id)
+    {
+        $category= category::where('id', $id)->pluck('parent_id');
+//        $name= category::where('id', $id)->get(['name']);
+        return $category[0];
     }
 }
