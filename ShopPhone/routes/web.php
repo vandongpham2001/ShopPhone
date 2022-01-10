@@ -48,14 +48,14 @@ Route::middleware(['auth'])->group(function () {
         });
 
         #ProductType
-        Route::prefix('producttype')->group(function () {
-            Route::get('add', [ProductTypeController::class, 'create']);
-            Route::post('add', [ProductTypeController::class, 'store']);
-            Route::get('list', [ProductTypeController::class, 'index']);
-            Route::get('edit/{productType}', [ProductTypeController::class, 'show']);
-            Route::post('edit/{productType}', [ProductTypeController::class, 'update']);
-            Route::DELETE('destroy', [ProductTypeController::class, 'destroy']);
-        });
+//        Route::prefix('producttype')->group(function () {
+//            Route::get('add', [ProductTypeController::class, 'create']);
+//            Route::post('add', [ProductTypeController::class, 'store']);
+//            Route::get('list', [ProductTypeController::class, 'index']);
+//            Route::get('edit/{productType}', [ProductTypeController::class, 'show']);
+//            Route::post('edit/{productType}', [ProductTypeController::class, 'update']);
+//            Route::DELETE('destroy', [ProductTypeController::class, 'destroy']);
+//        });
 
         #Product
         Route::prefix('product')->group(function () {
@@ -115,6 +115,6 @@ Route::middleware(['auth'])->group(function () {
 });
 Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 Route::get('category/{id}-{slug}.html', [MenuController::class, 'index']);
-
+Route::get('san-pham/{id}-{slug}.html', [\App\Http\Controllers\ProductController::class, 'index']);
 
 

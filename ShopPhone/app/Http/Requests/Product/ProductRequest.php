@@ -28,7 +28,7 @@ class ProductRequest extends FormRequest
             'NhaSX'=>'required',
             'ThoiGianBaoHanh'=>'required',
             'status'=>'required',
-            'productType_id'=>'required'
+            'category_id'=>'required'
         ];
     }
 

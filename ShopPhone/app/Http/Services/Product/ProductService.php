@@ -2,6 +2,7 @@
 
 namespace App\Http\Services\Product;
 
+use App\Models\category;
 use App\Models\product;
 use App\Models\producttype;
 use Illuminate\Support\Facades\DB;
@@ -11,6 +12,10 @@ class ProductService
 {
     public function getAllProductType(){
         return producttype::where('status', 1)->get();
+    }
+
+    public function getAllCategory(){
+        return Category::where('status', 1)->get();
     }
 
     public  function getAll(){

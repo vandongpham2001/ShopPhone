@@ -15,10 +15,10 @@ class producttype extends Model
         'category_id',
         'status'
     ];
-    public function category(){
-        return $this->hasOne(category::class, 'id', 'category_id');
-    }
-    public function products(){
-        return $this->hasMany(product::class, 'productType_id', 'id');
-    }
+//    public function category(){
+//        return $this->hasOne(category::class, 'id', 'category_id');
+//    }
+//    public function products(){
+//        return $this->hasMany(product::class, 'productType_id', 'id');
+//    }
 }

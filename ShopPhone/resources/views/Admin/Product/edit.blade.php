@@ -12,15 +12,26 @@
                 <input type="text" value="{{$product->name}}" class="form-control" name="name" id="name" placeholder="Nhập tên sản phẩm">
             </div>
 
+{{--            <div class="form-group">--}}
+{{--                <label for="category">Loại sản phẩm</label>--}}
+{{--                <select class="form-control" name="productType_id">--}}
+{{--                    --}}{{--                    <option value="0">Danh mục cha</option>--}}
+{{--                    @foreach($productTypes as $productType)--}}
+{{--                        <option value="{{$productType->id}}" {{$product->productType->id==$productType->id ? 'selected':''}}>{{$productType->name}}</option>--}}
+{{--                    @endforeach--}}
+{{--                </select>--}}
+{{--            </div>--}}
+
             <div class="form-group">
-                <label for="category">Loại sản phẩm</label>
-                <select class="form-control" name="productType_id">
+                <label for="category">Danh mục</label>
+                <select class="form-control" name="category_id">
                     {{--                    <option value="0">Danh mục cha</option>--}}
-                    @foreach($productTypes as $productType)
-                        <option value="{{$productType->id}}" {{$product->productType->id==$productType->id ? 'selected':''}}>{{$productType->name}}</option>
+                    @foreach($categories as $category)
+                        <option value="{{$category->id}}" {{$product->category_id==$category->id ? 'selected' : '' }}>{{$category->name}}</option>
                     @endforeach
                 </select>
             </div>
+
             <div class="form-group">
                 <label for="name">Nhà sản xuất</label>
                 <input type="text" value="{{$product->NhaSX}}" class="form-control" name="NhaSX" id="NhaSX" placeholder="Nhập nhà sản xuất">

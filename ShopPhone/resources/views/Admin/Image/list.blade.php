@@ -14,6 +14,6 @@
         <tbody>
         {!! \App\Helpers\Helper::image($images) !!}
         </tbody>
-        {!! $images->links('pagination::bootstrap-4') !!}
     </table>
+    {!! $images->links('pagination::bootstrap-4') !!}
 @endsection

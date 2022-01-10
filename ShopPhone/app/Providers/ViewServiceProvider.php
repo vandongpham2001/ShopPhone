@@ -26,5 +26,6 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('main', MenuComposer::class);
+        View::composer('rightbar', MenuComposer::class);
     }
 }

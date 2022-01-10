@@ -12,13 +12,13 @@
             <th>Màu</th>
             <th>Đơn giá</th>
             <th>Số lượng</th>
-            
+
             <th style="width: 100px">&nbsp;</th>
         </tr>
         </thead>
         <tbody>
         {!! \App\Helpers\Helper::productdetail($productdetails) !!}
         </tbody>
-        {!! $productdetails->links('pagination::bootstrap-4') !!}
     </table>
+    {!! $productdetails->links('pagination::bootstrap-4') !!}
 @endsection

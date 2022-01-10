@@ -19,7 +19,7 @@ class MenuComposer
     public function compose(View $view)
     {
         $categories = category::select('id', 'name', 'parent_id')->where('status', 1)->orderBy('id')->get();
-        $producttypes=producttype::select('id', 'name', 'category_id')->where('status', 1)->orderBy('id')->get();
-        $view->with('categories', $categories)->with('producttypes', $producttypes);
+//        $producttypes=producttype::select('id', 'name', 'category_id')->where('status', 1)->orderBy('id')->get();
+        $view->with('categories', $categories);
     }
 }

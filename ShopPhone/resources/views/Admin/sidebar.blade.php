@@ -58,29 +58,29 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class=" nav-icon fab fa-typo3"></i>
-                        <p>
-                            Loại sản phẩm
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{asset('admin/producttype/add')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm Loại sản phẩm</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{asset('admin/producttype/list')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách loại sản phẩm</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="#" class="nav-link">--}}
+{{--                        <i class=" nav-icon fab fa-typo3"></i>--}}
+{{--                        <p>--}}
+{{--                            Loại sản phẩm--}}
+{{--                            <i class="right fas fa-angle-left"></i>--}}
+{{--                        </p>--}}
+{{--                    </a>--}}
+{{--                    <ul class="nav nav-treeview">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{asset('admin/producttype/add')}}" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Thêm Loại sản phẩm</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a href="{{asset('admin/producttype/list')}}" class="nav-link">--}}
+{{--                                <i class="far fa-circle nav-icon"></i>--}}
+{{--                                <p>Danh sách loại sản phẩm</p>--}}
+{{--                            </a>--}}
+{{--                        </li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fab fa-product-hunt"></i>

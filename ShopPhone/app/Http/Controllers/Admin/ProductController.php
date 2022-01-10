@@ -30,7 +30,7 @@ class ProductController extends Controller
     {
         return view('admin.product.add', [
             'title' => 'Thêm sản phẩm mới',
-            'productTypes'=>$this->productService->getAllProductType()
+            'categories'=>$this->productService->getAllCategory()
         ]);
     }
 
@@ -46,7 +46,7 @@ class ProductController extends Controller
         return view('admin.product.edit', [
             'title' => 'Chỉnh sửa sản phẩm: ' . $product->name,
             'product' => $product,
-            'productTypes' => $this->productService->getAllProductType()
+            'categories' => $this->productService->getAllCategory()
         ]);
     }
 

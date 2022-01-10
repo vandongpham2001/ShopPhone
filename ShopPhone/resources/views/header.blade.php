@@ -508,7 +508,7 @@
             <!-- logo -->
             <div class="col-md-3 logo_agile">
                 <h1 class="text-center">
-                    <a href="index.html" class="font-weight-bold font-italic">
+                    <a href="/" class="font-weight-bold font-italic">
                         <img src="/backend/images/logo2.png" alt=" " class="img-fluid">Shop Phone
                     </a>
                 </h1>

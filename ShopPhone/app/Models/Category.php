@@ -8,8 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class category extends Model
 {
     use HasFactory;
-    public function productpypes(){
-        return $this->hasMany(producttype::class, 'category_id', 'id');
+//    public function productpypes(){
+//        return $this->hasMany(producttype::class, 'category_id', 'id');
+//    }
+    public function products(){
+        return $this->hasMany(product::class, 'category_id', 'id');
     }
 
     protected $fillable=[

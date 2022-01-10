@@ -26,7 +26,7 @@ class ProductdetailController extends Controller
             'title' => 'Danh sách chi tiết sản phẩm',
             'productdetails'=>$this->productdetailService->getAll()
         ]);
-        
+
     }
     public function create()
     {
@@ -56,5 +56,19 @@ class ProductdetailController extends Controller
             return redirect('/admin/productdetails/list');
         }
         return redirect()->back();
+    }
+
+    public function destroy(Request $request)
+    {
+        $result = $this->productdetailService->destroy($request);
+        if ($result) {
+            return response()->json([
+                'error' => false,
+                'message' => 'Xoá thành công chi tiết sản phẩm'
+            ]);
+        }
+        return response()->json([
+            'error' => true
+        ]);
     }
 }

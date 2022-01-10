@@ -76,7 +76,7 @@ class Helper
                     <tr>
                         <td>'. $products->firstItem()+$key .'</td>
                         <td>'. $product->name .'</td>
-                        <td>'. $product->producttype->name .'</td>
+                        <td>'. $product->category->name .'</td>
                         <td>'. $product->NhaSX .'</td>
                         <td>'. $product->ThoiGianBaoHanh .'</td>
                         <td>'. self::active($product->status) .'</td>
@@ -196,35 +196,95 @@ class Helper
         return $html;
     }
 
-    public static function menus($categories, $producttypes){
-        $html='';
-        foreach ($categories as $key => $category){
-            $html.='
-                <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+//    public static function menus($categories, $producttypes){
+//        $html='';
+//        foreach ($categories as $key => $category){
+//            $html.='
+//                <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
+//                    <a class="nav-link dropdown-toggle" href="/category/'. $category->id .'-'. Str::slug($category->name, '-') .'.html">
+//                        '. $category->name .'
+//                    </a>';
+//            if (self::isChild($category->id, $producttypes)){
+//                $html.= '<div class="dropdown-menu">
+//                            <div class="agile_inner_drop_nav_info p-4">
+//                                <h5 class="mb-3">'. $category->name .'</h5>
+//                                <div class="row">
+//                                    <div class="col-sm-6 multi-gd-img">
+//                                        <ul class="multi-column-dropdown">';
+//                foreach ($producttypes as $k=>$producttype) {
+//                    if ($producttype->category_id == $category->id){
+//                        $html .= '
+//                    <li>
+//                    <a href="/category/producttype' . $producttype->id . '-' . Str::slug($producttype->name, '-') . '.html">
+//                        ' . $producttype->name . '
+//                    </a>
+//                    </li>
+//                    ';
+//                }
+//                }
+////                unset($producttypes[$k]);
+//                $html.="</ul>";
+//            }
+//            $html .='</li>
+//                ';
+//            unset($categories[$key]);
+//        }
+//        return $html;
+//    }
+
+    public static function menus($categories, $parent_id = 0) :string
+    {
+        $html = '';
+        foreach ($categories as $key => $category) {
+            if ($category->parent_id == $parent_id) {
+                $html .= '
+                    <li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
                     <a class="nav-link dropdown-toggle" href="/category/'. $category->id .'-'. Str::slug($category->name, '-') .'.html">
                         '. $category->name .'
                     </a>';
-            if (self::isChild($category->id, $producttypes)){
-                $html.= '<div class="dropdown-menu">
+
+                unset($categories[$key]);
+
+                if (self::isChild($categories, $category->id)) {
+                    $html.= '<div class="dropdown-menu">
                             <div class="agile_inner_drop_nav_info p-4">
                                 <h5 class="mb-3">'. $category->name .'</h5>
                                 <div class="row">
                                     <div class="col-sm-6 multi-gd-img">
                                         <ul class="multi-column-dropdown">';
-                foreach ($producttypes as $k=>$producttype) {
-                    if ($producttype->category_id == $category->id){
-                        $html .= '
-                    <li>
-                    <a href="/category/producttype' . $producttype->id . '-' . Str::slug($producttype->name, '-') . '.html">
-                        ' . $producttype->name . '
-                    </a>
-                    </li>
-                    ';
+//                    $html .= '<ul class="sub-menu">';
+                    $html .= self::menus($categories, $category->id);
+                    $html .= '</ul>';
                 }
-                }
-//                unset($producttypes[$k]);
-                $html.="</ul>";
+
+                $html .= '</li>';
             }
+        }
+
+        return $html;
+    }
+
+//    public static function producttypes($producttypes){
+//        $html='';
+//        foreach ($producttypes as $key => $producttype){
+//            $html.='
+//                <li>
+//                    <input type="checkbox" class="checked">
+//                    <span class="span">'. $producttype->name .'</span>';
+//            $html .='</li>
+//                ';
+//            unset($producttypes[$key]);
+//        }
+//        return $html;
+//    }
+
+    public static function producttypes($categories){
+        $html='';
+        foreach ($categories as $key => $category){
+            $html.='
+                <li>
+                    <input type="checkbox" class="checked">
+                    <span class="span">'. $category->name .'</span>';
             $html .='</li>
                 ';
             unset($categories[$key]);
@@ -232,19 +292,6 @@ class Helper
         return $html;
     }
 
-    public static function producttypes($producttypes){
-        $html='';
-        foreach ($producttypes as $key => $producttype){
-            $html.='
-                <li>
-                    <input type="checkbox" class="checked">
-                    <span class="span">'. $producttype->name .'</span>';
-            $html .='</li>
-                ';
-            unset($producttypes[$key]);
-        }
-        return $html;
-    }
     public static function categories($categories){
         $html='';
         foreach ($categories as $key => $category){
@@ -267,20 +314,32 @@ class Helper
         return $gender==1 ? 'Nam' : 'Nữ';
     }
 
-    public static function isChild($id, $producttypes)
+//    public static function isChild($id, $producttypes)
+//    {
+//        $i=0;
+//        foreach ($producttypes as $key => $producttype)
+//        {
+//            if ($producttype->category_id==$id)
+//            {
+//                $i++;
+//            }
+//        }
+//        if($i>0)
+//            return true;
+//        return false;
+//    }
+
+    public static function isChild($categories, $id) : bool
     {
-        $i=0;
-        foreach ($producttypes as $key => $producttype)
-        {
-            if ($producttype->category_id==$id)
-            {
-                $i++;
+        foreach ($categories as $category) {
+            if ($category->parent_id == $id) {
+                return true;
             }
         }
-        if($i>0)
-            return true;
+
         return false;
     }
+
     public static function price($price=0, $priceSale=0){
         if ($priceSale!=0)
             return $priceSale;

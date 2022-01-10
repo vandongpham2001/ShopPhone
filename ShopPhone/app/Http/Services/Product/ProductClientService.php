@@ -14,9 +14,8 @@ class ProductClientService
         return DB::table('products')
                     ->join('images', 'images.product_id', '=', 'products.id')
                     ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
-                    ->join('producttypes', 'producttypes.id', '=', 'products.productType_id')
-                    ->join('categories', 'categories.id', '=', 'producttypes.category_id')
-                    ->where('categories.id', '=', 1)
+                    ->join('categories', 'categories.id', '=', 'products.category_id')
+                    ->where('categories.parent_id', '=', 1)
 //                    ->select('name', 'products.id', 'image')
                     ->orderBy('id')
 //                    ->groupBy('products.id', 'products.name', 'DonGia')
@@ -38,9 +37,8 @@ class ProductClientService
         return DB::table('products')
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
-            ->join('producttypes', 'producttypes.id', '=', 'products.productType_id')
-            ->join('categories', 'categories.id', '=', 'producttypes.category_id')
-            ->where('categories.id', '=', 2)
+            ->join('categories', 'categories.id', '=', 'products.category_id')
+            ->where('categories.parent_id', '=', 2)
 //                    ->select('name', 'products.id', 'image')
             ->orderBy('id')
 //                    ->groupBy('products.id', 'name', 'image')
@@ -63,9 +61,8 @@ class ProductClientService
         return DB::table('products')
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
-            ->join('producttypes', 'producttypes.id', '=', 'products.productType_id')
-            ->join('categories', 'categories.id', '=', 'producttypes.category_id')
-            ->where('categories.id', '=', 3)
+            ->join('categories', 'categories.id', '=', 'products.category_id')
+            ->where('categories.parent_id', '=', 3)
 //                    ->select('name', 'products.id', 'image')
             ->orderBy('id')
 //                    ->groupBy('products.id', 'name', 'image')
@@ -89,13 +86,12 @@ class ProductClientService
         return DB::table('products')
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
-            ->join('producttypes', 'producttypes.id', '=', 'products.productType_id')
-            ->join('categories', 'categories.id', '=', 'producttypes.category_id')
-            ->where('categories.id', '=', $id)
+            ->join('categories', 'categories.id', '=', 'products.category_id')
+            ->where('products.category_id', '=', $id)
 //                    ->select('name', 'products.id', 'image')
             ->orderBy('id')
 //                    ->groupBy('products.id', 'products.name', 'DonGia')
-            ->take(self::LIMIT)
+            ->take(self::LIMIT*2)
 //            ->paginate(0)
             ->get(array(
                 'products.id',
@@ -116,6 +112,7 @@ class ProductClientService
             ->orderBy('id')
 //                    ->groupBy('products.id', 'products.name', 'DonGia')
             ->take(self::LIMIT)
+//            ->paginate(1)
             ->get(array(
                 'products.id',
                 'products.name',
@@ -126,5 +123,31 @@ class ProductClientService
 
     public function getImageProduct($id){
         return image::where('product_id', $id)->first();
+    }
+    public function show($id){
+        return DB::table('products')
+            ->join('images', 'images.product_id', '=', 'products.id')
+            ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
+            ->join('categories', 'categories.id', '=', 'products.category_id')
+            ->where('products.id', $id)
+            ->where('products.status', 1)
+//            ->firtOrFail();
+            ->get(array(
+            'products.id',
+            'products.name',
+             DB::raw('CONCAT(images.image, "") as image'),
+            'DonGia',
+                'ROM',
+                'RAM',
+                'CPU',
+                'ManHinh',
+                'Pin',
+                'Camera',
+                'Color',
+                'category_id'))
+            ->first();
+    }
+    public function more($id){
+
     }
 }
