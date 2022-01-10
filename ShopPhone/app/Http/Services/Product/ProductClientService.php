@@ -100,6 +100,28 @@ class ProductClientService
                 'DonGia'
             ));
     }
+
+    public function getProductByCategoryParentId($id)
+    {
+//                return product::with('singleImage')->orderBy('id')->limit(self::LIMIT)->get();
+        return DB::table('products')
+            ->join('images', 'images.product_id', '=', 'products.id')
+            ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
+            ->join('categories', 'categories.id', '=', 'products.category_id')
+            ->where('categories.parent_id', '=', $id)
+//                    ->select('name', 'products.id', 'image')
+            ->orderBy('id')
+//                    ->groupBy('products.id', 'products.name', 'DonGia')
+            ->take(self::LIMIT*2)
+//            ->paginate(0)
+            ->get(array(
+                'products.id',
+                'products.name',
+                DB::raw('CONCAT(images.image, "") as image'),
+                'DonGia'
+            ));
+    }
+
     public function getProductByType($id)
     {
 //                return product::with('singleImage')->orderBy('id')->limit(self::LIMIT)->get();
