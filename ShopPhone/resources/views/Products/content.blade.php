@@ -135,8 +135,14 @@
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                             <form action="/add-cart" method="POST">
                                 <fieldset>
+{{--                                    <div class="quantity-select">--}}
+{{--                                        <div class="entry value-minus">&nbsp;</div>--}}
+{{--                                        <div class="entry value" name="add">1</div>--}}
+{{--                                        <div class="entry value-plus active">&nbsp;</div>--}}
+{{--                                    </div>--}}
+                                    <input type="number" name="add" value="1">
                                     <input type="hidden" name="cmd" value="_cart">
-                                    <input type="hidden" name="add" value="1">
+{{--                                    <input type="hidden" name="add" value="1">--}}
                                     <input type="hidden" name="business" value=" ">
                                     <input type="hidden" name="item_name" value="{{$product->name}}">
                                     <input type="hidden" name="amount" value="{{$product->DonGia}}">
@@ -144,10 +150,10 @@
                                     <input type="hidden" name="currency_code" value="VND">
                                     <input type="hidden" name="return" value=" ">
                                     <input type="hidden" name="cancel_return" value=" ">
-                                    <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
-                                    @csrf
+                                    <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
                                 </fieldset>
+                                @csrf
                             </form>
                         </div>
                     </div>
@@ -192,10 +198,10 @@
                                         <input type="hidden" name="currency_code" value="VND">
                                         <input type="hidden" name="return" value=" ">
                                         <input type="hidden" name="cancel_return" value=" ">
-                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
                                         <input type="hidden" name="product_id" value="{{$product->id}}">
-                                        @csrf
+                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
                                     </fieldset>
+                                    @csrf
                                 </form>
                             </div>
                         </div>

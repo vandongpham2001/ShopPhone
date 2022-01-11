@@ -221,8 +221,8 @@
                                                                 <input type="hidden" name="cancel_return" value=" ">
                                                                 <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
                                                                 <input type="hidden" name="product_id" value="{{$product->id}}">
-                                                                @csrf
                                                             </fieldset>
+                                                            @csrf
                                                         </form>
                                                     </div>
 

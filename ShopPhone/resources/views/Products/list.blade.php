@@ -37,7 +37,7 @@
                                             <div class="info-product-price my-2">
                                                 <span
                                                     class="item_price">{{number_format($phone->DonGia, 0, ',', '.') . " VNĐ"}}</span>
-                                                                        <del>$280.00</del>
+{{--                                                                        <del>$280.00</del>--}}
                                             </div>
                                             <div
                                                 class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -53,8 +53,8 @@
                                                         <input type="hidden" name="cancel_return" value=" ">
                                                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
                                                         <input type="hidden" name="product_id" value="{{$phone->id}}">
-                                                        @csrf
                                                     </fieldset>
+                                                    @csrf
                                                 </form>
                                             </div>
                                         </div>
@@ -87,7 +87,7 @@
                                             <div class="info-product-price my-2">
                                                 <span
                                                     class="item_price">{{number_format($phukien->DonGia, 0, ',', '.') . " VNĐ"}}</span>
-                                                                        <del>$340.00</del>
+{{--                                                                        <del>$340.00</del>--}}
                                             </div>
                                             <div
                                                 class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -103,8 +103,8 @@
                                                         <input type="hidden" name="cancel_return" value=" ">
                                                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
                                                         <input type="hidden" name="product_id" value="{{$phukien->id}}">
-                                                        @csrf
                                                     </fieldset>
+                                                    @csrf
                                                 </form>
                                             </div>
                                         </div>
@@ -149,7 +149,7 @@
                                             <div class="info-product-price my-2">
                                                 <span
                                                     class="item_price">{{number_format($pin->DonGia, 0, ',', '.') . " VNĐ"}}</span>
-                                                                        <del>$280.00</del>
+{{--                                                                        <del>$280.00</del>--}}
                                             </div>
                                             <div
                                                 class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -165,8 +165,8 @@
                                                         <input type="hidden" name="cancel_return" value=" ">
                                                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
                                                         <input type="hidden" name="product_id" value="{{$pin->id}}">
-                                                        @csrf
                                                     </fieldset>
+                                                    @csrf
                                                 </form>
                                             </div>
 

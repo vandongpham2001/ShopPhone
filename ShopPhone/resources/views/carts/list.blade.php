@@ -1,6 +1,7 @@
 @extends('main')
 
 @section('content')
+{{--    {{dd($carts)}}--}}
     <div class="services-breadcrumb">
         <div class="agile_inner_breadcrumb">
             <div class="container">
@@ -21,10 +22,13 @@
                 <span>G</span>iỏ Hàng
             </h3>
             <!-- //tittle heading -->
+            @php
+                $total=0;
+            @endphp
             @if (count($products)!=0)
             <div class="checkout-right">
                 <h4 class="mb-sm-4 mb-3">Your shopping cart contains:
-                    <span>3 Products</span>
+                    <span>{{count($products)}}</span>
                 </h4>
                 <div class="table-responsive">
                     <table class="timetable_sub">
@@ -34,18 +38,22 @@
                             <th>Product</th>
                             <th>Quality</th>
                             <th>Product Name</th>
-
                             <th>Price</th>
+                            <th>Total</th>
                             <th>Remove</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($products as $key=>$product)
+                            @php
+                                $priceEnd=$product->DonGia * $carts[$product->id];
+                                $total+=$priceEnd;
+                            @endphp
                         <tr class="rem1">
                             <td class="invert">1</td>
                             <td class="invert-image">
                                 <a href="single.html">
-                                    <img src="{{$product->image}}" alt=" " class="img-responsive">
+                                    <img src="{{$product->image}}" alt=" " class="img-responsive" width="50px" height="100px">
                                 </a>
                             </td>
                             <td class="invert">
@@ -53,7 +61,7 @@
                                     <div class="quantity-select">
                                         <div class="entry value-minus">&nbsp;</div>
                                         <div class="entry value">
-                                            <span>1</span>
+                                            <span>{{$carts[$product->id]}}</span>
                                         </div>
                                         <div class="entry value-plus active">&nbsp;</div>
                                     </div>
@@ -61,6 +69,7 @@
                             </td>
                             <td class="invert">{{$product->name}}</td>
                             <td class="invert">{{$product->DonGia}}</td>
+                            <td class="invert">{{$priceEnd}}</td>
                             <td class="invert">
                                 <div class="rem">
                                     <div class="close1"> </div>
@@ -68,59 +77,8 @@
                             </td>
                         </tr>
                         @endforeach
-{{--                        <tr class="rem2">--}}
-{{--                            <td class="invert">2</td>--}}
-{{--                            <td class="invert-image">--}}
-{{--                                <a href="single2.html">--}}
-{{--                                    <img src="images/a4.jpg" alt=" " class="img-responsive">--}}
-{{--                                </a>--}}
-{{--                            </td>--}}
-{{--                            <td class="invert">--}}
-{{--                                <div class="quantity">--}}
-{{--                                    <div class="quantity-select">--}}
-{{--                                        <div class="entry value-minus">&nbsp;</div>--}}
-{{--                                        <div class="entry value">--}}
-{{--                                            <span>1</span>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="entry value-plus active">&nbsp;</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="invert">Cordless Trimmer</td>--}}
-{{--                            <td class="invert">$1,999</td>--}}
-{{--                            <td class="invert">--}}
-{{--                                <div class="rem">--}}
-{{--                                    <div class="close2"> </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
-{{--                        <tr class="rem3">--}}
-{{--                            <td class="invert">3</td>--}}
-{{--                            <td class="invert-image">--}}
-{{--                                <a href="single.html">--}}
-{{--                                    <img src="images/a3.jpg" alt=" " class="img-responsive">--}}
-{{--                                </a>--}}
-{{--                            </td>--}}
-{{--                            <td class="invert">--}}
-{{--                                <div class="quantity">--}}
-{{--                                    <div class="quantity-select">--}}
-{{--                                        <div class="entry value-minus">&nbsp;</div>--}}
-{{--                                        <div class="entry value">--}}
-{{--                                            <span>1</span>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="entry value-plus active">&nbsp;</div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                            <td class="invert">Nikon Camera</td>--}}
-{{--                            <td class="invert">$37,490</td>--}}
-{{--                            <td class="invert">--}}
-{{--                                <div class="rem">--}}
-{{--                                    <div class="close3"> </div>--}}
-{{--                                </div>--}}
-{{--                            </td>--}}
-{{--                        </tr>--}}
                         </tbody>
+                        <h4 class="mb-sm-4 mb-3">Tổng tiền: {{number_format($total, 0, '', '.')}}</h4>
                     </table>
                 </div>
             </div>

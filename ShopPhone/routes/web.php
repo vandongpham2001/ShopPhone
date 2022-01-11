@@ -123,5 +123,6 @@ Route::get('san-pham/{id}-{slug}.html', [\App\Http\Controllers\ProductController
 Route::post('/add-cart', [CartController::class, 'index']);
 
 Route::get('/carts', [CartController::class, 'show']);
+//Route::post('/carts', [CartController::class, 'index']);
 //Route::get('/checkout', [CartController::class, 'show']);
 

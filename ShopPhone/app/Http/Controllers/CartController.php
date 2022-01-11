@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\CartService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
@@ -15,6 +16,7 @@ class CartController extends Controller
 
     public function index(Request $request){
         $result=$this->cartService->create($request);
+//        dd(Session::get('carts'));
         if ($result==false){
             return redirect()->back();
         }
@@ -25,7 +27,8 @@ class CartController extends Controller
         $products=$this->cartService->getProduct();
         return view('carts.list', [
             'title'=>'Giỏ hàng',
-            'products'=>$products
+            'products'=>$products,
+            'carts'=>Session::get('carts')
         ]);
     }
 
