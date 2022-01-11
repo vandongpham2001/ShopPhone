@@ -135,12 +135,12 @@
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                             <form action="/add-cart" method="POST">
                                 <fieldset>
-{{--                                    <div class="quantity-select">--}}
+                                    <div class="quantity-select">
 {{--                                        <div class="entry value-minus">&nbsp;</div>--}}
-{{--                                        <div class="entry value" name="add">1</div>--}}
+                                        <input class="entry value" name="add" value="1" type="number">
 {{--                                        <div class="entry value-plus active">&nbsp;</div>--}}
-{{--                                    </div>--}}
-                                    <input type="number" name="add" value="1">
+                                    </div>
+{{--                                    <input type="number" name="add" value="1">--}}
                                     <input type="hidden" name="cmd" value="_cart">
 {{--                                    <input type="hidden" name="add" value="1">--}}
                                     <input type="hidden" name="business" value=" ">

@@ -121,6 +121,7 @@ Route::get('category/{id}-{slug}.html', [MenuController::class, 'index']);
 Route::get('san-pham/{id}-{slug}.html', [\App\Http\Controllers\ProductController::class, 'index']);
 
 Route::post('/add-cart', [CartController::class, 'index']);
+Route::post('/update-cart', [CartController::class, 'update']);
 
 Route::get('/carts', [CartController::class, 'show']);
 //Route::post('/carts', [CartController::class, 'index']);
