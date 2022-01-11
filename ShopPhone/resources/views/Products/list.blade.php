@@ -41,20 +41,19 @@
                                             </div>
                                             <div
                                                 class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                                <form action="#" method="post">
+                                                <form action="/add-cart" method="POST">
                                                     <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart"/>
-                                                        <input type="hidden" name="add" value="1"/>
-                                                        <input type="hidden" name="business" value=" "/>
-                                                        <input type="hidden" name="item_name"
-                                                               value="Samsung Galaxy J7"/>
-                                                        <input type="hidden" name="amount" value="200.00"/>
-                                                        <input type="hidden" name="discount_amount" value="1.00"/>
-                                                        <input type="hidden" name="currency_code" value="USD"/>
-                                                        <input type="hidden" name="return" value=" "/>
-                                                        <input type="hidden" name="cancel_return" value=" "/>
-                                                        <input type="submit" name="submit" value="Add to cart"
-                                                               class="button btn"/>
+                                                        <input type="hidden" name="cmd" value="_cart">
+                                                        <input type="hidden" name="add" value="1">
+                                                        <input type="hidden" name="business" value=" ">
+                                                        <input type="hidden" name="item_name" value="{{$phone->name}}">
+                                                        <input type="hidden" name="amount" value="{{$phone->DonGia}}">
+                                                        <input type="hidden" name="currency_code" value="VND">
+                                                        <input type="hidden" name="return" value=" ">
+                                                        <input type="hidden" name="cancel_return" value=" ">
+                                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
+                                                        <input type="hidden" name="product_id" value="{{$phone->id}}">
+                                                        @csrf
                                                     </fieldset>
                                                 </form>
                                             </div>
@@ -92,20 +91,19 @@
                                             </div>
                                             <div
                                                 class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                                <form action="#" method="post">
+                                                <form action="/add-cart" method="POST">
                                                     <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart"/>
-                                                        <input type="hidden" name="add" value="1"/>
-                                                        <input type="hidden" name="business" value=" "/>
-                                                        <input type="hidden" name="item_name"
-                                                               value="Sony 80 cm (32 inches)"/>
-                                                        <input type="hidden" name="amount" value="320.00"/>
-                                                        <input type="hidden" name="discount_amount" value="1.00"/>
-                                                        <input type="hidden" name="currency_code" value="USD"/>
-                                                        <input type="hidden" name="return" value=" "/>
-                                                        <input type="hidden" name="cancel_return" value=" "/>
-                                                        <input type="submit" name="submit" value="Add to cart"
-                                                               class="button btn"/>
+                                                        <input type="hidden" name="cmd" value="_cart">
+                                                        <input type="hidden" name="add" value="1">
+                                                        <input type="hidden" name="business" value=" ">
+                                                        <input type="hidden" name="item_name" value="{{$phukien->name}}">
+                                                        <input type="hidden" name="amount" value="{{$phukien->DonGia}}">
+                                                        <input type="hidden" name="currency_code" value="VND">
+                                                        <input type="hidden" name="return" value=" ">
+                                                        <input type="hidden" name="cancel_return" value=" ">
+                                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
+                                                        <input type="hidden" name="product_id" value="{{$phukien->id}}">
+                                                        @csrf
                                                     </fieldset>
                                                 </form>
                                             </div>
@@ -155,19 +153,19 @@
                                             </div>
                                             <div
                                                 class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                                <form action="#" method="post">
+                                                <form action="/add-cart" method="POST">
                                                     <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart"/>
-                                                        <input type="hidden" name="add" value="1"/>
-                                                        <input type="hidden" name="business" value=" "/>
-                                                        <input type="hidden" name="item_name" value="Whirlpool 245"/>
-                                                        <input type="hidden" name="amount" value="230.00"/>
-                                                        <input type="hidden" name="discount_amount" value="1.00"/>
-                                                        <input type="hidden" name="currency_code" value="USD"/>
-                                                        <input type="hidden" name="return" value=" "/>
-                                                        <input type="hidden" name="cancel_return" value=" "/>
-                                                        <input type="submit" name="submit" value="Add to cart"
-                                                               class="button btn"/>
+                                                        <input type="hidden" name="cmd" value="_cart">
+                                                        <input type="hidden" name="add" value="1">
+                                                        <input type="hidden" name="business" value=" ">
+                                                        <input type="hidden" name="item_name" value="{{$pin->name}}">
+                                                        <input type="hidden" name="amount" value="{{$pin->DonGia}}">
+                                                        <input type="hidden" name="currency_code" value="VND">
+                                                        <input type="hidden" name="return" value=" ">
+                                                        <input type="hidden" name="cancel_return" value=" ">
+                                                        <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
+                                                        <input type="hidden" name="product_id" value="{{$pin->id}}">
+                                                        @csrf
                                                     </fieldset>
                                                 </form>
                                             </div>

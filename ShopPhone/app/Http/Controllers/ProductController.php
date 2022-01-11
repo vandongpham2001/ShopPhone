@@ -20,7 +20,8 @@ class ProductController extends Controller
 //        dd($product);
         return view('products.content', [
             'title'=>$product->name,
-            'product'=>$product
+            'product'=>$product,
+            'products'=>$productsMore
         ]);
     }
 }
