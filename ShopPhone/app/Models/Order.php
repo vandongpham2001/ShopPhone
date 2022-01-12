@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class order extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'address',
+        'sdt',
+        'status',
+        'user_id'
+    ];
     public function user(){
         return $this->hasOne(user::class, 'id', 'user_id');
     }

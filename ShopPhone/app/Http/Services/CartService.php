@@ -2,6 +2,9 @@
 
 namespace App\Http\Services;
 
+use App\Models\order;
+use App\Models\ordersdetail;
+use App\Models\User;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -11,7 +14,7 @@ class CartService
     public function create($request){
 //        dd($request);
         $quantity = (int) $request->input('add');
-        $product_id=(int) $request->input('product_id');
+        $product_id=(int) $request->input('productdetail_id');
         if ($quantity<=0 || $product_id<=0){
             Session::flash('error', 'Số lượng hoặc sản phẩm không hợp lệ');
             return false;
@@ -52,13 +55,95 @@ class CartService
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
             ->where('products.status', '=', 1)
-            ->whereIn('products.id', $productId)
+            ->whereIn('productdetails.id', $productId)
             ->get(array(
-                'products.id',
+                'productdetails.id',
+                'productdetails.product_id',
                 'products.name',
                 DB::raw('CONCAT(images.image, "") as image'),
                 'DonGia'
             ));
 //        dd($carts);
+    }
+
+    public function update($request){
+        Session::put('carts', $request->input('num_product'));
+
+        return true;
+    }
+
+    public function remove($id){
+        $carts=Session::get('carts');
+        unset($carts[$id]);
+        Session::put('carts', $carts);
+        return true;
+//        dd($carts);
+    }
+
+    public function addCart($request){
+        try{
+            DB::beginTransaction();
+//            Session::forget('carts');
+            $carts=Session::get('carts');
+//            dd($carts);
+            if (is_null($carts))
+                return false;
+
+            $user=User::create([
+                'name'=>$request->input('name'),
+                'email'=>$request->input('email'),
+                'DiaChi'=>$request->input('address'),
+                'SDT'=>$request->input('phone')
+            ]);
+
+            $order=order::create([
+                'address'=>$request->input('address'),
+                'sdt'=>$request->input('phone'),
+                'status'=>'Chờ duyệt',
+                'user_id'=>$user->id
+            ]);
+
+        $this->infoProductCart($carts, $order->id);
+
+        DB::commit();
+
+        Session::flash('success', 'Đặt hàng thành công');
+        Session::flush();
+
+        }
+        catch (\Exception $err){
+            DB::rollBack();
+            Session::flash('error', $err->getMessage());
+            return false;
+        }
+        return true;
+    }
+    protected function infoProductCart($carts, $order_id){
+        $productId=array_keys($carts);
+        $products=DB::table('products')
+            ->join('images', 'images.product_id', '=', 'products.id')
+            ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
+            ->where('products.status', '=', 1)
+            ->whereIn('productdetails.id', $productId)
+            ->get(array(
+                'productdetails.id',
+                'productdetails.product_id',
+                'products.name',
+                DB::raw('CONCAT(images.image, "") as image'),
+                'DonGia'
+            ));
+        $data=[];
+        foreach ($products as $key => $product){
+            $data[]=[
+                'order_id'=>$order_id,
+                'productDetail_id'=>$product->id,
+                'soLuong'=>$carts[$product->id],
+                'giaMua'=>$product->DonGia
+            ];
+
+
+            return ordersdetail::insert($data);
+        }
+
     }
 }

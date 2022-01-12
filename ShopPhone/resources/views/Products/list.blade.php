@@ -25,14 +25,14 @@
                                             <img src="{{$phone->image}}" alt="" width="150px" height="200px">
                                             <div class="men-cart-pro">
                                                 <div class="inner-men-cart-pro">
-                                                    <a href="/san-pham/{{$phone->id}}-{{Str::slug($phone->name, '-')}}.html"
+                                                    <a href="/san-pham/{{$phone->product_id}}-{{Str::slug($phone->name, '-')}}.html"
                                                        class="link-product-add-cart">Quick View</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item-info-product text-center border-top mt-4">
                                             <h4 class="pt-1">
-                                                <a href="/san-pham/{{$phone->id}}-{{Str::slug($phone->name, '-')}}.html">{{$phone->name}}</a>
+                                                <a href="/san-pham/{{$phone->product_id}}-{{Str::slug($phone->name, '-')}}.html">{{$phone->name}}</a>
                                             </h4>
                                             <div class="info-product-price my-2">
                                                 <span
@@ -52,7 +52,8 @@
                                                         <input type="hidden" name="return" value=" ">
                                                         <input type="hidden" name="cancel_return" value=" ">
                                                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
-                                                        <input type="hidden" name="product_id" value="{{$phone->id}}">
+{{--                                                        <input type="hidden" name="product_id" value="{{$phone->product_id}}">--}}
+                                                        <input type="hidden" name="productdetail_id" value="{{$phone->id}}">
                                                     </fieldset>
                                                     @csrf
                                                 </form>
@@ -75,14 +76,14 @@
                                             <img src="{{$phukien->image}}" alt="" width="150px" height="200px">
                                             <div class="men-cart-pro">
                                                 <div class="inner-men-cart-pro">
-                                                    <a href="/san-pham/{{$phukien->id}}-{{Str::slug($phukien->name, '-')}}.html"
+                                                    <a href="/san-pham/{{$phukien->product_id}}-{{Str::slug($phukien->name, '-')}}.html"
                                                        class="link-product-add-cart">Quick View</a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="item-info-product text-center border-top mt-4">
                                             <h4 class="pt-1">
-                                                <a href="/san-pham/{{$phukien->id}}-{{Str::slug($phukien->name, '-')}}.html">{{$phukien->name}}</a>
+                                                <a href="/san-pham/{{$phukien->product_id}}-{{Str::slug($phukien->name, '-')}}.html">{{$phukien->name}}</a>
                                             </h4>
                                             <div class="info-product-price my-2">
                                                 <span
@@ -102,7 +103,8 @@
                                                         <input type="hidden" name="return" value=" ">
                                                         <input type="hidden" name="cancel_return" value=" ">
                                                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
-                                                        <input type="hidden" name="product_id" value="{{$phukien->id}}">
+{{--                                                        <input type="hidden" name="product_id" value="{{$phukien->product_id}}">--}}
+                                                        <input type="hidden" name="productdetail_id" value="{{$phukien->id}}">
                                                     </fieldset>
                                                     @csrf
                                                 </form>
@@ -136,7 +138,7 @@
                                             <img src="{{$pin->image}}" alt="" width="150px" height="200px">
                                             <div class="men-cart-pro">
                                                 <div class="inner-men-cart-pro">
-                                                    <a href="/san-pham/{{$pin->id}}-{{Str::slug($pin->name, '-')}}.html"
+                                                    <a href="/san-pham/{{$pin->product_id}}-{{Str::slug($pin->name, '-')}}.html"
                                                        class="link-product-add-cart">Quick View</a>
                                                 </div>
                                             </div>
@@ -144,7 +146,7 @@
                                         <span class="product-new-top">New</span>
                                         <div class="item-info-product text-center border-top mt-4">
                                             <h4 class="pt-1">
-                                                <a href="/san-pham/{{$pin->id}}-{{Str::slug($pin->name, '-')}}.html">{{$pin->name}}</a>
+                                                <a href="/san-pham/{{$pin->product_id}}-{{Str::slug($pin->name, '-')}}.html">{{$pin->name}}</a>
                                             </h4>
                                             <div class="info-product-price my-2">
                                                 <span
@@ -164,7 +166,8 @@
                                                         <input type="hidden" name="return" value=" ">
                                                         <input type="hidden" name="cancel_return" value=" ">
                                                         <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
-                                                        <input type="hidden" name="product_id" value="{{$pin->id}}">
+{{--                                                        <input type="hidden" name="product_id" value="{{$pin->product_id}}">--}}
+                                                        <input type="hidden" name="productdetail_id" value="{{$pin->id}}">
                                                     </fieldset>
                                                     @csrf
                                                 </form>

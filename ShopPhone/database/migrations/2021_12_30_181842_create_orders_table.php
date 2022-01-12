@@ -17,8 +17,8 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('address');
             $table->string('sdt');
-            $table->integer('status');
-            $table->unsignedBigInteger('user_id');
+            $table->string('status');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('restrict')->onDelete('cascade');
             $table->timestamps();
         });

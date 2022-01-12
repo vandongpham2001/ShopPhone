@@ -124,6 +124,8 @@ Route::post('/add-cart', [CartController::class, 'index']);
 Route::post('/update-cart', [CartController::class, 'update']);
 
 Route::get('/carts', [CartController::class, 'show']);
+Route::get('/carts/delete/{id}', [CartController::class, 'remove']);
+Route::post('carts', [CartController::class, 'addCart']);
 //Route::post('/carts', [CartController::class, 'index']);
 //Route::get('/checkout', [CartController::class, 'show']);
 

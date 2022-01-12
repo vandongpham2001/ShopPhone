@@ -33,6 +33,21 @@ class CartController extends Controller
     }
 
     public function update(Request $request){
-        dd($request->all());
+        $this->cartService->update($request);
+
+        return redirect('/carts');
+    }
+
+    public function remove($id=0){
+        $this->cartService->remove($id);
+
+        return redirect('carts');
+    }
+
+    public function addCart(Request $request){
+//        dd($request->input());
+        $this->cartService->addCart($request);
+
+        return redirect()->back();
     }
 }

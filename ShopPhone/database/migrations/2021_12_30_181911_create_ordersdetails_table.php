@@ -18,7 +18,7 @@ class CreateOrdersdetailsTable extends Migration
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('productDetail_id');
             $table->integer('soLuong');
-            $table->decimal('giaMua');
+            $table->integer('giaMua');
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders')->onUpdate('restrict')->onDelete('cascade');
             $table->foreign('productDetail_id')->references('id')->on('productdetails')->onUpdate('restrict')->onDelete('cascade');

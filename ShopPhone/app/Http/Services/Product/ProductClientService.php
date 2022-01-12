@@ -21,7 +21,8 @@ class ProductClientService
 //                    ->groupBy('products.id', 'products.name', 'DonGia')
                     ->take(self::LIMIT)
                     ->get(array(
-                        'products.id',
+                        'productdetails.id',
+                        'productdetails.product_id',
                         'products.name',
                         DB::raw('CONCAT(images.image, "") as image'),
                         'DonGia'
@@ -44,7 +45,8 @@ class ProductClientService
 //                    ->groupBy('products.id', 'name', 'image')
             ->take(self::LIMIT)
             ->get(array(
-                'products.id',
+                'productdetails.id',
+                'productdetails.product_id',
                 'products.name',
                 'images.image',
                 'DonGia'
@@ -68,7 +70,8 @@ class ProductClientService
 //                    ->groupBy('products.id', 'name', 'image')
             ->take(self::LIMIT)
             ->get(array(
-                'products.id',
+                'productdetails.id',
+                'productdetails.product_id',
                 'products.name',
                 'images.image',
                 'DonGia'
@@ -94,7 +97,8 @@ class ProductClientService
             ->take(self::LIMIT*2)
 //            ->paginate(0)
             ->get(array(
-                'products.id',
+                'productdetails.id',
+                'productdetails.product_id',
                 'products.name',
                 DB::raw('CONCAT(images.image, "") as image'),
                 'DonGia'
@@ -115,7 +119,8 @@ class ProductClientService
             ->take(self::LIMIT*2)
 //            ->paginate(0)
             ->get(array(
-                'products.id',
+                'productdetails.id',
+                'productdetails.product_id',
                 'products.name',
                 DB::raw('CONCAT(images.image, "") as image'),
                 'DonGia'
@@ -146,6 +151,8 @@ class ProductClientService
     public function getImageProduct($id){
         return image::where('product_id', $id)->first();
     }
+
+
     public function show($id){
         return DB::table('products')
             ->join('images', 'images.product_id', '=', 'products.id')
@@ -156,10 +163,10 @@ class ProductClientService
 //            ->with('category')
 //            ->firtOrFail();
             ->get(array(
-            'products.id',
+            'productdetails.product_id',
             'products.name',
              DB::raw('CONCAT(images.image, "") as image'),
-            
+            'productdetails.id',
             'DonGia',
                 'ROM',
                 'RAM',
@@ -188,7 +195,8 @@ class ProductClientService
             ->limit(4)
 //            ->paginate(0)
             ->get(array(
-                'products.id',
+                'productdetails.id',
+                'productdetails.product_id',
                 'products.name',
                 DB::raw('CONCAT(images.image, "") as image'),
                 'DonGia'

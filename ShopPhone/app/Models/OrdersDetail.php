@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class ordersdetail extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'order_id',
+        'productDetail_id',
+        'soLuong',
+        'giaMua'
+    ];
     public function productdetail(){
         return $this->hasOne(productdetail::class, 'id', 'productDetail_id');
     }
