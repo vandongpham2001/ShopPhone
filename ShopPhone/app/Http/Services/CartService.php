@@ -132,18 +132,18 @@ class CartService
                 DB::raw('CONCAT(images.image, "") as image'),
                 'DonGia'
             ));
+//        dd($products);
         $data=[];
-        foreach ($products as $key => $product){
+        foreach ($products as $product){
             $data[]=[
                 'order_id'=>$order_id,
                 'productDetail_id'=>$product->id,
                 'soLuong'=>$carts[$product->id],
                 'giaMua'=>$product->DonGia
             ];
-
-
-            return ordersdetail::insert($data);
         }
+//        dd($data);
+        return ordersdetail::insert($data);
 
     }
 }
