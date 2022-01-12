@@ -179,6 +179,7 @@ class ProductClientService
                 ))
             ->first();
     }
+
     public function more($id){
         $product= product::where('id', $id)->pluck('category_id');
         return DB::table('products')
@@ -200,6 +201,18 @@ class ProductClientService
                 'products.name',
                 DB::raw('CONCAT(images.image, "") as image'),
                 'DonGia'
+            ));
+    }
+
+    public function getTopProduct(){
+        return DB::table('products')
+            ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
+            ->join('ordersdetails', 'ordersdetails.product_id', '=', 'productdetails.id')
+            ->sum('ordersdetails.soLuong')
+            ->groupBy('productdetails.id')
+            ->take(3)
+            ->get(array(
+                'productdetails.id'
             ));
     }
 }
