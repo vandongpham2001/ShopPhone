@@ -45,10 +45,11 @@
                         <div class="flexslider">
                             <ul class="slides">
                                 @foreach($images as $key => $image)
-                                <li data-thumb="{{$image->image}}">
-                                    <div class="thumb-image">
-                                        <img src="{{$image->image}}" data-imagezoom="true" class="img-fluid" alt=""></div>
-                                </li>
+                                    <li data-thumb="{{$image->image}}">
+                                        <div class="thumb-image">
+                                            <img src="{{$image->image}}" data-imagezoom="true" class="img-fluid" alt="">
+                                        </div>
+                                    </li>
                                 @endforeach
                             </ul>
                             <div class="clearfix"></div>
@@ -91,6 +92,9 @@
                                 <li class="mb-1">
                                     Màu sắc: {{$product->Color}}
                                 </li>
+                                <li class="mb-1">
+                                    Mô tả sản phẩm: {{$product->description==null ? 'Không có':$product->description}}
+                                </li>
                             </ul>
                         </div>
                     @endif
@@ -98,11 +102,6 @@
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                             <form action="/add-cart" method="POST">
                                 <fieldset>
-                                    <div class="quantity-select">
-                                        <div class="entry value-minus">&nbsp;</div>
-                                        <input class="entry value" name="add" value="1" type="number">
-                                        <div class="entry value-plus active">&nbsp;</div>
-                                    </div>
                                     {{--                                    <input type="number" name="add" value="1">--}}
                                     <input type="hidden" name="cmd" value="_cart">
                                     {{--                                    <input type="hidden" name="add" value="1">--}}
@@ -115,7 +114,18 @@
                                     <input type="hidden" name="cancel_return" value=" ">
                                     {{--                                    <input type="hidden" name="product_id" value="{{$product->product_id}}">--}}
                                     <input type="hidden" name="productdetail_id" value="{{$product->id}}">
-                                    <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
+                                    <div class="box">
+                                        <div class="row my-4">
+                                            <div class="quantity-select">
+                                                <div class="entry value-minus">&nbsp;</div>
+                                                <input class="entry value text-xl-center" name="add" value="1" type="number">
+                                                <div class="entry value-plus active">&nbsp;</div>
+                                            </div>
+                                        </div>
+                                        <div class="row my-4">
+                                            <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button">
+                                        </div>
+                                    </div>
                                 </fieldset>
                                 @csrf
                             </form>

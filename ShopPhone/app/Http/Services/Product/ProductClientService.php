@@ -196,6 +196,7 @@ class ProductClientService
                 'Pin',
                 'Camera',
                 'Color',
+                'products.description',
                 'category_id'
                 ))
             ->first();

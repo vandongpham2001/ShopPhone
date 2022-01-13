@@ -57,7 +57,7 @@
                                     <tr class="rem1">
                                         <td class="invert">{{$i++}}</td>
                                         <td class="invert-image">
-                                            <a href="single.html">
+                                            <a href="/san-pham/{{$product->product_id}}-{{Str::slug($product->name, '-')}}.html">
                                                 <img src="{{$product->image}}" alt=" " class="img-responsive"
                                                      width="50px" height="100px">
                                             </a>
