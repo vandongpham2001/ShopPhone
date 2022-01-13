@@ -11,7 +11,7 @@ use App\Models\productdetail;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class ProductdetailController extends Controller
+class ProductDetailController extends Controller
 {
     protected $productdetailService;
 

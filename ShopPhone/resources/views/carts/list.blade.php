@@ -94,7 +94,7 @@
                             </table>
                         </div>
                     </div>
-                <div class="">
+                <div class="row my-4">
                     <input type="submit" name="submit" value="Cập nhật giỏ hàng" formaction="/update-cart"
                            class="btn my-2 my-sm-0">
                 </div>

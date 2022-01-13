@@ -68,7 +68,7 @@
 
                     <div class="product-single-w3l">
                         <p class="my-3">
-                            <i class="far fa-hand-point-right mr-2"></i>
+                            <i class="far fa-hand-point-right mr-2">  Thông tin chi tiết</i>
                         {{--                                <label>1 Year</label>Manufacturer Warranty</p>--}}
                         <ul>
                             @if($parent_id==1)

@@ -10,6 +10,7 @@ use Illuminate\View\View;
 class MenuComposer
 {
 
+    const LIMIT=4;
     protected $users;
 
     public function __construct()
@@ -28,7 +29,7 @@ class MenuComposer
             ->join('ordersdetails', 'ordersdetails.productDetail_id', '=', 'productdetails.id')
             ->orderBy(DB::raw('sum(\'ordersdetails.soLuong\')'))
             ->groupBy('productdetails.id')
-            ->take(3)
+            ->take(self::LIMIT)
             ->get(array(
                 'productdetails.id'
             ))

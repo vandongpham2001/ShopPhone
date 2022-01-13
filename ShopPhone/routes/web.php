@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ProductdetailController;
+use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\Admin\Users\LoginController;
@@ -105,12 +105,12 @@ Route::middleware(['auth'])->group(function () {
 
         #Product Detail
         Route::prefix('productdetails')->group(function () {
-            Route::get('add', [ProductdetailController::class, 'create']);
-            Route::post('add', [ProductdetailController::class, 'store']);
-            Route::get('list', [ProductdetailController::class, 'index']);
-            Route::get('edit/{image}', [ProductdetailController::class, 'show']);
-            Route::post('edit/{image}', [ProductdetailController::class, 'update']);
-            Route::DELETE('destroy', [ProductdetailController::class, 'destroy']);
+            Route::get('add', [ProductDetailController::class, 'create']);
+            Route::post('add', [ProductDetailController::class, 'store']);
+            Route::get('list', [ProductDetailController::class, 'index']);
+            Route::get('edit/{image}', [ProductDetailController::class, 'show']);
+            Route::post('edit/{image}', [ProductDetailController::class, 'update']);
+            Route::DELETE('destroy', [ProductDetailController::class, 'destroy']);
         });
     });
 });
