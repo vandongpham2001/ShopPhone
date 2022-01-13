@@ -47,8 +47,7 @@
                                 @foreach($images as $key => $image)
                                 <li data-thumb="{{$image->image}}">
                                     <div class="thumb-image">
-                                        <img src="{{$image->image}}" data-imagezoom="true" class="img-fluid"
-                                             alt=""></div>
+                                        <img src="{{$image->image}}" data-imagezoom="true" class="img-fluid" alt=""></div>
                                 </li>
                                 @endforeach
                             </ul>
