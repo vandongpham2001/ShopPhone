@@ -47,6 +47,11 @@
             </div>
 
             <div class="form-group">
+                <label for="description">Mô tả chi tiết</label>
+                <textarea id="contentDetail" value="{{old('content')}}" name="content" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
                 <label>Kích hoạt</label>
                 <div class="custom-control custom-radio">
                     <input class="custom-control-input" value=1 type="radio" id="active" name="status" checked="">
@@ -73,5 +78,10 @@
         // Replace the <textarea id="editor1"> with a CKEditor 4
         // instance, using default configuration.
         CKEDITOR.replace( 'content' );
+    </script>
+    <script>
+        // Replace the <textarea id="editor1"> with a CKEditor 4
+        // instance, using default configuration.
+        CKEDITOR.replace( 'contentDetail' );
     </script>
 @endsection

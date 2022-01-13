@@ -97,7 +97,7 @@
                                 Màu sắc: {{$product->Color}}
                             </li>
                             <li class="mb-1">
-                                Mô tả sản phẩm: {{$product->description==null ? 'Không có':$product->description}}
+                                Mô tả sản phẩm: {!! $product->description==null ? 'Không có':$product->description !!}
                             </li>
                         </ul>
                     </div>

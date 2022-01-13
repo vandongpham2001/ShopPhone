@@ -14,6 +14,7 @@ class product extends Model
         'NhaSX',
         'ThoiGianBaoHanh',
         'description',
+//        'content',
         'status'
         ];
     public function producttype(){
