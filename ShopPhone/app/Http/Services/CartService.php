@@ -57,6 +57,7 @@ class CartService
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
             ->where('products.status', '=', 1)
             ->whereIn('productdetails.id', $productId)
+            ->groupBy('products.id')
             ->get(array(
                 'productdetails.id',
                 'productdetails.product_id',

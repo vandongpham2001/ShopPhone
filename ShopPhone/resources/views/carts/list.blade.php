@@ -48,13 +48,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php $i=1 ?>
                                 @foreach($products as $key=>$product)
                                     @php
                                         $priceEnd=$product->DonGia * $carts[$product->id];
                                         $total+=$priceEnd;
                                     @endphp
                                     <tr class="rem1">
-                                        <td class="invert">1</td>
+                                        <td class="invert">{{$i++}}</td>
                                         <td class="invert-image">
                                             <a href="single.html">
                                                 <img src="{{$product->image}}" alt=" " class="img-responsive"
@@ -108,25 +109,25 @@
                                     <div class="first-row">
                                         <div class="controls form-group">
                                             <input class="billing-address-name form-control" type="text" value="{{old('name')}}" name="name"
-                                                   placeholder="Tên" required="">
+                                                   placeholder="Tên" >
                                         </div>
                                         <div class="w3_agileits_card_number_grids">
                                             <div class="w3_agileits_card_number_grid_left form-group">
                                                 <div class="controls">
                                                     <input type="text" class="form-control" value="{{old('phone')}}" placeholder="Số điện thoại"
-                                                           name="phone" required="">
+                                                           name="phone" >
                                                 </div>
                                             </div>
                                             <div class="w3_agileits_card_number_grid_right form-group">
                                                 <div class="controls">
                                                     <input type="text" class="form-control" value="{{old('address')}}" placeholder="Địa chỉ"
-                                                           name="address" required="">
+                                                           name="address" >
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="controls form-group">
                                             <input type="text" class="form-control" placeholder="Email" value="{{old('email')}}" name="email"
-                                                   required="">
+                                                   >
                                         </div>
                                         <div class="controls form-group">
                                             <textarea class="form-control" placeholder="Ghi chú" value="{{old('content')}}"

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Cart\CartRequest;
 use App\Http\Services\CartService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -20,7 +21,8 @@ class CartController extends Controller
         if ($result==false){
             return redirect()->back();
         }
-        return redirect('/carts');
+//        return redirect('/carts');
+        return redirect()->back();
     }
 
     public function show(){
@@ -44,7 +46,7 @@ class CartController extends Controller
         return redirect('carts');
     }
 
-    public function addCart(Request $request){
+    public function addCart(CartRequest $request){
 //        dd($request->input());
         $this->cartService->addCart($request);
 
