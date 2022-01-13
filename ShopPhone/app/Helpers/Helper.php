@@ -251,9 +251,9 @@ class Helper
                             <div class="agile_inner_drop_nav_info p-4">
                                 <h5 class="mb-3">'. $category->name .'</h5>
                                 <div class="row">
-                                    <div class="col-sm-6 multi-gd-img">
-                                        <ul class="multi-column-dropdown">';
-//                    $html .= '<ul class="sub-menu">';
+                                    <div class="col-sm-6 multi-gd-img">';
+//                                        <ul class="multi-column-dropdown">'
+                    $html .= '<ul class="multi-column-dropdown">';
                     $html .= self::menus($categories, $category->id);
                     $html .= '</ul>';
                 }

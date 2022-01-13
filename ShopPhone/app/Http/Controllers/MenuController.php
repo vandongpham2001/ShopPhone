@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Services\Category\CategoryService;
 use App\Http\Services\Product\ProductClientService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -30,6 +31,15 @@ class MenuController extends Controller
             'title' => $menu->name,
             'products' => $products,
             'menu' => $menu
+        ]);
+    }
+    public function search(Request $request): JsonResponse
+    {
+        $result = $this->productService->search($request);
+        return response()->json([
+            'list' => $result,
+            'message' => $result != null  ? "" : "Không tìm thấy sản phẩm!",
+            'keyword' => $request->input('keyword').gettype($result)
         ]);
     }
 }

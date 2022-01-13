@@ -30,6 +30,6 @@ class product extends Model
     }
 
     public function singleImage(){
-        return $this->hasMany(image::class, 'product_id', 'id')->limit(1);
+        return $this->hasMany(image::class, 'product_id', 'id')->select('image')->limit(1);
     }
 }

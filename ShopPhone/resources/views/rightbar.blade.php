@@ -74,32 +74,34 @@
         <div class="f-grid py-2">
             <h3 class="agileits-sear-head mb-3">Sản phẩm bán chạy</h3>
             <div class="box-scroll">
-                <div class="scroll">
-                    <div class="row">
-                        <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                            <img src="images/k1.jpg" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                            <a href="">Samsung Galaxy On7 Prime (Gold, 4GB RAM + 64GB Memory)</a>
-                            <a href="" class="price-mar mt-2">$12,990.00</a>
-                        </div>
-                    </div>
+                <div class="box">
+                    @foreach($topProducts as $key => $product)
                     <div class="row my-4">
                         <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                            <img src="images/k2.jpg" alt="" class="img-fluid">
+                            <a href="/san-pham/{{$product->product_id}}-{{Str::slug($product->name, '-')}}.html"><img src="{{$product->image}}" alt="" class="img-fluid"></a>
                         </div>
                         <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                            <a href="">Haier 195 L 4 Star Direct-Cool Single Door Refrigerator</a>
-                            <a href="" class="price-mar mt-2">$12,499.00</a>
+                            <a href="/san-pham/{{$product->product_id}}-{{Str::slug($product->name, '-')}}.html">{{$product->name}}</a>
+                            <a href="/san-pham/{{$product->product_id}}-{{Str::slug($product->name, '-')}}.html" class="price-mar mt-2">{{number_format($product->DonGia, 0, ',', '.') . " VNĐ"}}</a>
                         </div>
                     </div>
+                    @endforeach
+{{--                    <div class="row my-4">--}}
+{{--                        <div class="col-lg-3 col-sm-2 col-3 left-mar">--}}
+{{--                            <img src="images/k2.jpg" alt="" class="img-fluid">--}}
+{{--                        </div>--}}
+{{--                        <div class="col-lg-9 col-sm-10 col-9 w3_mvd">--}}
+{{--                            <a href="">Haier 195 L 4 Star Direct-Cool Single Door Refrigerator</a>--}}
+{{--                            <a href="" class="price-mar mt-2">$12,499.00</a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="row">
                         <div class="col-lg-3 col-sm-2 col-3 left-mar">
-                            <img src="images/k3.jpg" alt="" class="img-fluid">
+{{--                            <img src="images/k3.jpg" alt="" class="img-fluid">--}}
                         </div>
                         <div class="col-lg-9 col-sm-10 col-9 w3_mvd">
-                            <a href="">Ambrane 13000 mAh Power Bank (P-1310 Premium)</a>
-                            <a href="" class="price-mar mt-2">$1,199.00 </a>
+{{--                            <a href="">Ambrane 13000 mAh Power Bank (P-1310 Premium)</a>--}}
+{{--                            <a href="" class="price-mar mt-2">$1,199.00 </a>--}}
                         </div>
                     </div>
                 </div>

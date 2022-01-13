@@ -505,6 +505,8 @@
 </script>
 <!-- //password-script -->
 
+<script src="/backend/js/function.js"></script>
+
 <!-- scroll seller -->
 <script src="/backend/js/scroll.js"></script>
 <!-- //scroll seller -->

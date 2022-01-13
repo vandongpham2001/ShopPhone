@@ -14,9 +14,10 @@
             <div class="row">
                 <!-- product left -->
                 <div class="agileinfo-ads-display col-lg-9">
-                    <div class="wrapper">
+                    <div class="wrapper" id="product-table">
                         <!-- first section -->
                         <?php $i = 1; $j = 1 ?>
+                        @if(count($products)>0)
                         <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                             <div class="row">
                                 @foreach($products as $key => $product)
@@ -71,8 +72,11 @@
                                 <?php  ?>
                             </div>
                         </div>
+                        @endif
                         <!-- //first section -->
                         <!-- second section -->
+
+                        @if(count($products)>3)
                         <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                             <?php $d = 1 ?>
                             <div class="row">
@@ -127,8 +131,9 @@
                                 @endforeach
                             </div>
                         </div>
+                        @endif
                         <!-- //second section -->
-
+                        @if(count($products)>6)
                         <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                             <?php $d = 1 ?>
                             <div class="row">
@@ -183,7 +188,9 @@
                                 @endforeach
                             </div>
                         </div>
+                        @endif
 
+                        @if(count($products)>9)
                         <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                             <?php $d = 1 ?>
                             <div class="row">
@@ -238,7 +245,9 @@
                                 @endforeach
                             </div>
                         </div>
+                        @endif
                     </div>
+                    <div id="products-null" class="null-feedback"></div>
                 </div>
                 <!-- //product left -->
                 <!-- product right -->

@@ -16,11 +16,14 @@ class ProductController extends Controller
 
     public function index($id='', $slug=''){
         $product=$this->productService->show($id);
+        $imageProduct=$this->productService->getListImageProduct($id);
+//        dd($imageProduct);
         $productsMore=$this->productService->more($id);
 //        dd($product);
         return view('products.content', [
             'title'=>$product->name,
             'product'=>$product,
+            'images'=>$imageProduct,
             'products'=>$productsMore
         ]);
     }

@@ -17,8 +17,8 @@ class ProductClientService
                     ->join('categories', 'categories.id', '=', 'products.category_id')
                     ->where('categories.parent_id', '=', 1)
 //                    ->select('name', 'products.id', 'image')
-                    ->orderBy('id')
-//                    ->groupBy('products.id', 'products.name', 'DonGia')
+                    ->orderByDesc('products.id')
+                    ->groupBy('products.id')
                     ->take(self::LIMIT)
                     ->get(array(
                         'productdetails.id',
@@ -41,8 +41,8 @@ class ProductClientService
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->where('categories.id', '=', 3)
 //                    ->select('name', 'products.id', 'image')
-            ->orderBy('id')
-//                    ->groupBy('products.id', 'name', 'image')
+            ->orderByDesc('products.id')
+            ->groupBy('products.id')
             ->take(self::LIMIT)
             ->get(array(
                 'productdetails.id',
@@ -59,15 +59,29 @@ class ProductClientService
     }
 
     public function getPhuKien(){
-//                return product::with('singleImage')->orderBy('id')->limit(self::LIMIT)->get();
+//        return DB::table('products')
+//            ->join('images', 'images.product_id', '=', 'products.id')
+//            ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
+//            ->join('categories', 'categories.id', '=', 'products.category_id')
+//            ->where('categories.parent_id', '=', 2)
+//            ->orderBy('id')
+//            ->take(self::LIMIT)
+//            ->get(array(
+//                'productdetails.id',
+//                'productdetails.product_id',
+//                'products.name',
+//                'images.image',
+//                'DonGia'
+//            ));
+
+
         return DB::table('products')
             ->join('images', 'images.product_id', '=', 'products.id')
             ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->where('categories.parent_id', '=', 2)
-//                    ->select('name', 'products.id', 'image')
-            ->orderBy('id')
-//                    ->groupBy('products.id', 'name', 'image')
+            ->orderByDesc('products.id')
+            ->groupBy('products.id')
             ->take(self::LIMIT)
             ->get(array(
                 'productdetails.id',
@@ -76,11 +90,6 @@ class ProductClientService
                 'images.image',
                 'DonGia'
             ));
-//        return image::select('id', 'image', 'product_id')->orderBy('id')->limit(self::LIMIT)->get();
-//        return DB::select('SELECT p.id, p.name, i.image
-//                                FROM products p, images i
-//                                WHERE p.id=i.product_id
-//                                GROUP BY p.id, p.name, i.image');
     }
 
     public function getProductByCategory($id)
@@ -92,8 +101,8 @@ class ProductClientService
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->where('products.category_id', '=', $id)
 //                    ->select('name', 'products.id', 'image')
-            ->orderBy('id')
-//                    ->groupBy('products.id', 'products.name', 'DonGia')
+            ->orderByDesc('products.id')
+            ->groupBy('products.id')
             ->take(self::LIMIT*2)
 //            ->paginate(0)
             ->get(array(
@@ -114,8 +123,8 @@ class ProductClientService
             ->join('categories', 'categories.id', '=', 'products.category_id')
             ->where('categories.parent_id', '=', $id)
 //                    ->select('name', 'products.id', 'image')
-            ->orderBy('id')
-//                    ->groupBy('products.id', 'products.name', 'DonGia')
+            ->orderByDesc('products.id')
+            ->groupBy('products.id')
             ->take(self::LIMIT*2)
 //            ->paginate(0)
             ->get(array(
@@ -137,7 +146,7 @@ class ProductClientService
             ->where('producttypes.id', '=', $id)
 //                    ->select('name', 'products.id', 'image')
             ->orderBy('id')
-//                    ->groupBy('products.id', 'products.name', 'DonGia')
+            ->groupBy('products.id')
             ->take(self::LIMIT)
 //            ->paginate(1)
             ->get(array(
@@ -148,8 +157,20 @@ class ProductClientService
             ));
     }
 
-    public function getImageProduct($id){
-        return image::where('product_id', $id)->first();
+    public function getListImageProduct($id){
+//        return image::where('product_id', $id);
+        return DB::table('images')
+            ->join('products', 'images.product_id', '=', 'products.id')
+            ->where('images.product_id', $id)
+//            ->where('products.status', 1)
+//            ->with('category')
+//            ->firtOrFail();
+            ->get(array(
+                'images.id',
+                'images.image',
+                'products.name',
+            ));
+
     }
 
 
@@ -191,8 +212,8 @@ class ProductClientService
             ->where('products.category_id', '=', $product[0])
 //            ->where('categories.parent_id', '=', $id)
 //                    ->select('name', 'products.id', 'image')
-            ->orderBy('id')
-//                    ->groupBy('products.id', 'products.name', 'DonGia')
+            ->orderByDesc('id')
+            ->groupBy('products.id')
             ->limit(4)
 //            ->paginate(0)
             ->get(array(
@@ -214,5 +235,28 @@ class ProductClientService
             ->get(array(
                 'productdetails.id'
             ));
+    }
+
+    public function search($request)
+    {
+        $keyword = (string)$request->input('keyword');
+        $rs = DB::table('products')
+            ->join('images', 'images.product_id', '=', 'products.id')
+            ->join('productdetails', 'productdetails.product_id', '=', 'products.id')
+            ->where('products.name', 'like', "%" . $keyword . "%")
+//                    ->select('name', 'products.id', 'image')
+            ->orderByDesc('products.id')
+            ->groupBy('products.id')
+            ->take(self::LIMIT*2)
+//            ->paginate(0)
+            ->get(array(
+                'productdetails.id',
+                'productdetails.product_id',
+                'products.name',
+                DB::raw('CONCAT(images.image, "") as image'),
+                'DonGia'
+            ));
+
+        return count($rs) == 0 ? null : $rs;
     }
 }

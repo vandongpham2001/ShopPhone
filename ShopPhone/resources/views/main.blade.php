@@ -16,6 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 @include('header')
 <!-- navigation -->
 <div class="navbar-inner">
+{{--    {{dd($categories)}}--}}
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="agileits-navi_search">
@@ -33,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto text-center mr-xl-5">
                     <li class="nav-item active mr-lg-2 mb-lg-0 mb-2">
-                        <a class="nav-link" href="#">Trang chủ
+                        <a class="nav-link" href="/">Trang chủ
                             <span class="sr-only">(current)</span>
                         </a>
                     </li>

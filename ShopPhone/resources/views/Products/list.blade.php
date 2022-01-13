@@ -1,3 +1,4 @@
+{{--{{dd($phukiens)}}--}}
 <div class="ads-grid py-sm-5 py-4">
     <div class="container py-xl-4 py-lg-2">
         <!-- tittle heading -->
@@ -13,6 +14,7 @@
             <div class="agileinfo-ads-display col-lg-9">
                 <div class="wrapper">
                     <!-- first section -->
+                    @if(count($phones)>0)
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                         <h3 class="heading-tittle text-center font-italic">Điện thoại mới</h3>
                         <div class="row">
@@ -64,8 +66,10 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                     <!-- //first section -->
                     <!-- second section -->
+                    @if(count($phukiens)>0)
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                         <h3 class="heading-tittle text-center font-italic">Phụ kiện</h3>
                         <div class="row">
@@ -115,6 +119,7 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                     <!-- //second section -->
                     <!-- third section -->
                     <div class="product-sec1 product-sec2 px-sm-5 px-3">
@@ -128,6 +133,7 @@
                     </div>
                     <!-- //third section -->
                     <!-- fourth section -->
+                    @if(count($pins)>0)
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
                         <h3 class="heading-tittle text-center font-italic">Ốp lưng</h3>
                         <div class="row">
@@ -179,6 +185,7 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                     <!-- //fourth section -->
                 </div>
             </div>

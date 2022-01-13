@@ -8,6 +8,8 @@
 
     <!-- page -->
 {{--    {{dd($product)}}--}}
+{{--    {{dd($images)}}--}}
+
     <div class="services-breadcrumb">
         <div class="agile_inner_breadcrumb">
             <div class="container">
@@ -43,48 +45,19 @@
                         <div class="flexslider">
 
                             <div class="clearfix"></div>
-                            <div class="flex-viewport" style="overflow: hidden; position: relative;">
-                                <ul class="slides"
-                                    style="width: 1000%; transition-duration: 0.6s; transform: translate3d(-874px, 0px, 0px);">
-                                    <li data-thumb="images/si3.jpg" class="clone" aria-hidden="true"
-                                        style="width: 437px; margin-right: 0px; float: left; display: block;">
+                            <div class="flex-viewport">
+                                <ul class="slides">
+                                    @foreach($images as $key => $image)
+                                    <li data-thumb="{{$image->image}}" class="clone" aria-hidden="true">
                                         <div class="thumb-image">
-                                            <img src="{{$product->image}}" data-imagezoom="true" class="img-fluid" alt=""
+                                            <img src="{{$image->image}}" data-imagezoom="true" class="img-fluid" alt=""
                                                  draggable="false"></div>
                                     </li>
-                                    <li data-thumb="images/si1.jpg"
-                                        style="width: 437px; margin-right: 0px; float: left; display: block;" class=""
-                                        data-thumb-alt="">
-                                        <div class="thumb-image">
-                                            <img src="{{$product->image}}" data-imagezoom="true" class="img-fluid" alt=""
-                                                 draggable="false"></div>
-                                    </li>
-                                    <li data-thumb="images/si2.jpg" data-thumb-alt=""
-                                        style="width: 437px; margin-right: 0px; float: left; display: block;"
-                                        class="flex-active-slide">
-                                        <div class="thumb-image">
-                                            <img src="{{$product->image}}" data-imagezoom="true" class="img-fluid" alt=""
-                                                 draggable="false"></div>
-                                    </li>
-                                    <li data-thumb="images/si3.jpg" data-thumb-alt=""
-                                        style="width: 437px; margin-right: 0px; float: left; display: block;">
-                                        <div class="thumb-image">
-                                            <img src="{{$product->image}}" data-imagezoom="true" class="img-fluid" alt=""
-                                                 draggable="false"></div>
-                                    </li>
-                                    <li data-thumb="images/si1.jpg"
-                                        style="width: 437px; margin-right: 0px; float: left; display: block;"
-                                        class="clone" aria-hidden="true">
-                                        <div class="thumb-image">
-                                            <img src="{{$product->image}}" data-imagezoom="true" class="img-fluid" alt=""
-                                                 draggable="false"></div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div>
                             <ol class="flex-control-nav flex-control-thumbs">
-                                <li><img src="images/si1.jpg" class="" draggable="false"></li>
                                 <li><img src="images/si2.jpg" draggable="false" class="flex-active"></li>
-                                <li><img src="images/si3.jpg" draggable="false"></li>
                             </ol>
                             <ul class="flex-direction-nav">
                                 <li class="flex-nav-prev"><a class="flex-prev" href="#">Previous</a></li>
@@ -164,6 +137,8 @@
         </div>
     </div>
 
+
+    @if(count($products)>0)
     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
         <h3 class="heading-tittle text-center font-italic">Sản phẩm liên quan</h3>
         <div class="row">
@@ -213,5 +188,6 @@
             @endforeach
         </div>
     </div>
+    @endif
 
 @endsection
