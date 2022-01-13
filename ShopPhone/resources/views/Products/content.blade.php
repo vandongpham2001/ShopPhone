@@ -65,12 +65,13 @@
                         {{--                        <label>Free delivery</label>--}}
                     </p>
                     <?php $parent_id = \App\Helpers\Helper::getCategory($product->category_id) ?>
-                    @if($parent_id==1)
-                        <div class="product-single-w3l">
-                            <p class="my-3">
-                                <i class="far fa-hand-point-right mr-2"></i>
-                            {{--                                <label>1 Year</label>Manufacturer Warranty</p>--}}
-                            <ul>
+
+                    <div class="product-single-w3l">
+                        <p class="my-3">
+                            <i class="far fa-hand-point-right mr-2"></i>
+                        {{--                                <label>1 Year</label>Manufacturer Warranty</p>--}}
+                        <ul>
+                            @if($parent_id==1)
                                 <li class="mb-1">
                                     Vi xử lý: {{$product->CPU}}
                                 </li>
@@ -84,20 +85,24 @@
                                     Màn hình: {{$product->ManHinh}}
                                 </li>
                                 <li class="mb-1">
-                                    Dung lượng pin: {{$product->Pin}}
-                                </li>
-                                <li class="mb-1">
                                     Camera: {{$product->Camera}}
                                 </li>
+                            @endif
+                            @if($product->Pin!=null)
                                 <li class="mb-1">
-                                    Màu sắc: {{$product->Color}}
+                                    Dung lượng pin: {{$product->Pin}}
                                 </li>
-                                <li class="mb-1">
-                                    Mô tả sản phẩm: {{$product->description==null ? 'Không có':$product->description}}
-                                </li>
-                            </ul>
-                        </div>
-                    @endif
+                            @endif
+                            <li class="mb-1">
+                                Màu sắc: {{$product->Color}}
+                            </li>
+                            <li class="mb-1">
+                                Mô tả sản phẩm: {{$product->description==null ? 'Không có':$product->description}}
+                            </li>
+                        </ul>
+                    </div>
+
+
                     <div class="occasion-cart">
                         <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                             <form action="/add-cart" method="POST">
@@ -118,7 +123,8 @@
                                         <div class="row my-4">
                                             <div class="quantity-select">
                                                 <div class="entry value-minus">&nbsp;</div>
-                                                <input class="entry value text-xl-center" name="add" value="1" type="number">
+                                                <input class="entry value text-xl-center" name="add" value="1"
+                                                       type="number">
                                                 <div class="entry value-plus active">&nbsp;</div>
                                             </div>
                                         </div>
