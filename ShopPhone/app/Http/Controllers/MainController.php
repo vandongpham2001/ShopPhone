@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Services\Banner\BannerService;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\Http\Services\Category\CategoryService;
 use App\Http\Services\Product\ProductClientService;
@@ -31,6 +32,15 @@ class MainController extends Controller
             'phones'=>$this->product->getPhone(),
             'pins'=>$this->product->getPin(),
             'phukiens'=>$this->product->getPhuKien()
+        ]);
+    }
+    public function search(Request $request): JsonResponse
+    {
+        $result = $this->product->search($request);
+        return response()->json([
+            'list' => $result,
+            'message' => $result != null  ? "" : "Không tìm thấy sản phẩm!",
+            'keyword' => $request->input('keyword').gettype($result)
         ]);
     }
 }

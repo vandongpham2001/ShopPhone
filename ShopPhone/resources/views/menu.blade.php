@@ -14,11 +14,11 @@
             <div class="row">
                 <!-- product left -->
                 <div class="agileinfo-ads-display col-lg-9">
-                    <div class="wrapper">
+                    <div class="wrapper" id="product-table">
                         <!-- first section -->
                         <?php $i = 1; $j = 1 ?>
                         @if(count($products)>0)
-                        <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4" id="product-table">
+                        <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
                             <div class="row">
                                 @foreach($products as $key => $product)
                                     @if($i<=3)

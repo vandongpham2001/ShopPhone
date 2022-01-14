@@ -9,10 +9,11 @@
 {{--            <span>C</span>omputers--}}
         </h3>
         <!-- //tittle heading -->
+        <div id="products-null" class="null-feedback"></div>
         <div class="row">
             <!-- product left -->
             <div class="agileinfo-ads-display col-lg-9">
-                <div class="wrapper">
+                <div class="wrapper" id="product-table">
                     <!-- first section -->
                     @if(count($phones)>0)
                     <div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
