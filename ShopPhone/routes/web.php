@@ -117,7 +117,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 
 Route::get('category/{id}-{slug}.html', [MenuController::class, 'index']);
-Route::post('product/search', [MenuController::class, 'search']);
+Route::post('/san-pham/search', [MenuController::class, 'search']);
 
 Route::get('san-pham/{id}-{slug}.html', [\App\Http\Controllers\ProductController::class, 'index']);
 

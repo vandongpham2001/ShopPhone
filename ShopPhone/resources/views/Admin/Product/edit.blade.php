@@ -46,10 +46,10 @@
                 <textarea id="content" name="description" class="form-control" >{{$product->description}}</textarea>
             </div>
 
-            <div class="form-group">
-                <label for="description">Mô tả chi tiết</label>
-                <textarea id="contentDetail" name="content" class="form-control" >{{$product->content}}</textarea>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="description">Mô tả chi tiết</label>--}}
+{{--                <textarea id="contentDetail" name="content" class="form-control" >{{$product->content}}</textarea>--}}
+{{--            </div>--}}
 
             <div class="form-group">
                 <label>Kích hoạt</label>

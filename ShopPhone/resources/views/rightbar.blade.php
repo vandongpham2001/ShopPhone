@@ -4,10 +4,12 @@
     <div class="side-bar p-sm-4 p-3">
         <div class="search-hotel border-bottom py-2">
             <h3 class="agileits-sear-head mb-3">Tìm kiếm</h3>
-            <form action="#" method="post">
-                <input type="search" placeholder="Tên sản phẩm" name="search" required="">
-                <input type="submit" value=" ">
-            </form>
+            <div class="form-group position-relative has-icon-right">
+                <input id="search-product" type="text" placeholder="Tên sản phẩm" class="form-control">
+{{--                <div class="form-control-icon">--}}
+{{--                    <i class="bi bi-search"></i>--}}
+{{--                </div>--}}
+            </div>
         </div>
         <!-- price -->
         <div class="range border-bottom py-2">

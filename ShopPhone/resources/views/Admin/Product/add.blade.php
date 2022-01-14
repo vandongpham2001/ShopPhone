@@ -46,10 +46,10 @@
                 <textarea id="content" value="{{old('description')}}" name="description" class="form-control"></textarea>
             </div>
 
-            <div class="form-group">
-                <label for="description">Mô tả chi tiết</label>
-                <textarea id="contentDetail" value="{{old('content')}}" name="content" class="form-control"></textarea>
-            </div>
+{{--            <div class="form-group">--}}
+{{--                <label for="description">Mô tả chi tiết</label>--}}
+{{--                <textarea id="contentDetail" value="{{old('content')}}" name="content" class="form-control"></textarea>--}}
+{{--            </div>--}}
 
             <div class="form-group">
                 <label>Kích hoạt</label>
