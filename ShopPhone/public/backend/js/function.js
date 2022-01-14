@@ -1,3 +1,21 @@
+function string_to_slug (str) {
+    str = str.replace(/^\s+|\s+$/g, ''); // trim
+    str = str.toLowerCase();
+
+    // remove accents, swap ñ for n, etc
+    var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
+    var to   = "aaaaeeeeiiiioooouuuunc------";
+    for (var i=0, l=from.length ; i<l ; i++) {
+        str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
+    }
+
+    str = str.replace(/[^a-z0-9 -]/g, '') // remove invalid chars
+        .replace(/\s+/g, '-') // collapse whitespace and replace by -
+        .replace(/-+/g, '-'); // collapse dashes
+
+    return str;
+}
+
 function renderProducts(list) {
     let html = "";
 
@@ -16,24 +34,26 @@ function renderProducts(list) {
           <img src="${product.image}" alt="" width="150px" height="200px">
           <div class="men-cart-pro">
           <div class="inner-men-cart-pro">
-          <a href="/san-pham/${product.product_id}-${product.name}.html" class="link-product-add-cart">Quick View</a>
+          <a href="/san-pham/${product.product_id}-${string_to_slug(product.name)}.html" class="link-product-add-cart">Quick View</a>
           </div>
           </div>
           <span class="product-new-top">New</span>
           </div>
-                                                <div class="item-info-product text-center border-top mt-4">
-                                                    <h4 class="pt-1">
-                                                        <a href="/san-pham/${product.product_id}-${product.name}.html">${product.name}</a>
-                                                    </h4>
-                                                    <div class="info-product-price my-2">
-                                                        <span
-                                                            class="item_price">${product.DonGia.toLocaleString()+' VNĐ'}</span>
+          <div class="item-info-product text-center border-top mt-4">
+          <h4 class="pt-1">
+          <a href="/san-pham/${product.product_id}-${string_to_slug(product.name)}.html">${product.name}</a>
+          </h4>
+          <div class="info-product-price my-2">
+          <span class="item_price">${product.DonGia.toLocaleString()+' VNĐ'}</span>
+          </div>
+          <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+
                                                     </div>
-                                                  </div>
-                                            </div>
-                                        </div>
-                            </div>
-                            </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
         `;
     });
     return html;
