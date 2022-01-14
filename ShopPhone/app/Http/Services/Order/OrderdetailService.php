@@ -18,6 +18,11 @@ class OrderdetailService
     public  function getAlldetail(){
         return ordersdetail::orderBy('id')->paginate(20);
     }
+
+    public  function getAlldetailNoPaginate(){
+        return ordersdetail::orderBy('id')->get();
+    }
+
     public function update($request, $order) : bool
     {
         try{

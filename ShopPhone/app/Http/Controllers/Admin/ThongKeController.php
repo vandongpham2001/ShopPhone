@@ -31,7 +31,7 @@ class ThongKeController extends Controller
             $sanpham+=$detail->soLuong;
             $total+=$detail->soLuong*$detail->giaMua;
        }
-       
+
     return view('admin.thongke.index', [
         'title' => 'Thống kê',
         'order_count'=>$donhang,
@@ -39,12 +39,13 @@ class ThongKeController extends Controller
         'user_count'=>$user_count,
         'totalcash'=>$total
     ]);
-    } 
+    }
     public function detail_list()
     {
         return view('admin.thongke.detail_list', [
             'title' => 'Chi tiết đơn hàng',
-            'orderdetails'=>$this->orderdetailservice->getAlldetail()
+            'orderdetails'=>$this->orderdetailservice->getAlldetail(),
+            'doanhthus'=>$this->orderdetailservice->getAlldetailNoPaginate()
         ]);
     }
 }

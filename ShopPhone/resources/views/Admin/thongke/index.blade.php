@@ -51,7 +51,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>{{$totalcash}} Vnđ</h3>
+                <h3>{{number_format($totalcash, 0, ',', '.') . " VNĐ"}} Vnđ</h3>
 
                 <p>Tổng tiền đã bán</p>
               </div>
@@ -63,5 +63,5 @@
           </div>
           <!-- ./col -->
         </div>
-        
+
 @endsection

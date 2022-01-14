@@ -8,9 +8,7 @@ function renderProducts(list) {
     list.forEach(product => {
         console.log(product);
         html += `
-                            <div class="row">
-                                        <div class="col-md-4 product-men mt-md-0 mt-5">
-                                            <div class="men-pro-item simpleCart_shelfItem">
+          <div class="men-pro-item simpleCart_shelfItem">
                                                 <div class="men-thumb-item text-center">
                                                     <img src="${product.image}" alt="" width="150px" height="200px">
                                                     <div class="men-cart-pro">
@@ -37,13 +35,13 @@ function renderProducts(list) {
                                                                 <input type="hidden" name="cmd" value="_cart">
                                                                 <input type="hidden" name="add" value="1">
                                                                 <input type="hidden" name="business" value=" ">
-                                                                <input type="hidden" name="item_name" value="{{$product->name}}">
-                                                                <input type="hidden" name="amount" value="{{$product->DonGia}}">
+                                                                <input type="hidden" name="item_name" value="${product.name}">
+                                                                <input type="hidden" name="amount" value="${product.DonGia}">
                                                                 <input type="hidden" name="currency_code" value="VND">
                                                                 <input type="hidden" name="return" value=" ">
                                                                 <input type="hidden" name="cancel_return" value=" ">
                                                                 <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
-                                                                <input type="hidden" name="productdetail_id" value="{{$product->id}}">
+                                                                <input type="hidden" name="productdetail_id" value="${product.id}">
 <!--                                                                @csrf-->
                                                             </fieldset>
                                                         </form>
@@ -51,10 +49,6 @@ function renderProducts(list) {
 
                                                 </div>
                                             </div>
-                                        </div>
-                            </div>
-
-                        <!-- //first section -->
         `;
     });
     return html;
@@ -73,7 +67,7 @@ function Search(idInput, url, idNullFeedback, idTable, renderFunc) {
 
         setTimeout(() => {
             let text = this.value.trim();
-            if (text == keyword) {
+            if (text === keyword) {
                 $.ajax({
                     type: 'post',
                     datatype: 'JSON',
@@ -89,4 +83,4 @@ function Search(idInput, url, idNullFeedback, idTable, renderFunc) {
     }
 }
 
-Search('search-product', '/san-pham/search', 'products-null', 'product-table', renderProducts);
+Search('keyword', '/san-pham/search', 'products-null', 'product-table', renderProducts);

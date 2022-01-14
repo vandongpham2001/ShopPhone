@@ -10,7 +10,7 @@
             <th>Số điện thoại</th>
             <th>Ngày tạo</th>
             <th>Trạng thái</th>
-            <th>Mã khách hàng</th>
+            <th>Tên khách hàng</th>
             <th style="width: 230px">&nbsp;</th>
         </tr>
         </thead>

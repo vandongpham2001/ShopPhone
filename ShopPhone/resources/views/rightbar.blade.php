@@ -5,7 +5,7 @@
         <div class="search-hotel border-bottom py-2">
             <h3 class="agileits-sear-head mb-3">Tìm kiếm</h3>
             <div class="form-group position-relative has-icon-right">
-                <input id="search-product" type="text" placeholder="Tên sản phẩm" class="form-control">
+                <input id="keyword" name="keyword" type="text" placeholder="Tên sản phẩm" class="form-control">
 {{--                <div class="form-control-icon">--}}
 {{--                    <i class="bi bi-search"></i>--}}
 {{--                </div>--}}

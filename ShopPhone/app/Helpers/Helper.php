@@ -278,8 +278,8 @@ class Helper
                         <td>'. $order->sdt .'</td>
                         <td>'. $order->created_at .'</td>
                         <td>'. $order->status .'</td>
-                        <td>'. $order->user_id .'</td>
-                       
+                        <td>'. $order->user->name .'</td>
+
                         <td>
                             <a class="btn btn-primary btn-sm" href="/admin/order/view/'. $order->id .'">
                                 <i class="fas fa-eye"></i>
@@ -315,11 +315,11 @@ class Helper
                         <td>'. $orderdetail->soLuong.'</td>
                         <td>'. number_format($orderdetail->giaMua,0,',','.') .'</td>
                         <td>
-                        
+
                             <a class="btn btn-primary btn-sm" href="/admin/orderdetails/edit/'. $orderdetail->id .'">
                                 <i class="fas fa-edit"></i>
                             </a>
-                           
+
                         </td>
                     </tr>
                 ';
@@ -343,24 +343,39 @@ class Helper
                         <td>'. $orderdetail->productdetail->product->name.'</td>
                         <td>'. $orderdetail->productdetail->RAM.'</td>
                         <td>'. $orderdetail->productdetail->ROM.'</td>
+                        <td>'. $orderdetail->productdetail->CPU.'</td>
                         <td>'. $orderdetail->productdetail->Color.'</td>
                         <td>'. $orderdetail->soLuong.'</td>
                         <td>'. number_format($orderdetail->giaMua,0,',','.') .'</td>
                         <td>
-                        
+
                             <a class="btn btn-primary btn-sm" href="/admin/orderdetails/edit/'. $orderdetail->id .'">
                                 <i class="fas fa-edit"></i>
                             </a>
-                           
+
                         </td>
                     </tr>
                 ';
                 $i++;
         }
-        $html=$html.'<tr><td colspan="9">Tổng tiền đã bán:&emsp;'. number_format($tongtien,0,',','.').'VNđ<td></tr>';
-        $html=$html.'<tr><td colspan="9">Số lượng sản phẩm đã bán:&emsp;'. number_format($soluongban,0,',','.').'<td></tr>';
+//        $html=$html.'<tr><td colspan="9">Tổng tiền đã bán:&emsp;'. number_format($tongtien,0,',','.').' VNđ<td></tr>';
+//        $html=$html.'<tr><td colspan="9">Số lượng sản phẩm đã bán:&emsp;'. number_format($soluongban,0,',','.').'<td></tr>';
         return $html;
     }
+
+    public static function doanhthu_thongke($doanhthus){
+        $html='';
+        $tongtien=0;
+        $soluongban=0;
+        foreach ($doanhthus as $key=>$orderdetail){
+            $tongtien+=$orderdetail->giaMua*$orderdetail->soLuong;
+            $soluongban+=$orderdetail->soLuong;
+        }
+        $html=$html.'<div class="float-right d-none d-sm-block"><b>Tổng tiền đã bán:&emsp;'. number_format($tongtien,0,',','.').' VNĐ</b></div>';
+        $html=$html.'<div class="float-right d-none d-sm-block"><b>Số lượng sản phẩm đã bán:&emsp;'. number_format($soluongban,0,',','.').'</b></div>';
+        return $html;
+    }
+
 //    public static function producttypes($producttypes){
 //        $html='';
 //        foreach ($producttypes as $key => $producttype){

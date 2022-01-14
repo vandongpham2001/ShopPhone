@@ -14,7 +14,7 @@
                 <img src="{{asset('backend/admin/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Admin</a>
+                <a href="/admin" class="d-block">Admin</a>
             </div>
         </div>
 
@@ -36,6 +36,15 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Trang chủ
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-bars"></i>
                         <p>
@@ -45,13 +54,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/category/add')}}" class="nav-link">
+                            <a href="/admin/category/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Danh mục</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/category/list')}}" class="nav-link">
+                            <a href="/admin/category/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách danh mục</p>
                             </a>
@@ -91,13 +100,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/product/add')}}" class="nav-link">
+                            <a href="/admin/product/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Sản phẩm</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/product/list')}}" class="nav-link">
+                            <a href="/admin/product/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách Sản phẩm</p>
                             </a>
@@ -115,13 +124,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/image/add')}}" class="nav-link">
+                            <a href="/admin/image/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Ảnh</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/image/list')}}" class="nav-link">
+                            <a href="/admin/image/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách ảnh sản phẩm</p>
                             </a>
@@ -138,13 +147,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/productdetails/add')}}" class="nav-link">
+                            <a href="/admin/productdetails/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm chi tiết sản phẩm</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/productdetails/list')}}" class="nav-link">
+                            <a href="/admin/productdetails/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách</p>
                             </a>
@@ -161,13 +170,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{asset('admin/banner/add')}}" class="nav-link">
+                            <a href="/admin/banner/add" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Thêm Banner</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{asset('admin/banner/list')}}" class="nav-link">
+                            <a href="/admin/banner/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách Banner</p>
                             </a>
@@ -185,7 +194,7 @@
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
-                            <a href="{{asset('admin/users/list')}}" class="nav-link">
+                            <a href="/admin/users/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách người dùng</p>
                             </a>
@@ -203,12 +212,12 @@
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
-                            <a href="{{asset('admin/order/list')}}" class="nav-link">
+                            <a href="/admin/order/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Danh sách Đơn hàng</p>
                             </a>
                         </li>
-                       
+
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -222,15 +231,15 @@
                     <ul class="nav nav-treeview">
 
                         <li class="nav-item">
-                            <a href="{{asset('admin/thongke/index')}}" class="nav-link">
+                            <a href="/admin/thongke/index" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Xem thống kê</p>
                             </a>
                         </li>
-                       
+
                     </ul>
                 </li>
-                
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
