@@ -36,15 +36,6 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/" class="nav-link">
-                        <i class="nav-icon fas fa-home"></i>
-                        <p>
-                            Trang chủ
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-bars"></i>
                         <p>
@@ -139,6 +130,29 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-info-circle"></i>
+                        <p>
+                           Chi tiết sản phẩm
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{asset('admin/productdetails/add')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Thêm chi tiết sản phẩm</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{asset('admin/productdetails/list')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Danh sách</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-id-card"></i>
                         <p>
                             Banner
@@ -180,26 +194,43 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-info-circle"></i>
+                        <i class="nav-icon fas fa-money-bill-alt"></i>
                         <p>
-                            Chi tiết sản phẩm
+                            Đơn hàng
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                            <a href="{{asset('admin/productdetails/add')}}" class="nav-link">
+
+                        <li class="nav-item">
+                            <a href="{{asset('admin/order/list')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Thêm chi tiết sản phẩm</p>
+                                <p>Danh sách Đơn hàng</p>
                             </a>
-                    </li>
-                    <li class="nav-item">
-                            <a href="{{asset('admin/productdetails/list')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Danh sách</p>
-                            </a>
-                    </li>
+                        </li>
+                       
+                    </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-flag"></i>
+                        <p>
+                            Thống kê
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+
+                        <li class="nav-item">
+                            <a href="{{asset('admin/thongke/index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Xem thống kê</p>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </li>
+                
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

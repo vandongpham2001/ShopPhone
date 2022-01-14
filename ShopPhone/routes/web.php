@@ -1,10 +1,12 @@
 <?php
-
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\OrderController;
+use App\Http\Controllers\Admin\OrderdetailController;
+use App\Http\Controllers\Admin\ThongKeController;
 use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\UploadController;
@@ -111,6 +113,28 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{image}', [ProductDetailController::class, 'show']);
             Route::post('edit/{image}', [ProductDetailController::class, 'update']);
             Route::DELETE('destroy', [ProductDetailController::class, 'destroy']);
+        });
+        #Order
+        Route::prefix('order')->group(function () {
+            
+            Route::get('list', [OrderController::class, 'index']);  
+            Route::get('view/{order}', [OrderController::class, 'view']);
+            Route::get('edit/{order}', [OrderController::class, 'show']);
+            Route::post('edit/{order}', [OrderController::class, 'update']);
+            Route::DELETE('destroy', [OrderController::class, 'destroy']);
+
+        });
+        #OrderDetail
+        Route::prefix('orderdetails')->group(function () {
+            
+            Route::get('list', [OrderdetailController::class, 'index']);
+            Route::get('edit/{orderdetail}', [OrderdetailController::class, 'show']);
+            Route::post('edit/{orderdetail}', [OrderdetailController::class, 'update']);
+            Route::DELETE('destroy/{orderdetail}', [OrderdetailController::class, 'destroy']);
+        });
+        Route::prefix('thongke')->group(function(){
+            Route::get('index',[ThongKeController::class,'index']);
+            Route::get('detail_list',[ThongKeController::class,'detail_list']);
         });
     });
 });

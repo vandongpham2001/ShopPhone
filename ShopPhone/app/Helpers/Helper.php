@@ -265,6 +265,102 @@ class Helper
         return $html;
     }
 
+     //Order
+     public static function order($orders){
+        $html='';
+        $i=1;
+        foreach ($orders as $key=>$order){
+            $html .= '
+                    <tr>
+                        <td>'. $orders->firstItem()+$key .'</td>
+                        <td>'."Đơn hàng ".$order->id .'</td>
+                        <td>'. $order->address .'</td>
+                        <td>'. $order->sdt .'</td>
+                        <td>'. $order->created_at .'</td>
+                        <td>'. $order->status .'</td>
+                        <td>'. $order->user_id .'</td>
+                       
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="/admin/order/view/'. $order->id .'">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                            <a class="btn btn-primary btn-sm" href="/admin/order/edit/'. $order->id .'">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="#" onclick="removeRow('. $order->id . ',\'/admin/order/destroy\')">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+
+                ';
+        }
+        return $html;
+    }
+    //Order detail
+    public static function orderdetail($orderdetails){
+        $html='';
+        $i=1;
+        $tongtien=0;
+        foreach ($orderdetails as $key=>$orderdetail){
+            $tongtien+=$orderdetail->giaMua*$orderdetail->soLuong;
+            $html .= '
+                    <tr>
+                        <td>'. $i .'</td>
+                        <td>'."Đơn hàng ". $orderdetail->order_id.'</td>
+                        <td>'. $orderdetail->productdetail->product->name.'</td>
+                        <td>'. $orderdetail->productdetail->RAM.'</td>
+                        <td>'. $orderdetail->productdetail->ROM.'</td>
+                        <td>'. $orderdetail->productdetail->Color.'</td>
+                        <td>'. $orderdetail->soLuong.'</td>
+                        <td>'. number_format($orderdetail->giaMua,0,',','.') .'</td>
+                        <td>
+                        
+                            <a class="btn btn-primary btn-sm" href="/admin/orderdetails/edit/'. $orderdetail->id .'">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                           
+                        </td>
+                    </tr>
+                ';
+                $i++;
+        }
+        $html=$html.'<tr><td colspan="9">Tổng tiên:&emsp;'. number_format($tongtien,0,',','.').'VNđ<td></tr>';
+        return $html;
+    }
+    public static function orderdetail_thongke($orderdetails){
+        $html='';
+        $i=1;
+        $tongtien=0;
+        $soluongban=0;
+        foreach ($orderdetails as $key=>$orderdetail){
+            $tongtien+=$orderdetail->giaMua*$orderdetail->soLuong;
+            $soluongban+=$orderdetail->soLuong;
+            $html .= '
+                    <tr>
+                        <td>'. $i .'</td>
+                        <td>'."Đơn hàng ". $orderdetail->order_id.'</td>
+                        <td>'. $orderdetail->productdetail->product->name.'</td>
+                        <td>'. $orderdetail->productdetail->RAM.'</td>
+                        <td>'. $orderdetail->productdetail->ROM.'</td>
+                        <td>'. $orderdetail->productdetail->Color.'</td>
+                        <td>'. $orderdetail->soLuong.'</td>
+                        <td>'. number_format($orderdetail->giaMua,0,',','.') .'</td>
+                        <td>
+                        
+                            <a class="btn btn-primary btn-sm" href="/admin/orderdetails/edit/'. $orderdetail->id .'">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                           
+                        </td>
+                    </tr>
+                ';
+                $i++;
+        }
+        $html=$html.'<tr><td colspan="9">Tổng tiền đã bán:&emsp;'. number_format($tongtien,0,',','.').'VNđ<td></tr>';
+        $html=$html.'<tr><td colspan="9">Số lượng sản phẩm đã bán:&emsp;'. number_format($soluongban,0,',','.').'<td></tr>';
+        return $html;
+    }
 //    public static function producttypes($producttypes){
 //        $html='';
 //        foreach ($producttypes as $key => $producttype){
