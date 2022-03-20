@@ -4,6 +4,7 @@ namespace App\Http\Services\Order;
 
 use App\Models\ordersdetail;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class OrderdetailService
@@ -17,6 +18,25 @@ class OrderdetailService
     }
     public  function getAlldetail(){
         return ordersdetail::orderBy('id')->paginate(20);
+    }
+
+    public  function getAllProductByDetail(){
+        return DB::table('ordersdetails')
+            ->join('productdetails', 'productdetails.id', '=', 'ordersdetails.productDetail_id')
+            ->join('products', 'products.id', '=', 'productdetails.product_id')
+            ->orderBy(DB::raw('sum(\'ordersdetails.soLuong\')'))
+            ->groupBy('ordersdetails.productDetail_id')
+            ->get(array(
+                'products.name',
+//                'soLuong',
+                DB::raw('sum(\'ordersdetails.soLuong\') as soLuong'),
+                'giaMua',
+                'ROM',
+                'RAM',
+                'CPU',
+                'Color'
+
+            ));
     }
 
     public  function getAlldetailNoPaginate(){

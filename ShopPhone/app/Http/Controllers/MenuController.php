@@ -42,4 +42,17 @@ class MenuController extends Controller
             'keyword' => $request->input('keyword').gettype($result)
         ]);
     }
+
+    public function filter(Request $request)
+    {
+//        dd($request->input());
+//        $filter=$request->input('filter');
+//        dd($filter);
+//        $result = $this->productService->search($request);
+//        return response()->json([
+//            'list' => $result,
+//            'message' => $result != null  ? "" : "Không tìm thấy sản phẩm!",
+//            'keyword' => $request->input('keyword').gettype($result)
+//        ]);
+    }
 }

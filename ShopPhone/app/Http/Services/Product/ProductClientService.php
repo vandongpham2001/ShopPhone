@@ -196,6 +196,7 @@ class ProductClientService
                 'Pin',
                 'Camera',
                 'Color',
+                'SoLuong',
                 'products.description',
                 'category_id'
                 ))

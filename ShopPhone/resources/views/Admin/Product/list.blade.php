@@ -60,7 +60,7 @@
                             <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
                                 aria-label="CSS grade: activate to sort column ascending">Update
                             </th>
-                            <th style="width: 100px">&nbsp;</th>
+                            <th style="width: 150px">&nbsp;</th>
                         </tr>
                         </thead>
                         <tbody>

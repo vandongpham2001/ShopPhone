@@ -83,6 +83,9 @@ class Helper
                         <td>'. self::active($product->status) .'</td>
                         <td>'. $product->updated_at .'</td>
                         <td>
+                            <a class="btn btn-primary btn-sm" href="/admin/product/productdetails/list/'. $product->id .'">
+                                <i class="fas fa-eye"></i>
+                            </a>
                             <a class="btn btn-primary btn-sm" href="/admin/product/edit/'. $product->id .'">
                                 <i class="fas fa-edit"></i>
                             </a>
@@ -130,6 +133,9 @@ class Helper
                         <td><a href="'. $image->image .'" target="_blank"><img src="'. $image->image .'" width="100px"></a></td>
                         <td>'. $image->updated_at .'</td>
                         <td>
+                            <a class="btn btn-primary btn-sm" href="/admin/image/view/'. $image->id .'">
+                                <i class="fas fa-eye"></i>
+                            </a>
                             <a class="btn btn-primary btn-sm" href="/admin/image/edit/'. $image->id .'">
                                 <i class="fas fa-edit"></i>
                             </a>

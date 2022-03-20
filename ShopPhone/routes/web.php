@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('admin/users/logout', [LoginController::class, 'logout']);
 
 Route::get('admin/users/login', [LoginController::class, 'index'])->name('login');
 Route::post('admin/users/login/store', [LoginController::class, 'store']);
@@ -68,6 +69,12 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{product}', [ProductController::class, 'show']);
             Route::post('edit/{product}', [ProductController::class, 'update']);
             Route::DELETE('destroy', [ProductController::class, 'destroy']);
+            Route::get('productdetails/add', [ProductDetailController::class, 'create']);
+            Route::post('productdetails/add', [ProductDetailController::class, 'store']);
+            Route::get('productdetails/list', [ProductDetailController::class, 'index']);
+            Route::get('productdetails/edit/{image}', [ProductDetailController::class, 'show']);
+            Route::post('productdetails/edit/{image}', [ProductDetailController::class, 'update']);
+            Route::DELETE('productdetails/destroy', [ProductDetailController::class, 'destroy']);
         });
 
         #Role
@@ -116,8 +123,8 @@ Route::middleware(['auth'])->group(function () {
         });
         #Order
         Route::prefix('order')->group(function () {
-            
-            Route::get('list', [OrderController::class, 'index']);  
+
+            Route::get('list', [OrderController::class, 'index']);
             Route::get('view/{order}', [OrderController::class, 'view']);
             Route::get('edit/{order}', [OrderController::class, 'show']);
             Route::post('edit/{order}', [OrderController::class, 'update']);
@@ -126,7 +133,7 @@ Route::middleware(['auth'])->group(function () {
         });
         #OrderDetail
         Route::prefix('orderdetails')->group(function () {
-            
+
             Route::get('list', [OrderdetailController::class, 'index']);
             Route::get('edit/{orderdetail}', [OrderdetailController::class, 'show']);
             Route::post('edit/{orderdetail}', [OrderdetailController::class, 'update']);
@@ -142,6 +149,8 @@ Route::get('/', [\App\Http\Controllers\MainController::class, 'index']);
 
 Route::get('category/{id}-{slug}.html', [MenuController::class, 'index']);
 Route::post('/san-pham/search', [MenuController::class, 'search']);
+
+Route::get('/san-pham/filter', [MenuController::class, 'filter']);
 
 Route::get('san-pham/{id}-{slug}.html', [\App\Http\Controllers\ProductController::class, 'index']);
 

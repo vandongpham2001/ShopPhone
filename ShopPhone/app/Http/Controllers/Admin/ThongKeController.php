@@ -45,6 +45,7 @@ class ThongKeController extends Controller
         return view('admin.thongke.detail_list', [
             'title' => 'Chi tiết đơn hàng',
             'orderdetails'=>$this->orderdetailservice->getAlldetail(),
+//            'orderdetails'=>$this->orderdetailservice->getAllProductByDetail(),
             'doanhthus'=>$this->orderdetailservice->getAlldetailNoPaginate()
         ]);
     }

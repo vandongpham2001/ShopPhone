@@ -239,6 +239,15 @@
 
                     </ul>
                 </li>
+                <li class="nav-item">
+                    <a href="/admin/users/logout" class="nav-link">
+                        <i class="nav-icon fas fa-angle-left"></i>
+                        <p>
+                            Đăng xuất
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                </li>
 
             </ul>
         </nav>

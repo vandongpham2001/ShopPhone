@@ -1,3 +1,10 @@
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+
+
 function string_to_slug (str) {
     str = str.replace(/^\s+|\s+$/g, ''); // trim
     str = str.toLowerCase();
@@ -46,8 +53,23 @@ function renderProducts(list) {
           <div class="info-product-price my-2">
           <span class="item_price">${product.DonGia.toLocaleString()+' VNĐ'}</span>
           </div>
-          <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+          <div
+                                                        class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                                                        <form action="/add-cart" method="POST">
+                                                            <fieldset>
+                                                                <input type="hidden" name="cmd" value="_cart">
+                                                                <input type="hidden" name="add" value="1">
+                                                                <input type="hidden" name="business" value=" ">
+                                                                <input type="hidden" name="item_name" value="${product.name}">
+                                                                <input type="hidden" name="amount" value="${product.DonGia}">
+                                                                <input type="hidden" name="currency_code" value="VND">
+                                                                <input type="hidden" name="return" value=" ">
+                                                                <input type="hidden" name="cancel_return" value=" ">
+                                                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button btn"/>
+                                                                <input type="hidden" name="productdetail_id" value="${product.id}">
 
+                                                            </fieldset>
+                                                        </form>
                                                     </div>
           </div>
           </div>
