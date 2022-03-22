@@ -7,6 +7,7 @@
             <li>Loại sản phẩm: <strong>{{$product->category->name}}</strong></li>
             <li>Nhà sản xuất: <strong>{{$product->NSX}}</strong></li>
             <li>Thời gian bảo hành: <strong>{{$product->ThoiGianBaoHanh}}</strong></li>
+            <a class="button-a-mobile-collapsed" href="/admin/productdetails/add">Thêm cấu hình sản phẩm</a>
         </ul>
     </div>
 
@@ -28,6 +29,7 @@
 
             </thead>
             <tbody>
+            {{--            {{dd($productdetails)}}--}}
             {!! \App\Helpers\Helper::productdetail($productdetails) !!}
             </tbody>
 

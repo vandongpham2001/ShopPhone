@@ -83,4 +83,14 @@ class ProductController extends Controller
             'keyword' => $request->input('keyword').gettype($result)
         ]);
     }
+
+    public function view(product $product)
+    {
+
+        return view('admin.product.detaillist',[
+            'title' => 'Danh sách chi tiết sản phẩm: ' . $product->name,
+            'product' => $product,
+            'productdetails'=>$product->productdetails()->get()
+        ]);
+    }
 }

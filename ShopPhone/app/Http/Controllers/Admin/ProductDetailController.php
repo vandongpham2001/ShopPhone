@@ -20,11 +20,13 @@ class ProductDetailController extends Controller
         $this->productdetailService=$productService;
     }
 
-    public function index()
+    public function index(product $product)
     {
-        return view('admin.productdetail.list', [
+        return view('admin.product.detaillist', [
             'title' => 'Danh sách chi tiết sản phẩm',
-            'productdetails'=>$this->productdetailService->getAll()
+            'product' => $product,
+//            'productdetails'=>$this->productdetailService->getProductDetail(),
+            'productdetails'=>$product->productdetails()->get()
         ]);
 
     }

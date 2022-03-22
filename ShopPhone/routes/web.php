@@ -69,12 +69,12 @@ Route::middleware(['auth'])->group(function () {
             Route::get('edit/{product}', [ProductController::class, 'show']);
             Route::post('edit/{product}', [ProductController::class, 'update']);
             Route::DELETE('destroy', [ProductController::class, 'destroy']);
-            Route::get('productdetails/add', [ProductDetailController::class, 'create']);
-            Route::post('productdetails/add', [ProductDetailController::class, 'store']);
-            Route::get('productdetails/list', [ProductDetailController::class, 'index']);
-            Route::get('productdetails/edit/{image}', [ProductDetailController::class, 'show']);
-            Route::post('productdetails/edit/{image}', [ProductDetailController::class, 'update']);
-            Route::DELETE('productdetails/destroy', [ProductDetailController::class, 'destroy']);
+            Route::get('view/{product}', [ProductController::class, 'view']);
+//            Route::get('productdetails/add', [ProductDetailController::class, 'create']);
+//            Route::post('productdetails/add', [ProductDetailController::class, 'store']);
+//            Route::get('productdetails/edit/{image}', [ProductDetailController::class, 'show']);
+//            Route::post('productdetails/edit/{image}', [ProductDetailController::class, 'update']);
+//            Route::DELETE('productdetails/destroy', [ProductDetailController::class, 'destroy']);
         });
 
         #Role

@@ -9,7 +9,7 @@
             <li>Trạng thái: <strong>{{$order->status}}</strong></li>
         </ul>
     </div>
-   
+
     <div class="detail">
     <table class="table">
         <thead>
@@ -22,16 +22,17 @@
             <th>Màu</th>
             <th>Số lượng</th>
             <th>Giá mua</th>
-            
+
             <th style="width: 100px">&nbsp;</th>
         </tr>
-        
+
         </thead>
         <tbody>
+{{--        {{dd($orderderdetails)}}--}}
         {!! \App\Helpers\Helper::orderdetail($orderdetails) !!}
-        
+
         </tbody>
-        
+
     </table>
 
     </div>

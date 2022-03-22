@@ -83,7 +83,7 @@ class Helper
                         <td>'. self::active($product->status) .'</td>
                         <td>'. $product->updated_at .'</td>
                         <td>
-                            <a class="btn btn-primary btn-sm" href="/admin/product/productdetails/list/'. $product->id .'">
+                            <a class="btn btn-primary btn-sm" href="/admin/product/view/'. $product->id .'">
                                 <i class="fas fa-eye"></i>
                             </a>
                             <a class="btn btn-primary btn-sm" href="/admin/product/edit/'. $product->id .'">
@@ -155,7 +155,7 @@ class Helper
         foreach ($productdetails as $key=>$productdetail){
             $html .= '
                     <tr>
-                    <td>'. $productdetails->firstItem()+$key .'</td>
+                    <td>'. $i .'</td>
                         <td>'. $productdetail->product->name .'</td>
                         <td>'. $productdetail->ROM .'</td>
                         <td>'. $productdetail->RAM .'</td>

@@ -16,6 +16,12 @@ class ProductDetailService
     public function getAll(){
         return ProductDetail::with('product')->orderBy('id')->paginate(10);
     }
+
+//    public function getProductDetail($request){
+//        $id=(int) $request->input('id');
+//        return ProductDetail::where('id', $id)->orderBy('id')->paginate(10);
+//    }
+
     public function create($request){
         try{
             $request->except('_token');
@@ -60,5 +66,5 @@ class ProductDetailService
 
         return count($rs) == 0 ? null : $rs;
     }
-  
+
 }
