@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Session;
 class ImageService
 {
     public function getAllProduct(){
-        return product::where('status', 1)->get();
+        return product::with('category')
+            ->orderBy('id')->paginate(10);
     }
 
     public function getAll(){

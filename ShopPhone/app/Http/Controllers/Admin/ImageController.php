@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Image\ImageRequest;
 use App\Http\Services\Image\ImageService;
 use App\Models\image;
+use App\Models\product;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,8 @@ class ImageController extends Controller
     {
         return view('admin.image.list', [
             'title' => 'Danh sách ảnh sản phẩm',
-            'images' => $this->imageService->getAll()
+//            'images' => $this->imageService->getAll()
+            'products' => $this->imageService->getAllProduct()
         ]);
     }
 
@@ -79,6 +81,16 @@ class ImageController extends Controller
             'list' => $result,
             'message' => $result != null ? "" : "Không tìm thấy ảnh nào!",
             'keyword' => $request->input('keyword') . gettype($result)
+        ]);
+    }
+
+    public function view(product $product)
+    {
+
+        return view('admin.image.view',[
+            'title' => 'Danh sách ảnh sản phẩm: ' . $product->name,
+            'product' => $product,
+            'images'=>$product->images()->get()
         ]);
     }
 }

@@ -84,6 +84,7 @@ Route::middleware(['auth'])->group(function () {
 
         #Image
         Route::prefix('image')->group(function () {
+            Route::get('view/{product}', [ImageController::class, 'view']);
             Route::get('add', [ImageController::class, 'create']);
             Route::post('add', [ImageController::class, 'store']);
             Route::get('list', [ImageController::class, 'index']);
